@@ -12,9 +12,10 @@ export class BannerComponent extends HelperService {
   // Settings
   settings = {
     slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    dots: false
+    slidesToScroll: 2,
+    arrows: true,
+    dots: false,
+    autoplay: true
   };
 
 }

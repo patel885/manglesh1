@@ -492,7 +492,7 @@
   width: 100%;
 }
 .sigma_map{
-  height: 600px;
+  height: 300px;
   width: 100%;
 }
 .sigma_map .sigma_contact-info{
@@ -1760,9 +1760,8 @@ textarea {
 .form-control {
     height: 60px;
     padding: 8px 15px;
-    border-radius: 0;
+    border-radius: 5px;
     border: 1px solid #efefef;
-    border-radius: 0;
     width: 100%;
     color: #6e6e6e;
     background-color: #fff;
@@ -2595,12 +2594,13 @@ table img {
 /* Header */
 .sigma_header {
   position: relative;
-  background-color: #fff;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.03);
+  background-color: #2874fc !important;
 }
 
 .navbar {
   padding: 0;
+  
 }
 
 .sigma_header .sigma_logo-wrapper {
@@ -2645,7 +2645,7 @@ table img {
 
 .sigma_header .navbar-nav li a:hover,
 .sigma_header .navbar-nav li.active>a {
-  color: #f55322;
+  color: #2874fc;
 }
 
 .sigma_header .navbar-nav li .sub-menu {
@@ -2693,9 +2693,9 @@ table img {
 
 .sigma_header .navbar-nav li .sub-menu li a:hover{
  padding-left: 32px;
- background-color: #f55322;
+ background-color: #2874fc;
  color: #fff;
- border-color: #f55322;
+ border-color: #2874fc;
 }
 
 .sigma_header .navbar-nav li .sub-menu li:last-child a {

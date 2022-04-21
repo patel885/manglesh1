@@ -2,11 +2,18 @@
     {
         "id": 1,
         "img": "assets/img/banner/1.jpg",
-        "title": "Vball",
-        "subtitle": "Volleyball Club"
+        "title": "Aerosports ",
+        "subtitle": "Tramploine Prk"
     },
     {
         "id": 2,
+        "img": "assets/img/banner/2.jpg",
+        "title": "Vball",
+        "subtitle": "Volleyball Club"
+    }
+    ,
+    {
+        "id": 1,
         "img": "assets/img/banner/2.jpg",
         "title": "Vball",
         "subtitle": "Volleyball Club"
