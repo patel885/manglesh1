@@ -1758,8 +1758,8 @@ textarea {
 }
 
 .form-control {
-    height: 60px;
-    padding: 8px 15px;
+    height: 20px;
+    padding: 8px 10px;
     border-radius: 5px;
     border: 1px solid #efefef;
     width: 100%;
@@ -1767,6 +1767,7 @@ textarea {
     background-color: #fff;
     letter-spacing: 0.1px;
     font-size: 14px;
+    
 }
 
 .form-control.transparent{

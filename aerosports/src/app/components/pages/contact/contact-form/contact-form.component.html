@@ -1,56 +1,69 @@
-<style>
-    .panel-footer {
-  display: flex;
-  justify-content: space-between;
-  background-color: #2874fc !important;
-}
-</style>
-<div class="panel-footer">
-    <span>    
-            <h1 style="line-height: 1.0;">Aerosports</h1>
-            <h3 style="line-height: 1.0;">OAKVILLE – MISSISSAUGA</h3>
-            <p>2679 Bristol Circle, Unit 2&amp;3<br> Oakville, ON L6H 6Z8<br> Canada</p>
-            <p>Tel:&nbsp;<a href="tel:19058292989">
-                <span class="extra-color-1">+1-905-829-2989</span>
-            </a>   
-          </p>   
-        </span>
-        <span >
-    
+
 <div class="section pt-0">
     <div class="container">
         <div class="section-title text-center">
-            <p class="subtitle"> <span></span> Get a Quote <span></span> </p>
-            <h4 class="title">Free Project Consultancy</h4>
+               <h4 class="title">Contact Us</h4>
         </div>
         <div class="row">
             <div class="offset-lg-1 col-lg-10">
                 <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
-                    <div class="row">
-                        <div class="col-lg-4">
+                    
                             <div class="form-group">
                                 <i class="far fa-user"></i>
                                 <input type="text" placeholder="Full Name" class="form-control" name="name" [(ngModel)]="model.name" required>
                             </div>
-                        </div>
-                        <div class="col-lg-4">
                             <div class="form-group">
                                 <i class="far fa-envelope"></i>
                                 <input type="email" placeholder="Email Address" class="form-control" name="email" [(ngModel)]="model.email" required>
                             </div>
-                        </div>
-                        <div class="col-lg-4">
                             <div class="form-group">
-                                <i class="far fa-pencil"></i>
-                                <input type="text" placeholder="Subject" class="form-control" name="subject" [(ngModel)]="model.subject" required>
+                                <i class="far fa-envelope"></i>
+                                <input type="phone" placeholder="Phone" class="form-control" name="phone" [(ngModel)]="model.phone" required>
                             </div>
-                        </div>
-                    </div>
+                
+                            <div class="form-group">
+                                <i class="far fa-envelope"></i>
+                                <select [(ngModel)]="model.subject" class="form-control"  placeholder="Subject" required name="cmbEvent" class="form-control">
+                                    <option value="" selected>Event</option>
+                                    <option value="BirthDay">BirthDay Party</option>
+                                    <option value="Group Booking">Group Booking</option>
+                                    <option value="Admission">Admission</option>
+                                    <option value="Camp">Camp</option>
+                                    <option value="Others">Others</option>
+                                </select>
+                              
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" [(ngModel)]="model.eventDate" placeholder="yyyy-mm-dd"
+                                       name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                                <div class="input-group-append">
+                                  <button class="btn btn-info" (click)="d.toggle()" type="button">Select</button>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                   <select [(ngModel)]="model.eventtime" placeholder="Time" required name="cmbEventTime" class="form-control">
+                                    <Option value="Time"></Option>
+                                    <option>10 AM</option>
+                                    <option>11 AM</option>
+                                    <option>12 AM</option>
+                                    <option>1 PM</option>
+                                    <option>2 PM</option>
+                                    <option>3 PM</option>
+                                    <option>4 PM</option>
+                                    <option>5 PM</option>
+                                    <option>6 PM</option>
+                                    <option>7 PM</option>
+                                    <option>8 PM</option>
+                                    <option>9 PM</option>                                    
+                                </select>
+                              
+                            </div>
+
                     <div class="form-group">
-                        <textarea placeholder="Enter Message" cols="45" rows="5" class="form-control" name="message" [(ngModel)]="model.message" required></textarea>
+                        <textarea placeholder="Enter Message" cols="45" rows="2" class="form-control" name="message" [(ngModel)]="model.message" required></textarea>
                     </div>
                     <div class="text-center">
-                        <button type="submit" class="sigma_btn-custom secondary" name="button">Get Consultancy <i class="far fa-plus"></i> </button>
+                        <button type="submit" class="sigma_btn-custom secondary" name="button">Send <i class="far fa-plus"></i> </button>
                     </div>
                     <div class="service-error mt-4 w-100" *ngIf="error">
                         <ngb-alert type="danger" class="mb-0 w-100" [dismissible]="false">
@@ -70,6 +83,3 @@
     </div>
 </div>
         
-</span>
-
-</div>
