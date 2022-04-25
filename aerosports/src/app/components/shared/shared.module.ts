@@ -15,9 +15,10 @@ import { HeaderComponent } from './header/header.component';
 import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 
 
-
 @NgModule({
-  declarations: [BlogSidebarComponent, BreadcrumbsComponent, CanvasComponent, FooterComponent, HeaderComponent, MobileMenuComponent],
+  declarations: [BlogSidebarComponent, BreadcrumbsComponent, 
+    CanvasComponent, FooterComponent, HeaderComponent, 
+    MobileMenuComponent],
   imports: [
     CommonModule,
     RouterModule,

@@ -19,10 +19,11 @@ import { BlogPostComponent } from './blog-post/blog-post.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { CaseComponent } from './case/case.component';
 import { PlansComponent } from './plans/plans.component';
+import { LocationComponent } from './location/location.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, BannerComponent, AboutTextComponent, ProcessComponent, BrandsComponent, ServicesComponent, CounterComponent, TeamComponent, TestimonialsComponent, BlogPostComponent, AboutUsComponent, CaseComponent, PlansComponent],
+  declarations: [HomeComponent, BannerComponent, AboutTextComponent, ProcessComponent, BrandsComponent, ServicesComponent, CounterComponent, TeamComponent, TestimonialsComponent, BlogPostComponent, AboutUsComponent, CaseComponent, PlansComponent, LocationComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
