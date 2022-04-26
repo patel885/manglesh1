@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import ldata from '../data/location.json';
+import mdata from '../data/aerosports.json';
+import { Aerosports } from '../models/aerosports';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +9,7 @@ import ldata from '../data/location.json';
 
 export class CommonService {
   public locationData = ldata;
+  public aerosports = mdata as Aerosports[];
   constructor(){
 
   }

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LocationGurderGuard } from './components/shared/location-guarder/location-gurder.guard';
 
-const routes: Routes = [
+export const routes: Routes = [
   //location
   { path: '', loadChildren: () => import('./components/pages/home/home.module').then(m => m.HomeModule), data: { breadcrumb: 'Homepage' } },
   // home

@@ -20,17 +20,23 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { CaseComponent } from './case/case.component';
 import { PlansComponent } from './plans/plans.component';
 import { LocationComponent } from './location/location.component';
+import { AttractionsModule } from '../attractions/attractions.module';
+import { PartiesEventsModule } from '../parties-events/parties-events.module';
 
 
 @NgModule({
-  declarations: [HomeComponent, BannerComponent, AboutTextComponent, ProcessComponent, BrandsComponent, ServicesComponent, CounterComponent, TeamComponent, TestimonialsComponent, BlogPostComponent, AboutUsComponent, CaseComponent, PlansComponent, LocationComponent],
+  declarations: [HomeComponent, BannerComponent, AboutTextComponent, ProcessComponent, BrandsComponent, 
+    ServicesComponent, CounterComponent, TeamComponent, TestimonialsComponent, BlogPostComponent, AboutUsComponent, 
+    CaseComponent, PlansComponent, LocationComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
     SharedModule,
     NgbModule,
     SlickCarouselModule,
-    CountUpModule
+    CountUpModule,
+    AttractionsModule,
+    PartiesEventsModule
   ]
 })
 export class HomeModule { }

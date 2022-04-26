@@ -9,7 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { AttractionsComponent } from './components/pages/attractions/attractions.component';
+import { PartiesEventsComponent } from './components/pages/parties-events/parties-events.component';
 @NgModule({
   declarations: [
     AppComponent
@@ -26,6 +27,10 @@ import { AppComponent } from './app.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
+  entryComponents:[
+    AttractionsComponent,
+    PartiesEventsComponent
+  ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

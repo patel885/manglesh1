@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { HelperService } from '../../services/helper.service';
 import data from '../../data/navigation.json';
 import { CommonService } from '../../services/common.service';
+import { Aerosports } from '../../models/aerosports';
 
 @Component({
   selector: 'app-header',
@@ -9,16 +10,22 @@ import { CommonService } from '../../services/common.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent extends HelperService  {
-  public navigation = data;
+  public navigation!: Aerosports[];
   constructor(public helperService: HelperService, public commonService: CommonService) {
     super();
+    this.navigation = this.commonService.aerosports;
   }
   ngOnInit(): void { 
   }
-  @Input() layout: number | string | undefined;
+  @Input() layout: number | string | undefined = "tertiary-bg" ;
+  @Input() hideMenu: boolean = false;
 
   onLinkClick(link: string){
     console.log(link);
+  }
+
+  hasChildren(item: Aerosports){
+    return item.children === undefined || item.children.length <= 0 ? false : true;
   }
 
 }
