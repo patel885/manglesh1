@@ -39,7 +39,7 @@ export class LocationComponent implements OnInit {
   private buildDynamicRoute(){
     this.commonService.aerosports.forEach(s =>{
       //console.log(s);
-      this.iterate(s, "/" + s.data.path);
+      this.iterate(s, "/" + s.path);
     });
 
     if(this.modifiedRoutes.length > 0){
@@ -49,7 +49,7 @@ export class LocationComponent implements OnInit {
     }
   }
 
-  iterate(s: Aerosports, path: string){
+  iterate(s: any, path: string){
     if(s.children){
       Array.from(s.children).forEach(child =>{
         this.iterate(child, path);
@@ -59,7 +59,7 @@ export class LocationComponent implements OnInit {
       console.log(this.routes);
       console.log(s);
       console.log(path);
-      var route = {path: ":location" + path + "/:type" ,  component: this.getComponent(s.data.type)} as Route
+      var route = {path: ":location" + path + "/:type" ,  component: this.getComponent(s.type)} as Route
       this.modifiedRoutes.push(route)
       
     }

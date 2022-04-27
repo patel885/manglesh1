@@ -13,6 +13,7 @@ export class HeaderComponent extends HelperService  {
   public navigation!: Aerosports[];
   constructor(public helperService: HelperService, public commonService: CommonService) {
     super();
+    //console.log(this.commonService.aerosports);
     this.navigation = this.commonService.aerosports;
   }
   ngOnInit(): void { 
@@ -24,7 +25,7 @@ export class HeaderComponent extends HelperService  {
     console.log(link);
   }
 
-  hasChildren(item: Aerosports){
+  hasChildren(item: any){
     return item.children === undefined || item.children.length <= 0 ? false : true;
   }
 
