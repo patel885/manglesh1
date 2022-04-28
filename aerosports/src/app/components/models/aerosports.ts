@@ -16,7 +16,17 @@ export interface Data {
 }
 
 export const PageTypes = {
-    Birthday: 'birthday',
-    OpenJumps: 'openjumps',
-    Aeroslam :'aeroslam'
+    PartiesEvents: 'partiesevents',
+    Attractions: 'attractions',
+    Programs: 'programs',
+    PricingPromos: 'pricingpromos',
+    GroupEvents: 'groupsevents',
+    Aboutus: 'aboutus',
+    Blogs: 'blogs',
+    Attractionsub: 'attractionssub',
+    Aboutussub: 'aboutussub',
+    Partieseventssub: 'partieseventssub',
+    Campprograms: 'campprograms',
+    Programssub: 'programssub',
+    Groupseventssub: 'groupseventssub'
 };

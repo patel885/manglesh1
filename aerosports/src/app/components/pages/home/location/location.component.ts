@@ -3,6 +3,7 @@ import { Route, Router, Routes } from '@angular/router';
 import { routes } from 'src/app/app-routing.module';
 import { Aerosports, PageTypes } from 'src/app/components/models/aerosports';
 import { CommonService } from 'src/app/components/services/common.service';
+import { AttractionDetailComponent } from '../../attractions/attraction-detail/attraction-detail.component';
 import { AttractionsComponent } from '../../attractions/attractions.component';
 import { PartiesEventsComponent } from '../../parties-events/parties-events.component';
 import { HomeComponent } from '../home.component';
@@ -42,42 +43,51 @@ export class LocationComponent implements OnInit {
       this.iterate(s, "/" + s.path);
     });
 
+    console.log(this.modifiedRoutes);
+
     if(this.modifiedRoutes.length > 0){
       this.routes.unshift(...this.modifiedRoutes);
-      console.log(this.routes);
+      //console.log(this.routes);
       this.router.resetConfig(this.routes);
     }
   }
 
   iterate(s: any, path: string){
-    if(s.children){
+    //console.log(s);
+    if(s.children && s.children.length > 0){
       Array.from(s.children).forEach(child =>{
         this.iterate(child, path);
-      })
+      });
+
+      if(s.hascontent && s.hascontent === true){
+        var route = {path: ":location" + path  ,  component: this.getComponent(s.pagetype)} as Route
+        this.modifiedRoutes.push(route)
+      }
+
     }else{
       
-      console.log(this.routes);
-      console.log(s);
-      console.log(path);
-      var route = {path: ":location" + path + "/:type" ,  component: this.getComponent(s.type)} as Route
+      var route = {path: ":location" + path + "/:type" ,  component: this.getComponent(s.pagetype)} as Route
       this.modifiedRoutes.push(route)
       
     }
+
+    
 
    
   }
 
   getComponent(type: string): Type<any> {
     switch (type) {
-        case PageTypes.Birthday: {
+        case PageTypes.PartiesEvents: {
             return PartiesEventsComponent;
         }
-        case PageTypes.Aeroslam: {
+        case PageTypes.Attractions: {
             return AttractionsComponent;
         }
-        case PageTypes.OpenJumps :{
-            return AttractionsComponent;
+        case PageTypes.Attractionsub:{
+          return AttractionDetailComponent;
         }
+        
         default:
           return HomeComponent;
     }

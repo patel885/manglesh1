@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
 import { AttractionsComponent } from './components/pages/attractions/attractions.component';
 import { PartiesEventsComponent } from './components/pages/parties-events/parties-events.component';
 import { CommonService } from './components/services/common.service';
-import { Observable, of } from 'rxjs';
+import { AttractionDetailComponent } from './components/pages/attractions/attraction-detail/attraction-detail.component';
 
 
 
@@ -40,7 +40,8 @@ import { Observable, of } from 'rxjs';
   bootstrap: [AppComponent],
   entryComponents:[
     AttractionsComponent,
-    PartiesEventsComponent
+    PartiesEventsComponent,
+    AttractionDetailComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -25,6 +25,15 @@ export class HeaderComponent extends HelperService  {
     console.log(link);
   }
 
+  hasLink(item: any){
+    var output = false;
+    //console.log(item);
+    if(item.hascontent && item.hascontent === true){
+      output = true;
+    }
+    return output;
+  }
+
   hasChildren(item: any){
     return item.children === undefined || item.children.length <= 0 ? false : true;
   }

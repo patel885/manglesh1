@@ -13,12 +13,13 @@ import { CanvasComponent } from './canvas/canvas.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
+import { ContainerListComponent } from './container-list/container-list.component';
 
 
 @NgModule({
   declarations: [BlogSidebarComponent, BreadcrumbsComponent, 
     CanvasComponent, FooterComponent, HeaderComponent, 
-    MobileMenuComponent],
+    MobileMenuComponent, ContainerListComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -27,6 +28,6 @@ import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
     BreadcrumbModule,
     FormsModule
   ],
-  exports: [BlogSidebarComponent, BreadcrumbsComponent, FooterComponent, HeaderComponent]
+  exports: [BlogSidebarComponent, BreadcrumbsComponent, FooterComponent, HeaderComponent, ContainerListComponent]
 })
 export class SharedModule { }

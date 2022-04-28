@@ -56,8 +56,8 @@
                 <ul class="navbar-nav" >
                     <li class="menu-item" [ngClass]="hasChildren(item) ? 'menu-item-has-children' : ''"
                         *ngFor="let item of navigation">
-                        <a href="javascript:void(0)" *ngIf="hasChildren(item)">{{item.desc}}</a>
-                        <a routerLink="{{item.link}}" *ngIf="!hasChildren(item)">{{item.desc}}</a>
+                        <a href="javascript:void(0)" *ngIf="!hasLink(item)">{{item.desc}}</a>
+                        <a routerLink="/{{commonService.location}}/{{item.path}}" *ngIf="hasLink(item)">{{item.desc}}</a>
                         <ul class="sub-menu" *ngIf="hasChildren(item)" [ngClass]="item.open ? 'd-block' : ''">
                             <li class="menu-item" [ngClass]="hasChildren(citem) ? 'menu-item-has-children' : ''"
                                 *ngFor="let citem of item.children">
