@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
     window.scroll(0,0);
   }
   private createTitle(routesCollection: Breadcrumb[]) {
-    const title = 'Vball - Volleyball - Angular Template';
+    const title = 'Aerosports Teampoline Park|Best Fun and Birthday Party Place';
     const titles = routesCollection.filter((route) => route.displayName);
 
     if (!titles.length) { return title; }

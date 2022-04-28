@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AttractionDetailComponent implements OnInit {
 
+  footerStyle:string=' '
+  
   constructor() { }
 
   ngOnInit(): void {
