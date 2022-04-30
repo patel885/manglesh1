@@ -7,6 +7,7 @@ export interface Aerosports {
     meta:         string;
     title:        string;
     data:         Data;
+    section1:     string;
     children?:    Aerosports[];
 }
 

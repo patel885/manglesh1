@@ -12,8 +12,9 @@ import { tap } from 'rxjs/operators';
 export class CommonService {
   public locationData = ldata;
   public aerosports: any[]  = [];
+  public allPages:any[]=[];
   constructor(private httpClient: HttpClient){
-    
+      
   }
 
 
@@ -41,7 +42,7 @@ export class CommonService {
 
         jsonData = jsonData.sort((i: any , j: any) => i.parentid - j.parentid)
         //console.log(jsonData);
-        
+        this.allPages=jsonData;
         let result: any[] = [];
         
 

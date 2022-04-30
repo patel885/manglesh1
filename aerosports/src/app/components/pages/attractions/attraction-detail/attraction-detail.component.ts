@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from '../../../services/common.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Aerosports } from 'src/app/components/models/aerosports';
 
 @Component({
   selector: 'app-attraction-detail',
@@ -7,11 +10,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AttractionDetailComponent implements OnInit {
 
-  footerStyle:string=' '
-  
-  constructor() { }
+  footerStyle = "tertiary-bg"
+  pagetype: string | any;
+  location: string | any;
+  page!: Aerosports;
 
-  ngOnInit(): void {
+  constructor(private route: ActivatedRoute, 
+     private router: Router,
+      private commonService: CommonService) { 
+       this.buildInitial();
+   }
+   ngOnInit(): void {
+    //console.log(this.route?.parent?.snapshot.url[2].path)
   }
 
+   buildInitial(){
+     this.pagetype   = this.router.url.split('/').pop();   
+        this.route.params.subscribe(routeParams => {
+         this.location = routeParams.location;   
+         this.pagetype = routeParams.type;   
+         console.log(routeParams.type);
+         
+       this.page= this.commonService.allPages.filter(t=>{
+        return t.path==routeParams.type;
+
+        })[0] as Aerosports;
+     
+        
+       });
+
+     
+   }
+ 
+ 
 }
