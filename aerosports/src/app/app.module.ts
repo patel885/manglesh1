@@ -13,6 +13,14 @@ import { AttractionsComponent } from './components/pages/attractions/attractions
 import { PartiesEventsComponent } from './components/pages/parties-events/parties-events.component';
 import { CommonService } from './components/services/common.service';
 import { AttractionDetailComponent } from './components/pages/attractions/attraction-detail/attraction-detail.component';
+import { ProgramsComponent } from './components/pages/programs/programs.component';
+import { PricingPromosComponent } from './components/pages/pricing-promos/pricing-promos.component';
+import { GroupsEventsComponent } from './components/pages/groups-events/groups-events.component';
+import { AboutUsComponent } from './components/pages/about-us/about-us.component';
+import { BirthdayPartiesComponent } from './components/pages/parties-events/birthday-parties/birthday-parties.component';
+import { CampProgramsComponent } from './components/pages/parties-events/camp-programs/camp-programs.component';
+import { ProgramDetailComponent } from './components/pages/programs/program-detail/program-detail.component';
+import { GroupEventDetailComponent } from './components/pages/groups-events/group-event-detail/group-event-detail.component';
 
 
 
@@ -29,7 +37,8 @@ import { AttractionDetailComponent } from './components/pages/attractions/attrac
     BreadcrumbModule,
     NgbModule,
     HttpClientModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+
   ],
   providers: [CommonService,{
     provide: APP_INITIALIZER,
@@ -41,7 +50,15 @@ import { AttractionDetailComponent } from './components/pages/attractions/attrac
   entryComponents:[
     AttractionsComponent,
     PartiesEventsComponent,
-    AttractionDetailComponent
+    AttractionDetailComponent,
+    ProgramsComponent,
+    PricingPromosComponent,
+    GroupsEventsComponent,
+    AboutUsComponent,
+    BirthdayPartiesComponent,
+    CampProgramsComponent,
+    ProgramDetailComponent,
+    GroupEventDetailComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

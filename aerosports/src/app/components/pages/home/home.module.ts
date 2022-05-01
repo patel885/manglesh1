@@ -22,6 +22,10 @@ import { PlansComponent } from './plans/plans.component';
 import { LocationComponent } from './location/location.component';
 import { AttractionsModule } from '../attractions/attractions.module';
 import { PartiesEventsModule } from '../parties-events/parties-events.module';
+import { ProgramsModule } from '../programs/programs.module';
+import { PricingPromosModule } from '../pricing-promos/pricing-promos.module';
+import { GroupsEventsModule } from '../groups-events/groups-events.module';
+import { AboutUsModule } from '../about-us/about-us.module';
 
 
 @NgModule({
@@ -36,7 +40,11 @@ import { PartiesEventsModule } from '../parties-events/parties-events.module';
     SlickCarouselModule,
     CountUpModule,
     AttractionsModule,
-    PartiesEventsModule
+    PartiesEventsModule, 
+    ProgramsModule,
+    PricingPromosModule,
+    GroupsEventsModule,
+    AboutUsModule   
   ]
 })
 export class HomeModule { }

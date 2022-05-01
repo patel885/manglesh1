@@ -29,5 +29,6 @@ export const PageTypes = {
     Partieseventssub: 'partieseventssub',
     Campprograms: 'campprograms',
     Programssub: 'programssub',
-    Groupseventssub: 'groupseventssub'
+    Groupseventssub: 'groupseventssub',
+    Faq:'faq'
 };

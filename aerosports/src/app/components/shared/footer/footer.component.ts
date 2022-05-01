@@ -9,7 +9,7 @@ import { BlogHelperService } from '../../services/blog-helper.service';
 })
 export class FooterComponent extends BlogHelperService {
   public service = data;
-  @Input() layout: number | string | undefined;
+  @Input() layout: number | string | undefined = "tertiary-bg";
   @Input() logo: number | string | undefined;
 
 

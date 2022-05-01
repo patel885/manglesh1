@@ -5,7 +5,15 @@ import { Aerosports, PageTypes } from 'src/app/components/models/aerosports';
 import { CommonService } from 'src/app/components/services/common.service';
 import { AttractionDetailComponent } from '../../attractions/attraction-detail/attraction-detail.component';
 import { AttractionsComponent } from '../../attractions/attractions.component';
+import { GroupEventDetailComponent } from '../../groups-events/group-event-detail/group-event-detail.component';
+import { GroupsEventsComponent } from '../../groups-events/groups-events.component';
+import { BirthdayPartiesComponent } from '../../parties-events/birthday-parties/birthday-parties.component';
+import { CampProgramsComponent } from '../../parties-events/camp-programs/camp-programs.component';
 import { PartiesEventsComponent } from '../../parties-events/parties-events.component';
+import { PricingPromosComponent } from '../../pricing-promos/pricing-promos.component';
+import { ProgramDetailComponent } from '../../programs/program-detail/program-detail.component';
+import { ProgramsComponent } from '../../programs/programs.component';
+import { AboutUsComponent } from '../about-us/about-us.component';
 import { HomeComponent } from '../home.component';
 
 
@@ -64,9 +72,8 @@ export class LocationComponent implements OnInit {
         this.modifiedRoutes.push(route)
       }
 
-    }else{
-      
-      var route = {path: ":location" + path + "/:type" ,  component: this.getComponent(s.pagetype)} as Route
+    }else{      
+      var route = {path: ":location" + path + (s.iscustom === 'y' ? "/" + s.path : "/:type") ,  component: this.getComponent(s.pagetype)} as Route
       this.modifiedRoutes.push(route)
       
     }
@@ -84,8 +91,32 @@ export class LocationComponent implements OnInit {
         case PageTypes.Attractions: {
             return AttractionsComponent;
         }
+        case PageTypes.Programs:{
+          return ProgramsComponent;
+        }
+        case PageTypes.PricingPromos:{
+          return PricingPromosComponent;
+        }
+        case PageTypes.GroupEvents:{
+          return GroupsEventsComponent;
+        }
+        case PageTypes.Aboutus: {
+          return AboutUsComponent;
+        }
         case PageTypes.Attractionsub:{
           return AttractionDetailComponent;
+        }
+        case PageTypes.Partieseventssub:{
+          return BirthdayPartiesComponent;
+        }
+        case PageTypes.Campprograms:{
+          return CampProgramsComponent;
+        }
+        case PageTypes.Programssub:{
+          return ProgramDetailComponent;
+        }
+        case PageTypes.Groupseventssub:{
+          return GroupEventDetailComponent;
         }
         
         default:
