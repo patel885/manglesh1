@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   headerStyle = "tertiary-bg";
   // Footer Style
   footerStyle = "tertiary-bg"
+  attractionCompType="attractions";
 
   ngOnInit(): void {
   }

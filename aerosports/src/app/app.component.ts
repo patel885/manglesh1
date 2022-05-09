@@ -17,12 +17,13 @@ import { Location, LocationStrategy, PathLocationStrategy } from '@angular/commo
 export class AppComponent implements OnInit {
   constructor(private titleService: Title, 
     private breadcrumbService: BreadcrumbService) {
-      
+    console.log('applog constructor');      
   }
   
   ngOnInit(): void {
     this.breadcrumbService.breadcrumbChanged.subscribe(crumbs => {
       this.titleService.setTitle(this.createTitle(crumbs));
+      console.log('applog nginit'); 
     });
   }
   onActivate(_event:any){
@@ -30,11 +31,13 @@ export class AppComponent implements OnInit {
   }
   private createTitle(routesCollection: Breadcrumb[]) {
     const title = 'Aerosports Teampoline Park|Best Fun and Birthday Party Place';
+
     const titles = routesCollection.filter((route) => route.displayName);
 
     if (!titles.length) { return title; }
 
     const routeTitle = this.titlesToString(titles);
+    console.log('routeTitle' + routeTitle); 
     return `${title}${routeTitle}`;
   }
 

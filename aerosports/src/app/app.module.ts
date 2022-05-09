@@ -21,7 +21,7 @@ import { BirthdayPartiesComponent } from './components/pages/parties-events/birt
 import { CampProgramsComponent } from './components/pages/parties-events/camp-programs/camp-programs.component';
 import { ProgramDetailComponent } from './components/pages/programs/program-detail/program-detail.component';
 import { GroupEventDetailComponent } from './components/pages/groups-events/group-event-detail/group-event-detail.component';
-
+import { ServicesComponent } from './components/pages/services/services.component';
 
 
 
@@ -58,7 +58,8 @@ import { GroupEventDetailComponent } from './components/pages/groups-events/grou
     BirthdayPartiesComponent,
     CampProgramsComponent,
     ProgramDetailComponent,
-    GroupEventDetailComponent
+    GroupEventDetailComponent,
+    ServicesComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

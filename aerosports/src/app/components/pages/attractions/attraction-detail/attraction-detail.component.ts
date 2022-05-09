@@ -21,11 +21,10 @@ export class AttractionDetailComponent implements OnInit {
        this.buildInitial();
    }
    ngOnInit(): void {
-    //console.log(this.route?.parent?.snapshot.url[2].path)
+    
   }
 
    buildInitial(){
-     this.pagetype   = this.router.url.split('/').pop();   
         this.route.params.subscribe(routeParams => {
          this.location = routeParams.location;   
          this.pagetype = routeParams.type;   

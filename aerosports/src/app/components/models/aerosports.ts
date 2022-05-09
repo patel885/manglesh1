@@ -11,6 +11,22 @@ export interface Aerosports {
     children?:    Aerosports[];
 }
 
+export interface BirthDayPackages {
+    plantitle:     string;
+    category:         string;
+    price:  string;
+    period: string;
+    includes:     string;
+    
+}
+
+export interface Config {
+    location:     string;
+    key:         string;
+    value:  string;
+    
+}
+
 export interface Data {
     path: string;
     type: string;
@@ -29,6 +45,7 @@ export const PageTypes = {
     Partieseventssub: 'partieseventssub',
     Campprograms: 'campprograms',
     Programssub: 'programssub',
+   BirthdayParties: 'kids-birthday-parties',
     Groupseventssub: 'groupseventssub',
     Faq:'faq'
 };

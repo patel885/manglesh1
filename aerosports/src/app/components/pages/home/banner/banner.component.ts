@@ -14,7 +14,7 @@ export class BannerComponent extends HelperService {
     slidesToShow: 1,
     slidesToScroll: 2,
     arrows: true,
-    dots: false,
+    dots: true,
     autoplay: true
   };
 

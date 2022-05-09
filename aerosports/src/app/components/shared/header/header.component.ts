@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { HelperService } from '../../services/helper.service';
-import data from '../../data/navigation.json';
 import { CommonService } from '../../services/common.service';
 import { Aerosports } from '../../models/aerosports';
 
@@ -15,6 +14,9 @@ export class HeaderComponent extends HelperService  {
     super();
     //console.log(this.commonService.aerosports);
     this.navigation = this.commonService.aerosports;
+    console.log('navigation');
+    console.log(this.navigation);
+
   }
   ngOnInit(): void { 
   }

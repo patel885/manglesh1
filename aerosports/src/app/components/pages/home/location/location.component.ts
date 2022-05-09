@@ -14,7 +14,10 @@ import { PricingPromosComponent } from '../../pricing-promos/pricing-promos.comp
 import { ProgramDetailComponent } from '../../programs/program-detail/program-detail.component';
 import { ProgramsComponent } from '../../programs/programs.component';
 import { AboutUsComponent } from '../about-us/about-us.component';
+import { BlogComponent } from '../../blog/blog.component';
+
 import { HomeComponent } from '../home.component';
+import { ServicesComponent } from '../services/services.component';
 
 
 @Component({
@@ -68,12 +71,12 @@ export class LocationComponent implements OnInit {
       });
 
       if(s.hascontent && s.hascontent === true){
-        var route = {path: ":location" + path  ,  component: this.getComponent(s.pagetype)} as Route
+        var route = {path: ":location" + path  ,  component: this.getComponent(s.path,s.parentid)} as Route
         this.modifiedRoutes.push(route)
       }
 
     }else{      
-      var route = {path: ":location" + path + (s.iscustom === 'y' ? "/" + s.path : "/:type") ,  component: this.getComponent(s.pagetype)} as Route
+      var route = {path: ":location" + path + (s.iscustom === 'y' ? "/" + s.path : "/:type") ,  component: this.getComponent(s.path,s.parentid)} as Route
       this.modifiedRoutes.push(route)
       
     }
@@ -83,19 +86,20 @@ export class LocationComponent implements OnInit {
    
   }
 
-  getComponent(type: string): Type<any> {
+  getComponent(type: string, parentid:string): Type<any> {
+    
     switch (type) {
         case PageTypes.PartiesEvents: {
-            return PartiesEventsComponent;
+            return ServicesComponent;
         }
         case PageTypes.Attractions: {
-            return AttractionsComponent;
+            return ServicesComponent;
         }
         case PageTypes.Programs:{
-          return ProgramsComponent;
+          return ServicesComponent;
         }
         case PageTypes.PricingPromos:{
-          return PricingPromosComponent;
+          return ServicesComponent;
         }
         case PageTypes.GroupEvents:{
           return GroupsEventsComponent;
@@ -104,23 +108,26 @@ export class LocationComponent implements OnInit {
           return AboutUsComponent;
         }
         case PageTypes.Attractionsub:{
-          return AttractionDetailComponent;
+          return ServicesComponent;
         }
-        case PageTypes.Partieseventssub:{
+        case PageTypes.BirthdayParties:{
           return BirthdayPartiesComponent;
         }
         case PageTypes.Campprograms:{
-          return CampProgramsComponent;
+          return ServicesComponent;
         }
         case PageTypes.Programssub:{
-          return ProgramDetailComponent;
+          return ServicesComponent;
         }
         case PageTypes.Groupseventssub:{
           return GroupEventDetailComponent;
         }
+        case PageTypes.Blogs:{
+          return BlogComponent;
+        }
         
         default:
-          return HomeComponent;
+          return AttractionDetailComponent;
     }
 } 
 
