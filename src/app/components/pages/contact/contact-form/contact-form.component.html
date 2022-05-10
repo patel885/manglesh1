@@ -1,0 +1,85 @@
+
+<div class="section pt-0">
+    <div class="container">
+        <div class="section-title text-center">
+               <h4 class="title">Contact Us</h4>
+        </div>
+        <div class="row">
+            <div class="offset-lg-1 col-lg-10">
+                <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+                    
+                            <div class="form-group">
+                                <i class="far fa-user"></i>
+                                <input type="text" placeholder="Full Name" class="form-control" name="name" [(ngModel)]="model.name" required>
+                            </div>
+                            <div class="form-group">
+                                <i class="far fa-envelope"></i>
+                                <input type="email" placeholder="Email Address" class="form-control" name="email" [(ngModel)]="model.email" required>
+                            </div>
+                            <div class="form-group">
+                                <i class="far fa-envelope"></i>
+                                <input type="phone" placeholder="Phone" class="form-control" name="phone" [(ngModel)]="model.phone" required>
+                            </div>
+                
+                            <div class="form-group">
+                                <i class="far fa-envelope"></i>
+                                <select [(ngModel)]="model.subject" class="form-control"  placeholder="Subject" required name="cmbEvent" class="form-control">
+                                    <option value="" selected>Event</option>
+                                    <option value="BirthDay">BirthDay Party</option>
+                                    <option value="Group Booking">Group Booking</option>
+                                    <option value="Admission">Admission</option>
+                                    <option value="Camp">Camp</option>
+                                    <option value="Others">Others</option>
+                                </select>
+                              
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" [(ngModel)]="model.eventDate" placeholder="yyyy-mm-dd"
+                                       name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                                <div class="input-group-append">
+                                  <button class="btn btn-info" (click)="d.toggle()" type="button">Select</button>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                   <select [(ngModel)]="model.eventtime" placeholder="Time" required name="cmbEventTime" class="form-control">
+                                    <Option value="Time"></Option>
+                                    <option>10 AM</option>
+                                    <option>11 AM</option>
+                                    <option>12 AM</option>
+                                    <option>1 PM</option>
+                                    <option>2 PM</option>
+                                    <option>3 PM</option>
+                                    <option>4 PM</option>
+                                    <option>5 PM</option>
+                                    <option>6 PM</option>
+                                    <option>7 PM</option>
+                                    <option>8 PM</option>
+                                    <option>9 PM</option>                                    
+                                </select>
+                              
+                            </div>
+
+                    <div class="form-group">
+                        <textarea placeholder="Enter Message" cols="45" rows="2" class="form-control" name="message" [(ngModel)]="model.message" required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="sigma_btn-custom secondary" name="button">Send <i class="far fa-plus"></i> </button>
+                    </div>
+                    <div class="service-error mt-4 w-100" *ngIf="error">
+                        <ngb-alert type="danger" class="mb-0 w-100" [dismissible]="false">
+                            <strong>Oops!</strong> Something bad happened. Please try again later.
+                        </ngb-alert>
+                    </div>
+                    <div [hidden]="!submitted" class="contact-message w-100 mt-4">
+                        <div *ngIf="model.id" class="contact-success w-100">
+                            <ngb-alert type="success" class="mb-0 w-100" [dismissible]="false">
+                                <strong>Success!</strong> Contact form has been successfully submitted.
+                            </ngb-alert>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+        

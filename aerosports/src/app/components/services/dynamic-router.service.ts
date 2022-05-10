@@ -7,7 +7,6 @@ import { AboutUsComponent } from '../pages/about-us/about-us.component';
 import { AttractionDetailComponent } from '../pages/attractions/attraction-detail/attraction-detail.component';
 import { BlogComponent } from '../pages/blog/blog.component';
 import { GroupEventDetailComponent } from '../pages/groups-events/group-event-detail/group-event-detail.component';
-import { GroupsEventsComponent } from '../pages/groups-events/groups-events.component';
 import { ServicesComponent } from '../pages/home/services/services.component';
 import { BirthdayPartiesComponent } from '../pages/parties-events/birthday-parties/birthday-parties.component';
 import { CommonService } from './common.service';
@@ -61,17 +60,16 @@ export class DynamicRouterService {
       Array.from(s.children).forEach(child =>{
         this.iterate(child, path);
       });
-
-      if(s.hascontent && s.hascontent === true){
         var route = {path: ":location" + path  ,  component: this.getComponent(s.path,s.parentid)} as Route
-        this.modifiedRoutes.push(route)
-      }
+        console.log(path);
+        console.log(route);
+        this.modifiedRoutes.push(route)     
 
     }else{      
-      var route = {path: ":location" + path + (s.iscustom === 'y' ? "/" + s.path : "/:type") ,  component: this.getComponent(s.path,s.parentid)} as Route
-      this.modifiedRoutes.push(route)
-      
-    }
+        var route = {path: ":location" + path + (s.iscustom === 'y' ? "/" + s.path : "/:type") ,  component: this.getComponent(s.path,s.parentid)} as Route
+        this.modifiedRoutes.push(route)
+        
+      }
 
     
 
@@ -94,10 +92,10 @@ export class DynamicRouterService {
           return ServicesComponent;
         }
         case PageTypes.GroupEvents:{
-          return GroupsEventsComponent;
+          return ServicesComponent;
         }
         case PageTypes.Aboutus: {
-          return AboutUsComponent;
+          return ServicesComponent;
         }
         case PageTypes.Attractionsub:{
           return ServicesComponent;
@@ -114,10 +112,10 @@ export class DynamicRouterService {
         case PageTypes.Groupseventssub:{
           return GroupEventDetailComponent;
         }
-        case PageTypes.Blogs:{
+/*        case PageTypes.Blogs:{
           return BlogComponent;
         }
-        
+  */      
         default:
           return AttractionDetailComponent;
     }

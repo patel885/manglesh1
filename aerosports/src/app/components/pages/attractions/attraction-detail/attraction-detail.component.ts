@@ -14,7 +14,13 @@ export class AttractionDetailComponent implements OnInit {
   pagetype: string | any;
   location: string | any;
   page!: Aerosports;
-
+  settings = {
+    slidesToShow: 1,
+    slidesToScroll: 2,
+    arrows: false,
+    dots: false,
+    autoplay: true
+  };
   constructor(private route: ActivatedRoute, 
      private router: Router,
       private commonService: CommonService) { 
@@ -28,7 +34,7 @@ export class AttractionDetailComponent implements OnInit {
         this.route.params.subscribe(routeParams => {
          this.location = routeParams.location;   
          this.pagetype = routeParams.type;   
-         console.log(routeParams.type);
+         //console.log(routeParams.type);
          
        this.page= this.commonService.allPages.filter(t=>{
         return t.path==routeParams.type;

@@ -1,8 +1,9 @@
+<app-header></app-header>
 <div class="section section-padding pt-0">
     <div class="container">
         <div class="section-title text-center">
             
-            <h4 class="title">{{currentPage.title}}</h4>
+            <h4 class="title">{{currentPage.desc}}</h4>
         </div>
         <div class="row">
             <div class="col-lg-4 col-md-6" *ngFor="let item of currentPage.children | slice:0:10">
@@ -11,15 +12,16 @@
                         <i [class]="item.icon"></i>
                     </div>-->
                     <div>
-                        <a routerLink="/{{item.location}}/{{pagetype}}/{{item.path}}" >  <img src="{{item.smallimage}}" alt="#" class="img-responsive"></a>
+                        <a routerLink="/{{commonService.location}}/{{pagetype}}/{{item.path}}" >  <img src="{{item.smallimage}}" alt="#" class="img-responsive"></a>
                     </div>
                     <div class="sigma_service-body">
-                        <h5>{{item.title}}</h5>
+                        <h5>{{item.desc}}</h5>
                         <p>{{item.smalltext}} </p>
-                        <a routerLink="/{{item.location}}/{{pagetype}}/{{item.path}}" class="btn-link"> Read More <i class="far fa-arrow-right"></i> </a>
+                        <a routerLink="/{{commonService.location}}/{{pagetype}}/{{item.path}}" class="btn-link"> Read More <i class="far fa-arrow-right"></i> </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<app-footer></app-footer>

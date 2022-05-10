@@ -14,11 +14,11 @@ export const routes: Routes = [
   // { path: ':location/blog/tag/:tagId', loadChildren: () => import('./components/pages/blog/blog.module').then(m => m.BlogModule), data: { breadcrumb: 'Blog Grid' } }, 
   // { path: ':location/blog/user/:userId', loadChildren: () => import('./components/pages/blog/blog.module').then(m => m.BlogModule), data: { breadcrumb: 'Blog Grid' } }, 
   // { path: ':location/blog/search/:query', loadChildren: () => import('./components/pages/blog/blog.module').then(m => m.BlogModule), data: { breadcrumb: 'Blog Grid' } }, 
-   { path: ':location/blog', loadChildren: () => import('./components/pages/blog/blog.module').then(m => m.BlogModule), data: { breadcrumb: 'Blog Grid' } }, 
+  //{ path: ':location/blog', loadChildren: () => import('./components/pages/blog/blog.module').then(m => m.BlogModule), data: { breadcrumb: 'Blog Grid' } }, 
   // { path: ':location/blog-standard', loadChildren: () => import('./components/pages/blog-standard/blog-standard.module').then(m => m.BlogStandardModule), data: { breadcrumb: 'Blog Standard' } },
   // { path: ':location/blog-details/:id', loadChildren: () => import('./components/pages/blog-details/blog-details.module').then(m => m.BlogDetailsModule), data: { breadcrumb: 'Blog Details' } },
   // About
-  { path: ':location/about', loadChildren: () => import('./components/pages/about/about.module').then(m => m.AboutModule), data: { breadcrumb: 'About Us' } },
+  //{ path: ':location/about', loadChildren: () => import('./components/pages/about/about.module').then(m => m.AboutModule), data: { breadcrumb: 'About Us' } },
   // Contact
   // { path: ':location/contact', loadChildren: () => import('./components/pages/contact/contact.module').then(m => m.ContactModule), data: { breadcrumb: 'Contact Us' } },
   // // Team
@@ -28,7 +28,7 @@ export const routes: Routes = [
   // // History
   // { path: ':location/history', loadChildren: () => import('./components/pages/history/history.module').then(m => m.HistoryModule), data: { breadcrumb: 'History' } },
   // // Services
-   { path: ':location/services', loadChildren: () => import('./components/pages/services/services.module').then(m => m.ServicesModule), data: { breadcrumb: 'Services' } },
+  // { path: ':location/services', loadChildren: () => import('./components/pages/services/services.module').then(m => m.ServicesModule), data: { breadcrumb: 'Services' } },
   // { path: ':location/services-v2', loadChildren: () => import('./components/pages/services-v2/services-v2.module').then(m => m.ServicesV2Module), data: { breadcrumb: 'Services' } },
   // { path: ':location/service-details/:id', loadChildren: () => import('./components/pages/services-details/services-details.module').then(m => m.ServicesDetailsModule), data: { breadcrumb: 'Service Details' } },
   // // Events

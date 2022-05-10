@@ -19,6 +19,14 @@ export interface BirthDayPackages {
     includes:     string;
     
 }
+export interface Blogs {
+    id:string;	title:string;	category:string;	tags:string;
+    shortdesc:string;	format:string;	image:string;	video:string;
+    postdate:string;	views:string;	author:string;
+    	htmldesc:string;
+  
+}
+
 
 export interface Config {
     location:     string;
@@ -45,7 +53,7 @@ export const PageTypes = {
     Partieseventssub: 'partieseventssub',
     Campprograms: 'campprograms',
     Programssub: 'programssub',
-   BirthdayParties: 'kids-birthday-parties',
+    BirthdayParties: 'kids-birthday-parties',
     Groupseventssub: 'groupseventssub',
     Faq:'faq'
 };

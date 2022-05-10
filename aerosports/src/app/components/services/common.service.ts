@@ -18,6 +18,8 @@ export class CommonService {
   public config:any[]=[]; 
   public locations:any[] = [];
   public aerosprots$: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
+  public blogs:any[] = [];
+  
   constructor(private httpClient: HttpClient){
       
   }
@@ -44,7 +46,13 @@ export class CommonService {
         this.BirthDayPackages = this.BirthDayPackages.filter(m=>{         
           return (m.location.indexOf(this.location)>-1 || m.location=='');
         });           
-          
+        
+        this.blogs = XLSX.utils.sheet_to_json(wb.Sheets["blogs"], {defval:""}) ;
+        this.blogs = this.blogs.filter(m=>{         
+          return (m.location.indexOf(this.location)>-1 || m.location=='');
+        });           
+        console.log(this.blogs);
+
         this.config=XLSX.utils.sheet_to_json(wb.Sheets["config"], {defval:""});        
         this.config=this.config.filter(m=>{          
           return (m.location.indexOf(this.location)>-1 || m.location=='');

@@ -23,12 +23,15 @@ import { ProgramDetailComponent } from './components/pages/programs/program-deta
 import { GroupEventDetailComponent } from './components/pages/groups-events/group-event-detail/group-event-detail.component';
 import { ServicesComponent } from './components/pages/services/services.component';
 import { ServicesComponent as AeroSportsServiceComponent } from './components/pages/home/services/services.component';
+import { BlogComponent } from './components/pages/blog/blog.component';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ServicesComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +64,9 @@ import { ServicesComponent as AeroSportsServiceComponent } from './components/pa
     ProgramDetailComponent,
     GroupEventDetailComponent,
     ServicesComponent,
-    AeroSportsServiceComponent
+    AeroSportsServiceComponent,
+    ServicesComponent,
+    BlogComponent
 
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

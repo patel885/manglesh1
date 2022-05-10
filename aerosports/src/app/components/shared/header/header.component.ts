@@ -28,12 +28,8 @@ export class HeaderComponent extends HelperService  {
   }
 
   hasLink(item: any){
-    var output = false;
-    //console.log(item);
-    if(item.hascontent && item.hascontent === true){
-      output = true;
-    }
-    return output;
+    
+    return true;
   }
 
   hasChildren(item: any){

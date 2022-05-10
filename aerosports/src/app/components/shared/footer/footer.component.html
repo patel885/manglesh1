@@ -9,25 +9,23 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-9">
-                                <p class="mb-0">Our next match is a home game of Onyx Yellow vs Tuskers on Sunday, 14th of October.</p>
+                                <p class="mb-0">Best party place</p>
                             </div>
                         </div>
                         <ul class="sigma_sm square mt-4 justify-content-start">
                             <li>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.facebook.com/aerosportsoakville/"><i class="fab fa-facebook-f"></i></a>
                             </li>
                             <li>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="https://twitter.com/AerosportsOak"><i class="fab fa-twitter"></i></a>
                             </li>
                             <li>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.instagram.com/aerosportsoakville/"><i class="fab fa-instagram"></i></a>
                             </li>
-                            <li>
-                                <a href="#"><i class="fab fa-linkedin"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fab fa-google"></i></a>
-                            </li>
+                           <!--<li>
+                                <a href=""><i class="fab fa-linkedin"></i></a>
+                            </li>-->
+                          
                         </ul>
                     </div>
                 </div>
@@ -35,8 +33,8 @@
                     <div class="sigma_footer-widget">
                         <h5 class="widget-title">Services</h5>
                         <ul class="sigma_footer-links">
-                            <li *ngFor="let item of service">
-                                <a routerLink="/service-details/{{item.id}}">{{item.title}}</a>
+                            <li *ngFor="let item of navigation">
+                                <a href="{{commonService.location}}/attractions/{{item.path}}">{{item.desc}}</a>
                             </li>
                         </ul>
                     </div>
@@ -45,21 +43,10 @@
                     <div class="sigma_footer-widget">
                         <h5 class="widget-title">Company</h5>
                         <ul class="sigma_footer-links">
-                            <li>
-                                <a routerLink="/">Home</a>
+                            <li *ngFor="let item of aboutUsLinks">
+                                <a  href="{{commonService.location}}/aboutus/{{item.path}}">{{item.desc}}</a>
                             </li>
-                            <li>
-                                <a routerLink="/about">About</a>
-                            </li>
-                            <li>
-                                <a routerLink="/blog">Blog</a>
-                            </li>
-                            <li>
-                                <a routerLink="/contact">Contacts</a>
-                            </li>
-                            <li>
-                                <a routerLink="/case-study">Cases</a>
-                            </li>
+                          
                         </ul>
                     </div>
                 </div>
@@ -67,8 +54,8 @@
                     <div class="sigma_footer-widget">
                         <h5 class="widget-title">Latest News</h5>
                         <div class="widget widget-recent-posts">
-                            <article class="sigma_recent-post" *ngFor="let item of recentPost() | slice:0:2">
-                                <a routerLink="/blog-details/{{item.id}}"><img [src]="item.image[0]" [alt]="item.title"></a>
+                            <article class="sigma_recent-post" *ngFor="let item of this.commonService.blogs | slice:0:2">
+                                <a routerLink="/blog-details/{{item.id}}"><img [src]="item.image" [alt]="item.title"></a>
                                 <div class="sigma_recent-post-body">
                                     <a routerLink="/blog-details/{{item.id}}"> <i class="far fa-calendar"></i> {{item.postdate}}</a>
                                     <h6> <a routerLink="/blog-details/{{item.id}}">{{item.title}}</a> </h6>

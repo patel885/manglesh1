@@ -21,14 +21,14 @@ export class AppComponent implements OnInit {
     private breadcrumbService: BreadcrumbService,
     dynamicService: DynamicRouterService,
     commonService: CommonService) {
-    console.log('applog constructor');    
+    //console.log('applog constructor');    
   }
   
   ngOnInit(): void {
     
     this.breadcrumbService.breadcrumbChanged.subscribe(crumbs => {
       this.titleService.setTitle(this.createTitle(crumbs));
-      console.log('applog nginit'); 
+     // console.log('applog nginit'); 
     });
   }
   onActivate(_event:any){
@@ -42,7 +42,7 @@ export class AppComponent implements OnInit {
     if (!titles.length) { return title; }
 
     const routeTitle = this.titlesToString(titles);
-    console.log('routeTitle' + routeTitle); 
+   // console.log('routeTitle' + routeTitle); 
     return `${title}${routeTitle}`;
   }
 

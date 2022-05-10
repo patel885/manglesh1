@@ -35,7 +35,7 @@ export class ServicesComponent extends HelperService {
     if(this.pagetype === "")
       this.pagetype = pType === undefined ? '' : pType;
 
-    console.log(this.pagetype);
+//    console.log(this.pagetype);
 
       this.route.params.subscribe(routeParams => {
         this.location = routeParams.location;        
@@ -56,7 +56,7 @@ export class ServicesComponent extends HelperService {
   constructor(public helperService: HelperService,private route: ActivatedRoute, 
     private router: Router, public commonService: CommonService) {
     super();
-    console.log('Services constructor...');
+    //console.log('Services constructor...');
 
   }
 

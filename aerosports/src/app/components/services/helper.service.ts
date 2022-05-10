@@ -2,18 +2,16 @@ import { AfterViewInit, OnInit, Injectable } from '@angular/core';
 import $ from 'jquery';
 import 'magnific-popup';
 import { Aerosports } from '../models/aerosports';
+import { CommonService } from './common.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HelperService implements OnInit, AfterViewInit {
   
-  public pages!: Aerosports[];
-  public currentPage!: Aerosports;
-  
-  constructor() {
-    
-   }
+  constructor( ) {
+    console.log('basehelper');    
+  }
   // Sticky Nav
   // @HostListener('window:scroll', ['$event'])
   // onWindowScroll(_e: any) {
