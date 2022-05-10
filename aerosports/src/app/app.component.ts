@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { BreadcrumbService, Breadcrumb } from 'angular-crumbs';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { DynamicRouterService } from './components/services/dynamic-router.service';
+import { CommonService } from './components/services/common.service';
 
 @Component({
   selector: 'app-root',
@@ -16,11 +18,14 @@ import { Location, LocationStrategy, PathLocationStrategy } from '@angular/commo
 })
 export class AppComponent implements OnInit {
   constructor(private titleService: Title, 
-    private breadcrumbService: BreadcrumbService) {
-    console.log('applog constructor');      
+    private breadcrumbService: BreadcrumbService,
+    dynamicService: DynamicRouterService,
+    commonService: CommonService) {
+    console.log('applog constructor');    
   }
   
   ngOnInit(): void {
+    
     this.breadcrumbService.breadcrumbChanged.subscribe(crumbs => {
       this.titleService.setTitle(this.createTitle(crumbs));
       console.log('applog nginit'); 

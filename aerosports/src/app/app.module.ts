@@ -7,7 +7,7 @@ import { BreadcrumbModule } from 'angular-crumbs';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { HttpClientModule } from '@angular/common/http';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module'; 
 import { AppComponent } from './app.component';
 import { AttractionsComponent } from './components/pages/attractions/attractions.component';
 import { PartiesEventsComponent } from './components/pages/parties-events/parties-events.component';
@@ -22,6 +22,7 @@ import { CampProgramsComponent } from './components/pages/parties-events/camp-pr
 import { ProgramDetailComponent } from './components/pages/programs/program-detail/program-detail.component';
 import { GroupEventDetailComponent } from './components/pages/groups-events/group-event-detail/group-event-detail.component';
 import { ServicesComponent } from './components/pages/services/services.component';
+import { ServicesComponent as AeroSportsServiceComponent } from './components/pages/home/services/services.component';
 
 
 
@@ -59,7 +60,9 @@ import { ServicesComponent } from './components/pages/services/services.componen
     CampProgramsComponent,
     ProgramDetailComponent,
     GroupEventDetailComponent,
-    ServicesComponent
+    ServicesComponent,
+    AeroSportsServiceComponent
+
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

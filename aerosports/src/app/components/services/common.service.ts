@@ -1,10 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { APP_INITIALIZER, Injectable, Provider } from '@angular/core';
+import { Injectable, Type } from '@angular/core';
 import ldata from '../data/location.json';
 import * as  XLSX from 'xlsx';
-import { inject } from '@angular/core/testing';
 import { tap } from 'rxjs/operators';
-import { Aerosports, BirthDayPackages, Config } from 'src/app/components/models/aerosports';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,10 +12,12 @@ import { Aerosports, BirthDayPackages, Config } from 'src/app/components/models/
 export class CommonService {
   public locationData = ldata;
   public aerosports: any[]  = [];
-public jsonData: any[]=[];
+  public jsonData: any[]=[];
   public allPages:any[]=[];
   public BirthDayPackages:any[]=[];
   public config:any[]=[]; 
+  public locations:any[] = [];
+  public aerosprots$: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
   constructor(private httpClient: HttpClient){
       
   }
@@ -24,7 +25,7 @@ public jsonData: any[]=[];
 
 
   load(){
-
+ 
     return this.httpClient.get('assets/data/menu.xlsx', { responseType: 'blob' }).pipe( tap(data =>{
       const reader: FileReader = new FileReader();
       reader.onload = (e: any) => {
@@ -35,6 +36,7 @@ public jsonData: any[]=[];
        this.aerosports = this.jsonData.sort((i: any , j: any) => i.parentid - j.parentid).filter(m=>{
                   return (m.location.indexOf(this.location)>-1 || m.location=='');
         });    
+        
         console.log("fyfft");
         console.log(this.location);
         this.allPages=this.aerosports;
@@ -63,8 +65,29 @@ public jsonData: any[]=[];
         },[]);
 
         this.aerosports = result;
+        this.locations = XLSX.utils.sheet_to_json(wb.Sheets["locations"], {defval:""}) ;
+        console.log(this.locations);
+        //console.log(this.router.url);
        
-         
+        var url = window.location.href;
+        var urlItems = url.split('/');
+        if(urlItems.length >= 5){
+          var tempLocation = urlItems[3];
+
+          var pagetype = urlItems[4];
+          var actualLocation = this.locations.filter(s => {
+            return s.locations === tempLocation;
+          });
+
+
+         if(actualLocation !== undefined && actualLocation.length > 0){
+           this.location = tempLocation;
+           //this.router.navigate([window.location.pathname]);
+         }
+        }
+
+        this.aerosprots$.next(this.aerosports);
+       
         
 
       };
@@ -86,8 +109,9 @@ public jsonData: any[]=[];
     return s === null ? '' : s;
   }
 
+  
 
-
+  
 }
 
 
