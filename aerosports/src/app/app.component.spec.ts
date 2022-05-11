@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Vball'`, () => {
+  it(`should have as title 'aerosports-website'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Vball');
+    expect(app.title).toEqual('aerosports-website');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('Vball app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('aerosports-website app is running!');
   });
 });
