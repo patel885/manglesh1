@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { BreadcrumbService, Breadcrumb } from 'angular-crumbs';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { DynamicRouterService } from './components/services/dynamic-router.service';
 import { CommonService } from './components/services/common.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import * as replaceString from 'replace-string';
+
 
 @Component({
   selector: 'app-root',
@@ -17,26 +20,87 @@ import { CommonService } from './components/services/common.service';
   ]
 })
 export class AppComponent implements OnInit {
+  private titleFormat = "Aerosports {{location}} | Best {{feature}} in Ontario | #1 indoor Trampoline Park";
+  private metaDescFormat = "Aerosports {{location}} a Huge indoor trampoline park with Ninja Warrior Course, open jump, foam pits, {{feature}} basketball area & more. Great for birthday parties & events!";
+  private metaTitleFormat = "{{location}} ON {{feature}} | Aerosports Trampoline Park+";
+  private metaOgDesc = "Aerosports Offers a variety of exciting trampoline park attractions and programs in {{location}} ON, including {{feature}}.Best place for birthday parties";
+  private locationFormat = '{{location}}';
+  private featureFormat = '{{feature}}';
   constructor(private titleService: Title, 
+    private metaService: Meta,
     private breadcrumbService: BreadcrumbService,
     dynamicService: DynamicRouterService,
-    commonService: CommonService) {
+    private commonService: CommonService, private router: Router, 
+    private route:ActivatedRoute) {
     //console.log('applog constructor');    
   }
   
   ngOnInit(): void {
     
     this.breadcrumbService.breadcrumbChanged.subscribe(crumbs => {
-      this.titleService.setTitle(this.createTitle(crumbs));
+      console.log(this.router);
+      //this.titleService.setTitle(this.createTitle(crumbs));
+      this.buildSEO();
      // console.log('applog nginit'); 
     });
+    
   }
+
+buildSEO(){
+    
+    var pType = this.router.url.split('/').pop();  
+    console.log(pType); 
+    console.log(this.commonService.allPages);  
+    var d = this.commonService.allPages.filter(s =>{
+      return s.path == pType;
+    });
+
+
+      this.titleService.setTitle(this.replaceValues(this.titleFormat, d));
+
+      this.createOrUpdateTag('robots','index,follow',d);
+      this.createOrUpdateTag('description',this.metaDescFormat,d);
+      this.createOrUpdateTag('og:title',this.metaTitleFormat,d);
+      this.createOrUpdateTag('og:description',this.metaOgDesc,d);
+      this.createOrUpdateTag('og:type',"website",d);
+      this.createOrUpdateTag('og:image',"",d);
+      this.createOrUpdateTag('og:url',window.location.href,d);
+      // this.metaService.addTags([
+      //   {name: 'robots', content: 'index,follow'},
+      //   {name: 'description', content: this.replaceValues(this.metaDescFormat,d)},
+      //   {name:'og:title', content: this.replaceValues(this.metaTitleFormat,d)},
+      //   {name:'og:description', content: this.replaceValues(this.metaOgDesc,d)},
+      //   {name: 'og:type', content: 'website'},
+      //   {name: 'robots', content: 'index, follow'},
+      //   {name:'og:image',content:''},
+      //   {name:'og:url', content: window.location.href}
+      // ]);
+}
+
+createOrUpdateTag(nameValue: string, content: string, d:any){
+  console.log(this.metaService.getTag("name='" + nameValue + "'"));
+  this.metaService.getTag("name='" + nameValue + "'") ? 
+          this.metaService.updateTag({name: nameValue, content: this.replaceValues(content,d)},"name='"+ nameValue +"'") : 
+          this.metaService.addTag({name: nameValue, content: this.replaceValues(content,d)});
+
+}
+
+replaceValues(val: String, d:any){
+  console.log(d);
+
+  var data = val.replace(this.locationFormat,this.commonService.location);
+  data =  data.replace(this.featureFormat, d.length > 0 ? d[0].desc : '');
+  return data;
+  //console.log(title);
+}
+
   onActivate(_event:any){
     window.scroll(0,0);
   }
   private createTitle(routesCollection: Breadcrumb[]) {
     const title = 'Aerosports Teampoline Park|Best Fun and Birthday Party Place';
-
+    
+    console.log(routesCollection);
     const titles = routesCollection.filter((route) => route.displayName);
 
     if (!titles.length) { return title; }
