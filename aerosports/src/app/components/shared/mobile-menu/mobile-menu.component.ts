@@ -15,6 +15,9 @@ export class MobileMenuComponent extends HelperService {
     
     ) {
     super();
+    console.log('mobilemenu');
+    console.log(commonService.aerosports);
+    
     this.navigation= commonService.aerosports;
   }
  

@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Aerosports } from '../../models/aerosports';
 import { CommonService } from '../../services/common.service';
+import { HelperService } from '../../services/helper.service';
  
 @Component({
   selector: 'app-attractions',
@@ -9,39 +11,49 @@ import { CommonService } from '../../services/common.service';
 })
 export class AttractionsComponent implements OnInit {
 
- // Footer Style
+  public pages!: Aerosports[];
+  @Input()
+  public pagetype:string='';
+  public currentPage!: Aerosports;
+
+  // Footer Style
  footerStyle = "tertiary-bg"
- pagetype: string | any;
+ //public pagetype: string | any;
  location: string | any;
  title: string = '';
  childrens: any[] = [];
  path: string = '';
-
-  constructor(private route: ActivatedRoute, 
-    private router: Router,
-     private commonService: CommonService) { 
-      this.buildInitial();
+  
+  ngOnInit() {
+    this.buildInitial();
+    
   }
 
   buildInitial(){
-    this.pagetype = this.router.url.split('/').pop();      
+    var pType = this.router.url.split('/').pop();
+    
+    if(this.pagetype === "")
+      this.pagetype = pType === undefined ? '' : pType;
+
+      console.log("attractions" + this.pagetype);
+
       this.route.params.subscribe(routeParams => {
         this.location = routeParams.location;        
       });
 
-    var d = this.commonService.aerosports.filter(s =>{
-      return s.pagetype == this.pagetype;
-    });
+      this.currentPage = this.commonService.aerosports.filter(s =>{
+      return s.path == this.pagetype;
+    })[0];
 
-    if(d && d.length > 0){
-      this.title = d[0].title === '' ? d[0].desc : d[0].title;
-      this.childrens = d[0].children;
-      this.path = this.commonService.location + '/' + d[0].pagetype + '/';
-    }
+    console.log(this.currentPage);
+
   }
+  
+  constructor(public helperService: HelperService,private route: ActivatedRoute, 
+    private router: Router, public commonService: CommonService) {
+    
+    //console.log('Services constructor...');
 
-  ngOnInit(): void {
-    //console.log(this.route?.parent?.snapshot.url[2].path)
   }
 
 }

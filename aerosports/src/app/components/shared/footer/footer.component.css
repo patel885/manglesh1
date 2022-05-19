@@ -1,0 +1,14 @@
+#parallax-image{
+    background-image:url("/assets/image/bg_parallax_effect.png") ;
+height: 500px;
+    color: whitesmoke;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    
+}
+#parallax-image h5{
+    color: white;
+}

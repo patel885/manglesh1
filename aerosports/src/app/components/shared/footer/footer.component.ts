@@ -1,8 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Aerosports } from '../../models/aerosports';
-import { BlogHelperService } from '../../services/blog-helper.service';
 import { CommonService } from '../../services/common.service';
 
 @Component({
@@ -19,7 +17,7 @@ export class FooterComponent {
   public aboutUsLinks!:Aerosports[];
   commonService:CommonService
 //  recentPost!:blog;
-  constructor (public commonService1: CommonService,private router: Router,bloghelpr: BlogHelperService)
+  constructor (public commonService1: CommonService,private router: Router)
   {
     this.commonService=commonService1;
 }

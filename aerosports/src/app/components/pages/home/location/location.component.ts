@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Route, Router, Routes } from '@angular/router';
-import { routes } from 'src/app/app-routing.module';
 import { CommonService } from 'src/app/components/services/common.service';
 
 
@@ -8,7 +7,7 @@ import { CommonService } from 'src/app/components/services/common.service';
 @Component({
   selector: 'app-location',
   templateUrl: './location.component.html',
-  styleUrls: ['./location.component.css']
+  styleUrls: ['./location.component.scss']
 })
 export class LocationComponent implements OnInit {
 

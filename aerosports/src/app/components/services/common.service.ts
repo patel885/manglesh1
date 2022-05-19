@@ -1,16 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, Type } from '@angular/core';
-import ldata from '../data/location.json';
 import * as  XLSX from 'xlsx';
 import { tap } from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs';
+import { animate, animateChild, group, query, style, transition, trigger } from '@angular/animations';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class CommonService {
-  public locationData = ldata;
+  
   public aerosports: any[]  = [];
   public jsonData: any[]=[];
   public allPages:any[]=[];
@@ -121,5 +121,55 @@ export class CommonService {
 
   
 }
+export const slideInAnimation =
+  trigger('routeAnimations', [
+    transition('* <=> *', [
+      style({ position: 'relative' }),
+      query(':enter, :leave', [
+        style({
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%'
+        })
+      ]),
+      query(':enter', [
+        style({ left: '-100%' })
+      ]),
+      query(':leave', animateChild()),
+      group([
+        query(':leave', [
+          animate('300ms ease-out', style({ left: '100%' }))
+        ]),
+        query(':enter', [
+          animate('300ms ease-out', style({ left: '0%' }))
+        ]),
+      ]),
+    ]),
+    transition('* <=> *', [
+      style({ position: 'relative' }),
+      query(':enter, :leave', [
+        style({
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%'
+        })
+      ]),
+      query(':enter', [
+        style({ left: '-100%' })
+      ]),
+      query(':leave', animateChild()),
+      group([
+        query(':leave', [
+          animate('200ms ease-out', style({ left: '100%', opacity: 0 }))
+        ]),
+        query(':enter', [
+          animate('300ms ease-out', style({ left: '0%' }))
+        ]),
+        query('@*', animateChild())
+      ]),
+    ])
+  ]);  
 
 

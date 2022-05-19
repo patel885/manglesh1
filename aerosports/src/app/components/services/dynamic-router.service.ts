@@ -3,13 +3,10 @@ import { Injectable, Type } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { routes } from 'src/app/app-routing.module';
 import { PageTypes } from '../models/aerosports';
-import { AboutUsComponent } from '../pages/about-us/about-us.component';
 import { AttractionDetailComponent } from '../pages/attractions/attraction-detail/attraction-detail.component';
-import { BlogComponent } from '../pages/blog/blog.component';
-import { GroupEventDetailComponent } from '../pages/groups-events/group-event-detail/group-event-detail.component';
-import { ServicesComponent } from '../pages/home/services/services.component';
+import { AttractionsComponent } from '../pages/attractions/attractions.component';
 import { BirthdayPartiesComponent } from '../pages/parties-events/birthday-parties/birthday-parties.component';
-import { CommonService } from './common.service';
+import { CommonService, slideInAnimation } from './common.service';
 
 @Injectable({
   providedIn: 'root'
@@ -60,13 +57,21 @@ export class DynamicRouterService {
       Array.from(s.children).forEach(child =>{
         this.iterate(child, path);
       });
-        var route = {path: ":location" + path  ,  component: this.getComponent(s.path,s.parentid)} as Route
+        var route = {path: ":location" + path  ,  component: this.getComponent(s.path,s.parentid),
+         data:{
+            Animation:slideInAnimation
+        }} as Route
         console.log(path);
         console.log(route);
         this.modifiedRoutes.push(route)     
 
     }else{      
-        var route = {path: ":location" + path + (s.iscustom === 'y' ? "/" + s.path : "/:type") ,  component: this.getComponent(s.path,s.parentid)} as Route
+        var route = {path: ":location" + path + (s.iscustom === 'y' ? "/" + s.path : "/:type") ,  
+        component: this.getComponent(s.path,s.parentid),
+        data:{
+          Animation:slideInAnimation
+        }
+      } as Route
         this.modifiedRoutes.push(route)
         
       }
@@ -80,42 +85,37 @@ export class DynamicRouterService {
     
     switch (type) {
         case PageTypes.PartiesEvents: {
-            return ServicesComponent;
+            return AttractionsComponent;
         }
         case PageTypes.Attractions: {
-            return ServicesComponent;
+            return AttractionsComponent;
         }
         case PageTypes.Programs:{
-          return ServicesComponent;
+          return AttractionsComponent;
         }
         case PageTypes.PricingPromos:{
-          return ServicesComponent;
+          return AttractionsComponent;
         }
         case PageTypes.GroupEvents:{
-          return ServicesComponent;
+          return AttractionsComponent;
         }
         case PageTypes.Aboutus: {
-          return ServicesComponent;
+          return AttractionsComponent;
         }
         case PageTypes.Attractionsub:{
-          return ServicesComponent;
+          return AttractionsComponent;
         }
         case PageTypes.BirthdayParties:{
           return BirthdayPartiesComponent;
         }
-        case PageTypes.Campprograms:{
-          return ServicesComponent;
-        }
+        
         case PageTypes.Programssub:{
-          return ServicesComponent;
+          return AttractionsComponent;
         }
         case PageTypes.Groupseventssub:{
-          return GroupEventDetailComponent;
+          return AttractionDetailComponent;
         }
-/*        case PageTypes.Blogs:{
-          return BlogComponent;
-        }
-  */      
+    
         default:
           return AttractionDetailComponent;
     }

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import data from '../../../data/plans.json';
+import { Component,Input, OnInit } from '@angular/core';
+import { Aerosports } from 'src/app/components/models/aerosports';
+import { CommonService } from 'src/app/components/services/common.service';
 
 @Component({
   selector: 'app-plans',
@@ -7,10 +8,19 @@ import data from '../../../data/plans.json';
   styleUrls: ['./plans.component.css']
 })
 export class PlansComponent implements OnInit {
-  public plans = data;
-  constructor() { }
+  @Input()
+  public pagetype:string='';
+  
+  
+  public currentPage!: Aerosports;
+  constructor(public commonService:CommonService) { }
 
   ngOnInit(): void {
+    this.currentPage = this.commonService.aerosports.filter(s =>{
+      return s.pagetype == this.pagetype;
+    })[0] as Aerosports;
+
+    console.log(this.commonService.aerosports);
   }
 
 }

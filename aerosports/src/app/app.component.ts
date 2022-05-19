@@ -3,8 +3,15 @@ import { Title } from '@angular/platform-browser';
 import { BreadcrumbService, Breadcrumb } from 'angular-crumbs';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { DynamicRouterService } from './components/services/dynamic-router.service';
-import { CommonService } from './components/services/common.service';
-
+import { CommonService, slideInAnimation } from './components/services/common.service';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+  // ...
+} from '@angular/animations';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,8 +21,12 @@ import { CommonService } from './components/services/common.service';
       provide: LocationStrategy,
       useClass: PathLocationStrategy
     }
+  ],
+  animations: [
+    slideInAnimation
   ]
 })
+
 export class AppComponent implements OnInit {
   constructor(private titleService: Title, 
     private breadcrumbService: BreadcrumbService,

@@ -1,24 +1,23 @@
 <div class="sigma_logo-wrapper">
     <a class="sigma_logo" routerLink="/">
-        <img src="assets/img/logo-dark.png" alt="logo">
+
+        <img src="assets/image/logo.png" alt="logo">
     </a>
 </div>
 <!-- Menu -->
 <ul class="navbar-nav">
-    <li class="menu-item" [ngClass]="item.child == true ? 'menu-item-has-children' : ''"
-        *ngFor="let item of navigation">
-        <a href="javascript:void(0)" (click)="trigger(item)" *ngIf="hasLink(item)">{{item.desc}}</a>
-        <a routerLink="/{{commonService.location}}/{{item.path}}" *ngIf="hasLink(item)">{{item.desc}}</a>
+    <li class="menu-item" 
+    *ngFor="let item of navigation">
+       <a href="javascript:void(0)" (click)="trigger(item)" *ngIf="hasChildren(item)">{{item.desc}}</a>
+        <a routerLink="/{{commonService.location}}/{{item.path}}" *ngIf="!hasChildren(item)">{{item.desc}}</a>
+       
         <ul class="sub-menu" *ngIf="hasChildren(item)" [ngClass]="item.open ? 'd-block' : ''">
-            <li class="menu-item" [ngClass]="item.child == true ? 'menu-item-has-children' : ''"
-                *ngFor="let citem of item.children">
-                <a href="javascript:void(0)" (click)="trigger(citem)" *ngIf="item.child">{{item.desc}}</a>
-                <a routerLink="/{{commonService.location}}/{{item.path}}/{{citem.path}}" *ngIf="!item.child">{{item.desc}}</a>
-                <ul class="sub-menu" *ngIf="item.child" [ngClass]="item.open ? 'd-block' : ''">
-                    <li class="menu-item" *ngFor="let item of item.submenu">
-                        <a routerLink="{{item.link}}">{{item.desc}}</a>
-                    </li>
-                </ul>
+           
+            <li class="menu-item" [ngClass]="hasChildren(citem) ? 'menu-item-has-children' : ''"
+            *ngFor="let citem of item.children">
+            <a href="javascript:void(0)" *ngIf="hasChildren(citem)">{{citem.desc}}</a>
+            <a routerLink="/{{commonService.location}}/{{item.path}}/{{citem.path}}" *ngIf="!hasChildren(citem)">{{citem.desc}}</a>
+        
             </li>
         </ul>
     </li>

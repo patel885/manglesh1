@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import data from '../../../data/plans.json';
 import { CommonService } from '../../../services/common.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Aerosports, BirthDayPackages, Config } from 'src/app/components/models/aerosports';
@@ -12,9 +11,9 @@ import { Aerosports, BirthDayPackages, Config } from 'src/app/components/models/
 export class BirthdayPartiesComponent implements OnInit {
   pagetype: string | any;
   location: string | any;
-  bps!: BirthDayPackages[];
+  bps!: [] | any;
   addons!: Config[];
-
+  rules!: Config[];
   constructor(private route: ActivatedRoute, 
      private router: Router,
       private commonService: CommonService) { 
@@ -24,20 +23,24 @@ export class BirthdayPartiesComponent implements OnInit {
    buildInitial(){
     this.route.params.subscribe(routeParams => {  
       console.log(routeParams.location);   
-    this.bps= this.commonService.BirthDayPackages.filter(t=>{
-      return t.location==routeParams.location;
-      }) as BirthDayPackages[];      
+    this.bps= this.commonService.BirthDayPackages;
 
-      this.addons = this.commonService.config.filter(t=>{
-        return t.location==routeParams.location && t.key=="birthday-addon"
+     this.addons = this.commonService.config.filter(t=>{
+        return t.key=="birthday-addon"
       } ) as Config[];
-      console.log("addons");
-      console.log(this.addons);
-    console.log(this.bps);
+      this.rules= this.commonService.config.filter(t=>{
+        return t.key=="birthday-rules"
+      } ) as Config[];
     });
    }
 
   ngOnInit(): void {
   }
-
+  getconfig(key:string): string {
+    var s = this.commonService.config.filter(t=>{
+      return t.key==key;
+    }) [0].value;
+    return s;
+    
+  }
 }

@@ -9,3 +9,8 @@ handlers:
 
 - url: /
   static_dir: dist/aerosports-website
+
+- url: /.*
+  script: auto
+  secure: always
+  redirect_http_response_code: 301
