@@ -36,6 +36,7 @@ export class CommonService {
         const ws1: XLSX.WorkSheet = wb.Sheets["Data"]; 
        this.jsonData = XLSX.utils.sheet_to_json(ws1, {defval:""});        
        this.aerosports = this.jsonData.sort((i: any , j: any) => i.parentid - j.parentid).filter(m=>{
+                //m.section1= m.section1.replace(/\r?\n|\r/g, "<br/>");    
                   return (m.location.toUpperCase().indexOf(this.location.toUpperCase())>-1 || m.location=='');
         });    
         
@@ -54,7 +55,8 @@ export class CommonService {
         console.log(this.blogs);
 
         this.config=XLSX.utils.sheet_to_json(wb.Sheets["config"], {defval:""});        
-        this.config=this.config.filter(m=>{          
+        this.config=this.config.filter(m=>{      
+          m.value= m.value.replace(/\r?\n|\r/g, "<br/>");    
           return (m.location.toUpperCase().indexOf(this.location.toUpperCase())>-1 || m.location=='');
         });    
         console.log('configtt');

@@ -65,7 +65,8 @@ export class DynamicRouterService {
         console.log(route);
         this.modifiedRoutes.push(route)     
 
-    }else{      
+    }else{   
+      console.log('nochild');   
         var route = {path: ":location" + path + (s.iscustom === 'y' ? "/" + s.path : "/:type") ,  
         component: this.getComponent(s.path,s.parentid),
         data:{
