@@ -58,4 +58,5 @@ export class HelperService implements OnInit, AfterViewInit {
       mainClass: 'mfp-fade',
     });
   }
+  
 }

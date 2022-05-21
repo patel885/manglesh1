@@ -2,15 +2,23 @@ runtime: python27
 api_version: 1
 threadsafe: true
 
+env_variables:
+  environment: "--prod"
+  
 handlers:
-- url: /
-  static_files: dist/aerosports-website/index.html
-  upload: dist/aerosports-website/index.html
+  - url: /
+    secure: always
+    static_files: dist/aerosports-website/index.html
+    upload: dist/aerosports-website/index.html
 
-- url: /
-  static_dir: dist/aerosports-website
+  #  Routing rules for resources, css, js, images etc. Any file with format filename.ext
+  - url: /(.*\.(.+))$
+    secure: always
+    static_files: dist/aerosports-website/\1
+    upload: dist/aerosports-website/(.*\.(.+))$
 
-- url: /.*
-  script: auto
-  secure: always
-  redirect_http_response_code: 301
+  #  Routing rule for Angular Routing
+  - url: /(.*)
+    secure: always
+    static_files: dist/aerosports-website/index.html
+    upload: dist/aerosports-website/index.html

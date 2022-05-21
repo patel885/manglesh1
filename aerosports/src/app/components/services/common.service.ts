@@ -36,7 +36,7 @@ export class CommonService {
         const ws1: XLSX.WorkSheet = wb.Sheets["Data"]; 
        this.jsonData = XLSX.utils.sheet_to_json(ws1, {defval:""});        
        this.aerosports = this.jsonData.sort((i: any , j: any) => i.parentid - j.parentid).filter(m=>{
-                  return (m.location.indexOf(this.location)>-1 || m.location=='');
+                  return (m.location.toUpperCase().indexOf(this.location.toUpperCase())>-1 || m.location=='');
         });    
         
         console.log("fyfft");
@@ -44,20 +44,21 @@ export class CommonService {
         this.allPages=this.aerosports;
         this.BirthDayPackages = XLSX.utils.sheet_to_json(wb.Sheets["birthday packages"], {defval:""}) ;
         this.BirthDayPackages = this.BirthDayPackages.filter(m=>{         
-          return (m.location.indexOf(this.location)>-1 || m.location=='');
+          return (m.location.toUpperCase().indexOf(this.location.toUpperCase())>-1 || m.location=='');
         });           
         
         this.blogs = XLSX.utils.sheet_to_json(wb.Sheets["blogs"], {defval:""}) ;
         this.blogs = this.blogs.filter(m=>{         
-          return (m.location.indexOf(this.location)>-1 || m.location=='');
+          return (m.location.toUpperCase().indexOf(this.location.toUpperCase())>-1 || m.location=='');
         });           
         console.log(this.blogs);
 
         this.config=XLSX.utils.sheet_to_json(wb.Sheets["config"], {defval:""});        
         this.config=this.config.filter(m=>{          
-          return (m.location.indexOf(this.location)>-1 || m.location=='');
+          return (m.location.toUpperCase().indexOf(this.location.toUpperCase())>-1 || m.location=='');
         });    
         console.log('configtt');
+        console.log(this.location);
         console.log(this.config);
         let result: any[] = [];
         this.aerosports.reduce((acc: any, place: any) =>{

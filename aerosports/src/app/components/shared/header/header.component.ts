@@ -29,12 +29,8 @@ export class HeaderComponent extends HelperService  {
     this.navigation = this.commonService.aerosports;
     this.location=this.commonService.locations[0];
     console.log('navigation');
-    console.log(this.navigation);
     this.pagetype = this.router.url.split('/').pop();
-  
-      console.log("attractions" + this.pagetype);
-
-      this.route.params.subscribe(routeParams => {
+    this.route.params.subscribe(routeParams => {
         this.location = routeParams.location;    
        // this.pagetype = routeParams.pagetype;
      
@@ -44,10 +40,10 @@ export class HeaderComponent extends HelperService  {
         return s.path == this.pagetype;
       })[0];
      
-    console.log(this.page);
    
   }
   getconfig(key:string): string {
+    console.log(this.commonService.config);
     var s = this.commonService.config.filter(t=>{
       return t.key==key;
     }) [0].value;

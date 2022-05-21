@@ -25,10 +25,10 @@ ngOnInit(): void {
   console.log("attactions");
   console.log(this.commonService.aerosports);
    
-    console.log(this.commonService.aerosports.filter(t=>{return t.path =="aboutus"}));
+    console.log(this.commonService.aerosports.filter(t=>{return t.path.toUpperCase() =="aboutus".toUpperCase()}));
     
-    this.navigation= this.commonService.aerosports.filter(t=>{return t.path =="attractions"})[0].children;
-    this.aboutUsLinks=this.commonService.aerosports.filter(t=>{ return t.path =="aboutus"})[0].children;
+    this.navigation= this.commonService.aerosports.filter(t=>{return t.path.toUpperCase() =="attractions".toUpperCase()})[0].children;
+    this.aboutUsLinks=this.commonService.aerosports.filter(t=>{ return t.path.toUpperCase() =="aboutus".toUpperCase()})[0].children;
     
   //  this.recentPost=bloghelpr.recentPost();
     
