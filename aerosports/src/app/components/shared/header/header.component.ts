@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { HelperService } from '../../services/helper.service';
 import { CommonService } from '../../services/common.service';
 import { Aerosports } from '../../models/aerosports';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,13 +11,44 @@ import { Aerosports } from '../../models/aerosports';
 })
 export class HeaderComponent extends HelperService  {
   public navigation!: Aerosports[];
-  constructor(public helperService: HelperService, public commonService: CommonService) {
+  public location!:any;
+  page!: Aerosports;
+  pagetype!: string | any;
+  
+  settings = {
+    slidesToShow: 1,
+    slidesToScroll: 2,
+    arrows: false,
+    dots: false,
+    autoplay: true
+  };
+  constructor(private route: ActivatedRoute, 
+    private router: Router,public helperService: HelperService, public commonService: CommonService) {
     super();
     //console.log(this.commonService.aerosports);
     this.navigation = this.commonService.aerosports;
+    this.location=this.commonService.locations[0];
     console.log('navigation');
-    console.log(this.navigation);
+    this.pagetype = this.router.url.split('/').pop();
+    this.route.params.subscribe(routeParams => {
+        this.location = routeParams.location;    
+       // this.pagetype = routeParams.pagetype;
+     
+      });
 
+      this.page = this.commonService.allPages.filter(s =>{
+        return s.path == this.pagetype;
+      })[0];
+     
+   
+  }
+  getconfig(key:string): string {
+    console.log(this.commonService.config);
+    var s = this.commonService.config.filter(t=>{
+      return t.key==key;
+    }) [0].value;
+    return s;
+    
   }
   ngOnInit(): void { 
   }

@@ -222,7 +222,7 @@
   right: -10px;
   width: 20px;
   height: 20px;
-  background-color: #f55322;
+  background-color: #489bc7;
 }
 .img-group-inner span + span{
   top: auto;
@@ -263,7 +263,7 @@
   width: 3px;
   height: 80px;
   text-align: center;
-  background-color: #f55322;
+  background-color: #489bc7;
   margin: 0 auto;
 }
 
@@ -325,8 +325,8 @@
   top: -20px;
 }
 .sigma_dots.primary{
-  background-image: -o-radial-gradient(#f55322 1px,transparent 1px),-o-radial-gradient(#f55322 1px,transparent 1px);
-  background-image: radial-gradient(#f55322 1px,transparent 1px),radial-gradient(#f55322 1px,transparent 1px);
+  background-image: -o-radial-gradient(#489bc7 1px,transparent 1px),-o-radial-gradient(#489bc7 1px,transparent 1px);
+  background-image: radial-gradient(#489bc7 1px,transparent 1px),radial-gradient(#489bc7 1px,transparent 1px);
 }
 .sigma_dots.secondary{
   background-image: -o-radial-gradient(#222222 1px,transparent 1px),-o-radial-gradient(#222222 1px,transparent 1px);
@@ -423,7 +423,7 @@
   border-radius: 50%;
   bottom: -150px;
   left: -150px;
-  border: 40px solid #f55322;
+  border: 40px solid #489bc7;
   z-index: -1;
 }
 
@@ -526,7 +526,7 @@
 
 .stroke-text{
   color: #fff;
-  -webkit-text-fill-color: transparent;
+  /*-webkit-text-fill-color: transparent;*/
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #fff;
   font-weight: 400;
@@ -541,7 +541,7 @@
   -webkit-text-stroke-width: 0;
 }
 .stroke-text span.custom-primary{
-  -webkit-text-fill-color: #f55322;
+  -webkit-text-fill-color: #489bc7;
   -webkit-text-stroke-width: 0;
 }
 .stroke-text span.text-dark{
@@ -577,9 +577,9 @@
 .sigma_preloader li {
   width: 40px;
   height: 40px;
-  background: #f55322;
+  background: #489bc7;
   border-radius: 4px;
-  box-shadow: 0 0 1px #fff, 0 0 5px #f55322, 0 0 10px #f55322, 0 0 15px #f55322, 0 0 25px #f55322, 0 0 55px #f55322;
+  box-shadow: 0 0 1px #fff, 0 0 5px #489bc7, 0 0 10px #489bc7, 0 0 15px #489bc7, 0 0 25px #489bc7, 0 0 55px #489bc7;
   -webkit-animation: preloaderScale 0.8s linear alternate infinite;
           animation: preloaderScale 0.8s linear alternate infinite;
 }
@@ -727,7 +727,7 @@
     display: inline-block;
     position: absolute;
     top: 0;
-    background-color: #f55322;
+    background-color: #489bc7;
     border-radius: 100%;
 
     -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
@@ -1265,7 +1265,7 @@ p {
 }
 
 a {
-  color: #f55322;
+  color: #489bc7;
   text-decoration: none;
   -webkit-transition: .3s;
   -o-transition: .3s;
@@ -1386,7 +1386,7 @@ ol li {
   -o-transition: .3s;
   transition: .3s;
   margin-right: 10px;
-  color: #f55322;
+  color: #489bc7;
   background-color: #f9ffed;
 }
 
@@ -1415,7 +1415,7 @@ blockquote {
   padding: 10px 20px;
   background-position: center;
   background-size: cover;
-  border-left: 2px solid #f55322;
+  border-left: 2px solid #489bc7;
 }
 .blockquote.light{
   background-color: transparent;
@@ -1594,7 +1594,7 @@ blockquote::before{
   margin-bottom: 15px;
   font-size: 16px;
   text-transform: uppercase;
-  color: #f55322;
+  color: #489bc7;
   font-weight: 400;
   display: flex;
   align-items: center;
@@ -1629,7 +1629,7 @@ blockquote::before{
   position: relative;
   margin-right: 16px;
   margin-bottom: 0;
-  background-color: #f55322;
+  background-color: #489bc7;
 }
 
 .section-title .subtitle span:last-child{
@@ -1643,7 +1643,7 @@ blockquote::before{
   width: 2px;
   height: 22px;
   line-height: 1;
-  background-color: #f55322;
+  background-color: #489bc7;
   margin-top: 0;
 }
 .section-title .subtitle span:first-child::after{
@@ -1662,7 +1662,7 @@ blockquote::before{
   position: relative;
 }
 .section-title.section-title-2 .subtitle{
-  color: #f55322;
+  color: #489bc7;
   background-color: #f9ffed;
   display: inline-block;
   padding: 5px 20px;
@@ -1847,7 +1847,7 @@ textarea {
 
 .custom-radio .custom-control-input:checked~.custom-control-label::before,
 .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-    background-color: #f55322;
+    background-color: #489bc7;
 }
 
 .custom-control label {
@@ -1927,8 +1927,8 @@ textarea {
   color: #fff;
   padding: 5px 20px;
   font-size: 22px;
-  background-color: #f55322;
-  border: 1px solid #f55322;
+  background-color: #489bc7;
+  border: 1px solid #489bc7;
 }
 
 .sigma_btn-custom {
@@ -1938,7 +1938,7 @@ textarea {
     white-space: nowrap;
     vertical-align: middle;
     position: relative;
-    background-color: #f55322;
+    background-color: #489bc7;
     border: 0;
     color: #fff;
     font-size: 14px;
@@ -1982,7 +1982,7 @@ textarea {
     outline: none;
 }
 .sigma_btn-custom.primary {
-    background-color: #f55322;
+    background-color: #489bc7;
 }
 
 .sigma_btn-custom.transparent{
@@ -2135,7 +2135,7 @@ textarea {
 }
 .sigma_round-button .sigma_round-button-circle{
   fill: none;
-  stroke: #f55322;
+  stroke: #489bc7;
   -webkit-transform-origin: center center;
   -ms-transform-origin: center center;
   transform-origin: center center;
@@ -2151,7 +2151,7 @@ textarea {
   -webkit-transition: 1s;
   -o-transition: 1s;
   transition: 2s;
-  color: #f55322;
+  color: #489bc7;
   stroke-linecap: round;
 }
 
@@ -2176,7 +2176,7 @@ textarea {
 1.5. Colors & Badges
 ====================*/
 .custom-primary {
-  color: #f55322 !important;
+  color: #489bc7 !important;
 }
 .custom-secondary {
   color: #222222;
@@ -2296,7 +2296,7 @@ textarea {
 }
 
 .primary-bg {
-    background-color: #f55322;
+    background-color: #489bc7;
 }
 .primary-dark-bg{
   background-color: #ca2f00;
@@ -2332,7 +2332,7 @@ textarea {
   line-height: 1.2;
 }
 .badge.badge-primary{
-  color: #f55322;
+  color: #489bc7;
   background-color: #fff1e5;
 }
 .badge.badge-secondary{
@@ -2474,7 +2474,7 @@ table img {
   background-color: #f7f7f7;
 }
 .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover{
-  color: #f55322;
+  color: #489bc7;
 }
 .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover,
 .nav-tabs .nav-link{
@@ -2486,17 +2486,17 @@ table img {
 }
 .nav-tabs .nav-link i{
   margin-right: 5px;
-  color: #f55322;
+  color: #489bc7;
 }
 .sigma_product-additional-info .nav-link.active,
 .nav-link.active {
-  border-bottom: 2px solid #f55322;
+  border-bottom: 2px solid #489bc7;
   font-weight: 600;
-  color: #f55322;
+  color: #489bc7;
 }
 .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active{
-  border-bottom: 2px solid #f55322;
+  border-bottom: 2px solid #489bc7;
   font-weight: 600;
 }
 
@@ -2538,7 +2538,7 @@ table img {
 
 .sigma_sm.square.light li a:hover,
 .sigma_sm.square li a:hover{
-  background-color: #f55322;
+  background-color: #489bc7;
   color: #fff;
 }
 
@@ -2770,7 +2770,7 @@ table img {
   height: 41px;
   background-color: rgba(214, 167,123, .25);
   display: inline-flex;
-  color: #f55322;
+  color: #489bc7;
   align-items: center;
   justify-content: center;
   border-radius: 4px;
@@ -2779,11 +2779,11 @@ table img {
 }
 
 .sigma_header.style-1 .sigma_header-top-contacts .sigma_header-top-nav li a{
-   color: #f55322;
+   color: #489bc7;
 }
 .sigma_header-top-contacts .sigma_header-top-nav li a:hover,
 .sigma_header.style-1 .sigma_header-top-contacts .sigma_header-top-nav li a:hover {
-  background-color: #f55322;
+  background-color: #489bc7;
   color: #fff;
 }
 
@@ -2800,7 +2800,7 @@ table img {
   -ms-flex-align: center;
   align-items: center;
   padding: 10px;
-  background-color: #f55322;
+  background-color: #489bc7;
   color: #fff;
   border-radius: 4px;
   font-weight: 500;
@@ -2825,7 +2825,7 @@ table img {
   padding-bottom: 15px;
 }
 .sigma_header .sigma_header-bottom .navbar-nav li a:hover{
-  color: #f55322;
+  color: #489bc7;
 }
 
 .sigma_header .sigma_header-bottom-inner .aside-toggle.desktop-toggler{
@@ -2834,7 +2834,7 @@ table img {
   width: 62px;
   align-items: center;
   justify-content: center;
-  background-color: #f55322;
+  background-color: #489bc7;
   transition: .3s;
   border-radius: 0;
   border: 0;
@@ -2896,7 +2896,7 @@ table img {
 .sigma_header .sigma_header-controls ul li.header-controls-item a.sigma_header-control-cart p {
   margin: 0;
   font-weight: 600;
-  color: #f55322;
+  color: #489bc7;
 }
 
 .sigma_header .sigma_header-controls ul li.header-controls-item a:hover {
@@ -2963,7 +2963,7 @@ table img {
   height: 25px;
   font-weight: 600;
   font-size: 12px;
-  background-color: #f55322;
+  background-color: #489bc7;
   color: #fff;
   display: flex;
   align-items: center;
@@ -2988,8 +2988,8 @@ table img {
   color: #222222;
 }
 .sigma_header.style-2 .sigma_header-top-contacts .sigma_header-top-nav li a:hover{
-  background-color: #f55322;
-  border-color: #f55322;
+  background-color: #489bc7;
+  border-color: #489bc7;
   color: #fff;
 }
 
@@ -3057,7 +3057,7 @@ table img {
 .sigma_header.style-3 .sigma_header-top-contacts .sigma_header-top-nav li a:hover,
 .sigma_header.style-5 .sigma_header-top .sigma_header-top-cta li a:hover,
 .sigma_header.style-5 .sigma_header-top-contacts .sigma_header-top-nav li a:hover{
-  background-color: #f55322;
+  background-color: #489bc7;
 }
 
 /* Style 4 */
@@ -3149,7 +3149,7 @@ table img {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #f55322;
+  color: #489bc7;
 }
 
 .sigma_header .sigma_header-top-links.important-links li p{
@@ -3179,7 +3179,7 @@ table img {
 }
 
 .sigma_header.style-5 .sigma_header-bottom .navbar-nav > li > a:hover{
-  color: #f55322;
+  color: #489bc7;
 }
 
 .sigma_header.style-5 .sigma_header-controls ul li.header-controls-item a,
@@ -3192,8 +3192,8 @@ table img {
 .sigma_header.style-5 .sigma_header-controls ul li.header-controls-item a:hover,
 .sigma_header.style-5 .aside-toggle:hover,
 .sigma_header.style-5 .aside-toggle.desktop-toggler:hover{
-  background-color: #f55322;
-  border-color: #f55322;
+  background-color: #489bc7;
+  border-color: #489bc7;
 }
 
 /* Style 6 */
@@ -3266,7 +3266,7 @@ table img {
 /* Style 7 */
 
 .sigma_header.style-7 .sigma_header-top{
-  background-color: #f55322;
+  background-color: #489bc7;
 }
 
 .sigma_header.style-7 .sigma_header-top-links li a,
@@ -3313,7 +3313,7 @@ table img {
 }
 
 .sigma_header.style-7 .sigma-call h5{
-  color: #f55322;
+  color: #489bc7;
 }
 
 .sigma_header.style-7 .navbar-nav{
@@ -3429,7 +3429,7 @@ table img {
 .sigma_header.style-8.has-dark-bg .sigma_header-top-links.important-links li:last-child a i{
   border: 0;
   background-color: transparent;
-  color: #f55322;
+  color: #489bc7;
 }
 
 .sigma_header.style-8.has-dark-bg .links-inner p{
@@ -3536,7 +3536,7 @@ table img {
 }
 
 .search-form-wrapper .search-btn:hover i {
-  color: #f55322;
+  color: #489bc7;
 }
 
 /*Aside*/
@@ -3581,7 +3581,7 @@ table img {
 }
 
 .sigma_aside .navbar-nav li a:hover{
-  color: #f55322;
+  color: #489bc7;
 }
 
 .sigma_aside .navbar-nav li.menu-item-has-children>a:after {
@@ -3746,7 +3746,7 @@ table img {
 }
 
 .sigma_search-adv-input button:hover {
-    color: #f55322;
+    color: #489bc7;
 }
 
 .sigma_search-adv-cats .sub-menu li,
@@ -3759,7 +3759,8 @@ table img {
 ========================*/
 
 .sigma_footer {
-  background-color: #f7f7f7;
+  
+  background-image: url('../image/footer_bg.png');
   padding: 80px 0;
   background-size: cover;
   background-position: center;
@@ -3773,6 +3774,7 @@ table img {
   align-items: center;
   justify-content: center;
   margin: 25px 0;
+  
 }
 
 .sigma_footer p{
@@ -3790,14 +3792,14 @@ table img {
 
 .sigma_footer .sigma_footer-links li a {
   position: relative;
-  color: #777;
+  color: white;
   font-weight: 400;
   font-size: 16px;
 }
 
 .sigma_footer .sigma_footer-links li a:hover,
 .sigma_footer .sigma_footer-copyright p a:hover {
-  color: #f55322;
+  color: #489bc7;
 }
 
 .sigma_footer .sigma_footer-copyright {
@@ -3825,6 +3827,7 @@ table img {
 
 .sigma_footer .sigma_footer-widget .widget-title {
   margin-bottom: 20px;
+  color: white;
 }
 
 .sigma_footer .sigma_footer-widget {
@@ -3861,7 +3864,7 @@ table img {
 }
 
 .sigma-call i{
-  color: #f55322;
+  color: #489bc7;
   font-size: 32px;
   margin-right: 18px;
 }
@@ -3916,6 +3919,7 @@ table img {
 
 .sigma_footer.style-5 .sigma_footer-bottom{
   margin-top: 50px;
+  
 }
 
 .sigma_footer.style-5.has-newsletter{
@@ -3944,10 +3948,13 @@ table img {
   width: 2px;
   height: 16px;
   background-color: #999b9f;
+  
+
 }
 
 .sigma_footer.style-5 .sigma_info-wrapper.style-18{
-  background-color: #1c1e22;
+  
+  
 }
 
 .sigma_footer.style-5 .sigma_footer-image{
@@ -3994,7 +4001,7 @@ table img {
 }
 
 .sigma_footer.sigma_footer-dark .sigma_sm.square li a:hover {
-  background-color: #f55322;
+  background-color: #489bc7;
   color: #fff;
 }
 
@@ -4036,7 +4043,7 @@ table img {
 }
 
 .sigma_footer.sigma_footer-dark.style-7 .sigma-call{
-  background-color: #f55322;
+  background-color: #489bc7;
 }
 
 .sigma_instagram {
@@ -4075,7 +4082,7 @@ table img {
   transition: .3s;
   opacity: 0;
   visibility: hidden;
-  color: #f55322;
+  color: #489bc7;
   width: 40px;
   height: 40px;
   background-color: #fff;
@@ -4170,7 +4177,7 @@ table img {
 }
 
 .sigma_subheader .breadcrumb .breadcrumb-item.active {
-    color: #f55322;
+    color: #489bc7;
     font-weight: 700;
     text-transform: uppercase;
     font-size: 14px;
@@ -4211,7 +4218,7 @@ table img {
   width: 3px;
   margin: 0 2px;
   transition: .3s;
-  background-color: #f55322;
+  background-color: #489bc7;
 }
 .vertical-toggler span:nth-child(odd){
   height: 30px;
@@ -4327,7 +4334,7 @@ table img {
 }
 .sigma_post-meta i{
   margin-right: 5px;
-  color: #f55322;
+  color: #489bc7;
 }
 
 .sigma_post-meta a,
@@ -4337,7 +4344,7 @@ table img {
   font-weight: 600;
 }
 .sigma_post-meta a:hover{
-  color: #f55322;
+  color: #489bc7;
 }
 
 .sigma_post-categories{
@@ -4347,7 +4354,7 @@ table img {
 .sigma_post-categories a {
     display: inline-block;
     padding: 0;
-    color: #f55322;
+    color: #489bc7;
     font-weight: 500;
     text-transform: uppercase;
     font-size: 13px;
@@ -4401,7 +4408,7 @@ table img {
 }
 
 .sigma_post .sigma_post-body .sigma_post-desc>span a {
-    color: #f55322;
+    color: #489bc7;
 }
 
 .sigma_post .sigma_post-body .sigma_post-desc p {
@@ -4417,7 +4424,7 @@ table img {
   margin-left: 0;
 }
 .sigma_post:not(.sigma_post-list) .btn-link:hover{
-  color: #f55322;
+  color: #489bc7;
 }
 .sigma_post:not(.sigma_post-list) .btn-link::before{
   display: none;
@@ -4432,7 +4439,7 @@ table img {
   position: absolute;
   bottom: 0;
   left: 0;
-  background-color: #f55322;
+  background-color: #489bc7;
   width: 60px;
   height: 60px;
   display: flex;
@@ -4520,7 +4527,7 @@ table img {
   padding-top: 16.25%;
 }
 .sigma_post .post-format-quote{
-  background-color: #f55322;
+  background-color: #489bc7;
 }
 
 .sigma_post .post-format-quote h5 a,
@@ -4577,7 +4584,7 @@ table img {
 /* Style 2 */
 .sigma_post.style-2 .sigma_post-body{
   border: 0;
-  border-top: 3px solid #f55322;
+  border-top: 3px solid #489bc7;
   box-shadow: 0px 10px 50px 0px rgba(53,82,99,0.09);
   width: calc( 100% - 40px );
   margin-left: 20px;
@@ -4707,7 +4714,7 @@ table img {
   flex: 1;
 }
 .sigma_author-about .sigma_author-about-content span{
-  color: #f55322;
+  color: #489bc7;
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -4777,7 +4784,7 @@ table img {
   justify-content: center;
 }
 .sigma_post-share .sigma_sm li a:hover{
-  background-color: #f55322;
+  background-color: #489bc7;
   color: #fff;
 }
 .sigma_post-share .sigma_sm li a i {
@@ -4803,7 +4810,7 @@ table img {
   color: #777;
 }
 .sigma_single-pagination a:hover h6{
-  color: #f55322;
+  color: #489bc7;
 }
 .sigma_single-pagination a.pagination-next{
   text-align: right;
@@ -4833,7 +4840,7 @@ table img {
   width: 30px;
   height: 3px;
   border-radius: 4px;
-  background-color: #f55322;
+  background-color: #489bc7;
   display: block;
   position: absolute;
   top: 17px;
@@ -4844,7 +4851,7 @@ table img {
   width: 15px;
   height: 3px;
   border-radius: 4px;
-  background-color: #f55322;
+  background-color: #489bc7;
   display: block;
   position: absolute;
   top: 9px;
@@ -4880,7 +4887,7 @@ table img {
 }
 
 .sidebar-widget ul.sidebar-widget-list li a:hover {
-    color: #f55322;
+    color: #489bc7;
 }
 
 .widget-about-author-inner {
@@ -4914,7 +4921,7 @@ table img {
   border: 1px solid #efefef;
 }
 .widget-about-author-inner .sigma_sm li a:hover{
-  background-color: #f55322;
+  background-color: #489bc7;
   color: #fff;
 }
 .widget-about-author-body{
@@ -4954,7 +4961,7 @@ table img {
   color: #222222;
 }
 .sidebar-widget.widget-recent-posts .sigma_recent-post h6 a:hover{
-  color: #f55322;
+  color: #489bc7;
 }
 
 .sidebar-widget.widget-recent-posts .sigma_recent-post+.sigma_recent-post{
@@ -4974,7 +4981,7 @@ table img {
 }
 .widget-recent-posts .sigma_recent-post-body > a i{
   margin-right: 5px;
-  color: #f55322;
+  color: #489bc7;
 }
 .widget-recent-posts .sigma_recent-post-body > a:hover{
   color: #ca2f00;
@@ -4994,14 +5001,14 @@ table img {
 }
 
 .sigma_footer:not(.sigma_footer-dark) .sigma_sm.square li a:hover{
-  background-color: #f55322;
+  background-color: #489bc7;
   color: #fff;
 }
 
 .sigma_footer:not(.sigma_footer-dark) .widget-recent-posts .sigma_recent-post h6 a:hover,
 .widget-recent-posts .sigma_recent-post h6 a:hover,
 .widget-recent-posts .sigma_recent-post span a:hover {
-    color: #f55322;
+    color: #489bc7;
 }
 
 .widget-recent-posts .sigma_recent-post span {
@@ -5051,7 +5058,7 @@ table img {
 
 .sidebar-widget.widget-categories ul li a span{
   border-radius: 50%;
-  background-color: #f55322;
+  background-color: #489bc7;
   color: #fff;
   font-size: 13px;
   transition: .3s;
@@ -5067,13 +5074,13 @@ table img {
 }
 
 .sidebar-widget.widget-categories ul li a:hover{
-  background-color: #f55322;
+  background-color: #489bc7;
   color: #fff;
 }
 
 .sidebar-widget.widget-categories ul li a:hover span{
   background-color: #fff1e5;
-  color: #f55322;
+  color: #489bc7;
 }
 
 .tags a,
@@ -5096,7 +5103,7 @@ table img {
 .tags a:hover,
 .tagcloud a:hover,
 .entry-content .wp-block-tag-cloud a:hover {
-    background-color: #f55322;
+    background-color: #489bc7;
     color: #fff;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -5113,7 +5120,7 @@ table img {
 }
 
 .sigma_newsletter-form.primary-bg {
-    background-color: #f55322;
+    background-color: #489bc7;
 }
 
 .sigma_newsletter-form h5 {
@@ -5242,7 +5249,7 @@ table img {
 .sigma_product-price span:first-child {
     font-size: 14px;
     line-height: 1.2;
-    color: #f55322;
+    color: #489bc7;
     font-weight: 700;
 }
 
@@ -5306,7 +5313,7 @@ table img {
 }
 
 .sigma_product-controls a:hover {
-    background-color: #f55322;
+    background-color: #489bc7;
     color: #fff;
     box-shadow: 0px 10px 50px 0px rgba(53,82,99,0.09);
 }
@@ -5334,18 +5341,18 @@ table img {
 .irs--flat .irs-single,
 .irs--flat .irs-bar,
 .irs--flat .irs-handle>i:first-child {
-    background-color: #f55322;
+    background-color: #489bc7;
 }
 
 .irs--flat .irs-from:before,
 .irs--flat .irs-to:before,
 .irs--flat .irs-single:before {
-    border-top-color: #f55322;
+    border-top-color: #489bc7;
 }
 
 .irs--flat .irs-handle.state_hover>i:first-child,
 .irs--flat .irs-handle:hover>i:first-child {
-    background-color: #f55322;
+    background-color: #489bc7;
 }
 
 /* 6.3.3 Products Quick View & Details */
@@ -5447,7 +5454,7 @@ table img {
 }
 
 .qty span:hover {
-  color: #f55322;
+  color: #489bc7;
 }
 
 .qty span {
@@ -5492,7 +5499,7 @@ table img {
   height: 25px;
   border-radius: 50%;
   z-index: -1;
-  background-color: #f55322;
+  background-color: #489bc7;
 }
 .sigma_product-radio label input:checked + span::before{
   transform: translate(-50%, -50%) scale(1);
@@ -5521,7 +5528,7 @@ table img {
 }
 
 .sigma_product-additional-info .nav-item+.nav-item .nav-link:hover{
-  color: #f55322;
+  color: #489bc7;
 }
 
 .sigma_product-additional-info .tab-content {
@@ -5611,7 +5618,7 @@ table img {
 }
 
 .sigma_product-meta li a:hover {
-    color: #f55322;
+    color: #489bc7;
 }
 
 .sigma_product-single-thumb,
@@ -5659,7 +5666,7 @@ td.remove {
 }
 
 .sigma_cart-product-wrapper h6 a:hover {
-    color: #f55322;
+    color: #489bc7;
 }
 
 .sigma_cart-product-wrapper p {
@@ -5821,7 +5828,7 @@ td.remove {
 }
 
 .sigma_banner .slick-dots li.slick-active button {
-    background-color: #f55322;
+    background-color: #489bc7;
 }
 
 .sigma_banner .sigma_banner-slider-inner .sigma_banner-text {
@@ -5836,7 +5843,9 @@ td.remove {
 .banner-1.sigma_banner .sigma_banner-slider-inner {
     overflow: hidden;
     position: relative;
+  
     padding: 210px 0 120px;
+    background-repeat: repeat;
 }
 
 .sigma_banner.banner-1 .sigma_arrows,
@@ -5865,7 +5874,7 @@ td.remove {
   background-color: #5f5f5f;
 }
 .sigma_banner.banner-1 .slick-dots li.slick-active button{
-  background-color: #f55322;
+  background-color: #489bc7;
 }
 
 .banner-1.sigma_banner img{
@@ -5959,7 +5968,7 @@ td.remove {
   color: #222222;
 }
 .sigma_banner-sm-inner a:hover{
-  color: #f55322;
+  color: #489bc7;
 }
 .sigma_banner-sm-inner a + a{
   margin-left: 20px;
@@ -5987,7 +5996,8 @@ td.remove {
 .banner-3.sigma_banner .sigma_banner-slider-inner {
     overflow: hidden;
     position: relative;
-    padding: 180px 0;
+    /*padding-bottom:360px;*/
+    width:100%;
 }
 
 .header-absolute + .banner-3.sigma_banner .sigma_banner-slider-inner{
@@ -6019,7 +6029,7 @@ td.remove {
 }
 
 .banner-cta.sigma_box.primary-bg{
-  background-color: #f55322;
+  background-color: #489bc7;
 }
 .banner-cta.sigma_box.secondary-bg{
   background-color: #222222;
@@ -6169,7 +6179,7 @@ td.remove {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #f55322;
+  color: #489bc7;
   margin-right: 20px;
 }
 .sigma_icon-block.icon-block-2 i{
@@ -6186,7 +6196,7 @@ td.remove {
   width: 60px;
   height: 60px;
   font-size: 36px;
-  background-color: #f55322;
+  background-color: #489bc7;
   color: #222222;
   border: 4px solid #fff;
   box-shadow: 0 3px 12px rgba(0,0,0,.09);
@@ -6227,11 +6237,11 @@ td.remove {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  border: 1px solid #f55322;
+  border: 1px solid #489bc7;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #f55322;
+  color: #489bc7;
 }
 .sigma_icon-block.icon-block-4 i::after{
   content: '';
@@ -6241,7 +6251,7 @@ td.remove {
   transform: translateX(-50%);
   height: 50px;
   width: 1px;
-  background: linear-gradient(to bottom, #f55322, transparent) ;
+  background: linear-gradient(to bottom, #489bc7, transparent) ;
 }
 .sigma_icon-block.icon-block-4 .sigma_icon-block-content{
   flex: 1;
@@ -6260,7 +6270,7 @@ td.remove {
   margin-bottom: 20px;
   background-color: #fff;
   border-radius: 35px;
-  color: #f55322;
+  color: #489bc7;
   z-index: 1;
   transition: .3s;
   display: block;
@@ -6302,8 +6312,8 @@ td.remove {
   background-color: #fff;
   margin: 0 auto 20px;
   font-size: 50px;
-  border: 3px solid #f55322;
-  color: #f55322;
+  border: 3px solid #489bc7;
+  color: #489bc7;
 }
 .sigma_icon-block.icon-block-6 h5,
 .sigma_icon-block.icon-block-7 h5{
@@ -6358,7 +6368,7 @@ td.remove {
   left: -20px;
   width: 40px;
   height: 40px;
-  background-color: #f55322;
+  background-color: #489bc7;
   opacity: .4;
   border-radius: 50%;
   z-index: -1;
@@ -6417,7 +6427,7 @@ td.remove {
   visibility: visible;
 }
 .sigma_icon-block.icon-block-7.text-center .sigma_icon-block-content > span{
-  color: #f55322;
+  color: #489bc7;
   font-weight: 600;
   margin-bottom: 10px;
   display: block;
@@ -6723,7 +6733,7 @@ td.remove {
 }
 
 .sigma_auth-mini a:hover {
-    color: #f55322;
+    color: #489bc7;
 }
 
 /* 6.9. Error 404 */
@@ -6802,7 +6812,7 @@ td.remove {
   color: #fff;
 }
 .sigma_team-sm .sigma_sm li a:hover{
-  color: #f55322;
+  color: #489bc7;
 }
 .sigma_team-sm .sigma_sm li + li{
   margin-left: 15px;
@@ -6892,8 +6902,8 @@ td.remove {
   justify-content: center;
 }
 .sigma_team.team-2 .sigma_team-sm li a:hover{
-  background-color: #f55322;
-  border-color: #f55322;
+  background-color: #489bc7;
+  border-color: #489bc7;
   color: #fff;
 }
 
@@ -6945,7 +6955,7 @@ td.remove {
 .sigma_pricing-price span{
   font-size: 48px;
   font-weight: 800;
-  color: #f55322;
+  color: #489bc7;
 }
 .sigma_pricing .list-style-none{
   margin-top: 20px;
@@ -6985,7 +6995,7 @@ td.remove {
   top: 10px;
   right: 40px;
   font-size: 60px;
-  color: #f55322;
+  color: #489bc7;
 }
 
 .sigma_pricing.pricing-2::before{
@@ -7014,7 +7024,7 @@ td.remove {
   justify-content: center;
   border: 10px solid #fff;
   box-shadow: 0 3px 12px rgba(0,0,0,.1);
-  background-color: #f55322;
+  background-color: #489bc7;
   border-radius: 50%;
 }
 .sigma_pricing.pricing-2 .sigma_pricing-price span{
@@ -7069,7 +7079,7 @@ td.remove {
   left: -60px;
   width: 50px;
   height: 1px;
-  background-color: #f55322;
+  background-color: #489bc7;
 }
 .sigma_timeline-nodes:nth-child(odd) .sigma_timeline-content::before{
   left: auto;
@@ -7099,7 +7109,7 @@ td.remove {
   top: 0;
   left: 49.99999%;
   width: 0;
-  border-left: 1px solid #f55322;
+  border-left: 1px solid #489bc7;
   opacity: .3;
   height: calc(100% + 50px);
   z-index: 1;
@@ -7135,7 +7145,7 @@ td.remove {
 .sigma_timeline-image i {
   background: #fff;
   padding: 5px;
-  color: #f55322;
+  color: #489bc7;
   border-radius: 50%;
   margin-top: 0;
   font-size: 24px;
@@ -7191,7 +7201,7 @@ td.remove {
 }
 
 .sigma_contact-info .sigma_sm a:hover{
-  background-color: #f55322;
+  background-color: #489bc7;
 }
 .sigma_contact-bg{
   height: 100%;
@@ -7208,7 +7218,7 @@ td.remove {
   font-size: 18px;
 }
 .sigma_contact-info-item .sigma_sm li a:hover{
-  color: #f55322;
+  color: #489bc7;
 }
 
 /*======================
@@ -7293,7 +7303,7 @@ td.remove {
 }
 .sigma_arrows .slick-arrow:hover {
     color: #fff;
-    background-color: #f55322;
+    background-color: #489bc7;
 }
 .sigma_arrows.sigma_arrows-transparent .slick-arrow:hover,
 .sigma_arrows.sigma_arrows-transparent .slick-arrow{
@@ -7452,7 +7462,7 @@ td.remove {
 .slick-next:hover,
 .slick-next:focus {
     color: #fff;
-    background-color: #f55322;
+    background-color: #489bc7;
 }
 
 .slick-prev:hover::before,
@@ -7496,14 +7506,14 @@ td.remove {
 }
 
 .slick-dots li.slick-active button {
-    background-color: #f55322;
+    background-color: #489bc7;
 }
 
 .light-dots .slick-dots li button{
   background-color: #fff;
 }
 .light-dots .slick-dots li.slick-active button {
-    background-color: #f55322;
+    background-color: #489bc7;
 }
 
 
@@ -7689,7 +7699,7 @@ td.remove {
 
 .progress .progress-bar{
   position: relative;
-  background-color: #f55322;
+  background-color: #489bc7;
   transition: 3s;
 }
 
@@ -7700,7 +7710,7 @@ td.remove {
   width: 5px;
   height: 20px;
   border-radius: 20px;
-  background-color: #f55322;
+  background-color: #489bc7;
   transform: translateY(-50%);
 }
 
@@ -7782,7 +7792,7 @@ td.remove {
 
 .accordion .card-header .btn[aria-expanded="true"]::after,
 .accordion .card-header .btn[aria-expanded="true"]::before {
-    background-color: #f55322;
+    background-color: #489bc7;
 }
 
 .accordion .card-header i {
@@ -7794,7 +7804,7 @@ td.remove {
 }
 
 .accordion .card-header .btn[aria-expanded="true"] i {
-    color: #f55322;
+    color: #489bc7;
 }
 
 .accordion .card {
@@ -7950,7 +7960,7 @@ td.remove {
   position: relative;
   width: 80px;
   height: 80px;
-  background-color: #f55322;
+  background-color: #489bc7;
   border-radius: 50%;
   color: #fff;
   display: inline-flex;
@@ -7986,10 +7996,10 @@ td.remove {
   animation-iteration-count: infinite;
 }
 .sigma_video-popup.bg-white{
-  color: #f55322;
+  color: #489bc7;
 }
 .sigma_video-popup.bg-white:hover{
-  background-color: #f55322 !important;
+  background-color: #489bc7 !important;
   color: #fff;
 }
 
@@ -8069,7 +8079,7 @@ td.remove {
 }
 
 .sigma_testimonial.style-2 .sigma_testimonial-inner.slick-current cite{
-  color: #f55322;
+  color: #489bc7;
 }
 
 .sigma_testimonial.style-2 .sigma_testimonial-inner.slick-current .sigma_testimonial-author span{
@@ -8103,7 +8113,7 @@ td.remove {
   top: -20px;
   line-height: 1;
   right: 0px;
-  background-color: #f55322;
+  background-color: #489bc7;
   color: #fff;
   border-radius: 50%;
   font-size: 25px;
@@ -8238,7 +8248,7 @@ td.remove {
   left: -10px;
   width: 100px;
   height: 100%;
-  border: 5px solid #f55322;
+  border: 5px solid #489bc7;
   opacity: .3;
   z-index: -1;
 }
@@ -8301,7 +8311,7 @@ td.remove {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #f55322;
+  background-color: #489bc7;
   transition: .3s;
 }
 .sigma_service.border .sigma_service-thumb::after{
@@ -8312,13 +8322,13 @@ td.remove {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #f55322;
+  background-color: #489bc7;
   transition: .3s;
 }
 
 .sigma_service.primary-bg:hover,
 .sigma_service.primary-bg{
-  background-color: #f55322;
+  background-color: #489bc7;
   border: 0;
 }
 .sigma_service.secondary-bg:hover,
@@ -8353,7 +8363,7 @@ td.remove {
   color: #222222;
 }
 .sigma_service.style-1.bg-white:hover i{
-  color: #f55322;
+  color: #489bc7;
 }
 
 .sigma_service .sigma_service-thumb i{
@@ -8363,7 +8373,7 @@ td.remove {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f55322;
+  background-color: #489bc7;
   border: 5px solid #fff;
   box-shadow: 0 3px 12px rgba(0,0,0,.1);
   border-radius: 0;
@@ -8396,7 +8406,7 @@ td.remove {
   transition: .3s;
 }
 .sigma_service:hover{
-  background-color: #f55322;
+  background-color: #489bc7;
   transform: translateY(-3px);
 }
 .sigma_service.style-1:hover .btn-link,
@@ -8501,7 +8511,7 @@ td.remove {
   color: #fff;
 }
 .sigma_service.style-3:hover .sigma_service-body .btn-link::before{
-  background-color: #f55322;
+  background-color: #489bc7;
 }
 
 /* Details */
@@ -8644,7 +8654,7 @@ td.remove {
   color: #fff;
 }
 .sigma_portfolio-item .sigma_portfolio-item-content-inner h5 a:hover{
-  color: #f55322;
+  color: #489bc7;
 }
 .sigma_portfolio-item .sigma_portfolio-item-content i{
   font-size: 15px;
@@ -8702,7 +8712,7 @@ td.remove {
 }
 
 .filter-items h5.active{
-  background-color: #f55322;
+  background-color: #489bc7;
   color: #fff;
 }
 .filter-items h5:not(.active):hover{
@@ -8747,7 +8757,7 @@ td.remove {
 .sigma_portfolio-item.style-2:hover .sigma_portfolio-item-content i{
   bottom: auto;
   transform: translateX(5px);
-  color: #f55322;
+  color: #489bc7;
 }
 
 .sigma_portfolio-item.style-3 .sigma_portfolio-item-content-inner,
@@ -8790,11 +8800,11 @@ td.remove {
   color: #767e88;
 }
 .sigma_list-item .sigma_sm li a:hover{
-  color: #f55322;
+  color: #489bc7;
 }
 
 .sigma_portfolio-details{
-  background-color: #f55322;
+  background-color: #489bc7;
   padding: 30px 0;
   display: flex;
   align-items: center;

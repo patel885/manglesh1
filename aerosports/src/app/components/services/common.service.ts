@@ -1,16 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, Type } from '@angular/core';
-import ldata from '../data/location.json';
 import * as  XLSX from 'xlsx';
 import { tap } from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs';
+import { animate, animateChild, group, query, style, transition, trigger } from '@angular/animations';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class CommonService {
-  public locationData = ldata;
+  
   public aerosports: any[]  = [];
   public jsonData: any[]=[];
   public allPages:any[]=[];
@@ -36,7 +36,8 @@ export class CommonService {
         const ws1: XLSX.WorkSheet = wb.Sheets["Data"]; 
        this.jsonData = XLSX.utils.sheet_to_json(ws1, {defval:""});        
        this.aerosports = this.jsonData.sort((i: any , j: any) => i.parentid - j.parentid).filter(m=>{
-                  return (m.location.indexOf(this.location)>-1 || m.location=='');
+                //m.section1= m.section1.replace(/\r?\n|\r/g, "<br/>");    
+                  return (m.location.toUpperCase().indexOf(this.location.toUpperCase())>-1 || m.location=='');
         });    
         
         console.log("fyfft");
@@ -44,20 +45,22 @@ export class CommonService {
         this.allPages=this.aerosports;
         this.BirthDayPackages = XLSX.utils.sheet_to_json(wb.Sheets["birthday packages"], {defval:""}) ;
         this.BirthDayPackages = this.BirthDayPackages.filter(m=>{         
-          return (m.location.indexOf(this.location)>-1 || m.location=='');
+          return (m.location.toUpperCase().indexOf(this.location.toUpperCase())>-1 || m.location=='');
         });           
         
         this.blogs = XLSX.utils.sheet_to_json(wb.Sheets["blogs"], {defval:""}) ;
         this.blogs = this.blogs.filter(m=>{         
-          return (m.location.indexOf(this.location)>-1 || m.location=='');
+          return (m.location.toUpperCase().indexOf(this.location.toUpperCase())>-1 || m.location=='');
         });           
         console.log(this.blogs);
 
         this.config=XLSX.utils.sheet_to_json(wb.Sheets["config"], {defval:""});        
-        this.config=this.config.filter(m=>{          
-          return (m.location.indexOf(this.location)>-1 || m.location=='');
+        this.config=this.config.filter(m=>{      
+          m.value= m.value.replace(/\r?\n|\r/g, "<br/>");    
+          return (m.location.toUpperCase().indexOf(this.location.toUpperCase())>-1 || m.location=='');
         });    
         console.log('configtt');
+        console.log(this.location);
         console.log(this.config);
         let result: any[] = [];
         this.aerosports.reduce((acc: any, place: any) =>{
@@ -121,5 +124,55 @@ export class CommonService {
 
   
 }
+export const slideInAnimation =
+  trigger('routeAnimations', [
+    transition('* <=> *', [
+      style({ position: 'relative' }),
+      query(':enter, :leave', [
+        style({
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%'
+        })
+      ]),
+      query(':enter', [
+        style({ left: '-100%' })
+      ]),
+      query(':leave', animateChild()),
+      group([
+        query(':leave', [
+          animate('300ms ease-out', style({ left: '100%' }))
+        ]),
+        query(':enter', [
+          animate('300ms ease-out', style({ left: '0%' }))
+        ]),
+      ]),
+    ]),
+    transition('* <=> *', [
+      style({ position: 'relative' }),
+      query(':enter, :leave', [
+        style({
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%'
+        })
+      ]),
+      query(':enter', [
+        style({ left: '-100%' })
+      ]),
+      query(':leave', animateChild()),
+      group([
+        query(':leave', [
+          animate('200ms ease-out', style({ left: '100%', opacity: 0 }))
+        ]),
+        query(':enter', [
+          animate('300ms ease-out', style({ left: '0%' }))
+        ]),
+        query('@*', animateChild())
+      ]),
+    ])
+  ]);  
 
 

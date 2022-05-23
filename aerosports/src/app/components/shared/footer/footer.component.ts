@@ -1,8 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Aerosports } from '../../models/aerosports';
-import { BlogHelperService } from '../../services/blog-helper.service';
 import { CommonService } from '../../services/common.service';
 
 @Component({
@@ -19,7 +17,7 @@ export class FooterComponent {
   public aboutUsLinks!:Aerosports[];
   commonService:CommonService
 //  recentPost!:blog;
-  constructor (public commonService1: CommonService,private router: Router,bloghelpr: BlogHelperService)
+  constructor (public commonService1: CommonService,private router: Router)
   {
     this.commonService=commonService1;
 }
@@ -27,10 +25,10 @@ ngOnInit(): void {
   console.log("attactions");
   console.log(this.commonService.aerosports);
    
-    console.log(this.commonService.aerosports.filter(t=>{return t.path =="aboutus"}));
+    console.log(this.commonService.aerosports.filter(t=>{return t.path.toUpperCase() =="aboutus".toUpperCase()}));
     
-    this.navigation= this.commonService.aerosports.filter(t=>{return t.path =="attractions"})[0].children;
-    this.aboutUsLinks=this.commonService.aerosports.filter(t=>{ return t.path =="aboutus"})[0].children;
+    this.navigation= this.commonService.aerosports.filter(t=>{return t.path.toUpperCase() =="attractions".toUpperCase()})[0].children;
+    this.aboutUsLinks=this.commonService.aerosports.filter(t=>{ return t.path.toUpperCase() =="aboutus".toUpperCase()})[0].children;
     
   //  this.recentPost=bloghelpr.recentPost();
     

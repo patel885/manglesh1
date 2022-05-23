@@ -13,14 +13,8 @@ import { AttractionsComponent } from './components/pages/attractions/attractions
 import { PartiesEventsComponent } from './components/pages/parties-events/parties-events.component';
 import { CommonService } from './components/services/common.service';
 import { AttractionDetailComponent } from './components/pages/attractions/attraction-detail/attraction-detail.component';
-import { ProgramsComponent } from './components/pages/programs/programs.component';
-import { PricingPromosComponent } from './components/pages/pricing-promos/pricing-promos.component';
-import { GroupsEventsComponent } from './components/pages/groups-events/groups-events.component';
-import { AboutUsComponent } from './components/pages/about-us/about-us.component';
 import { BirthdayPartiesComponent } from './components/pages/parties-events/birthday-parties/birthday-parties.component';
 import { CampProgramsComponent } from './components/pages/parties-events/camp-programs/camp-programs.component';
-import { ProgramDetailComponent } from './components/pages/programs/program-detail/program-detail.component';
-import { GroupEventDetailComponent } from './components/pages/groups-events/group-event-detail/group-event-detail.component';
 import { ServicesComponent } from './components/pages/services/services.component';
 import { ServicesComponent as AeroSportsServiceComponent } from './components/pages/home/services/services.component';
 import { BlogComponent } from './components/pages/blog/blog.component';
@@ -31,8 +25,7 @@ import { BlogComponent } from './components/pages/blog/blog.component';
   declarations: [
     AppComponent,
     ServicesComponent,
-    BlogComponent
-  ],
+    BlogComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -55,14 +48,8 @@ import { BlogComponent } from './components/pages/blog/blog.component';
     AttractionsComponent,
     PartiesEventsComponent,
     AttractionDetailComponent,
-    ProgramsComponent,
-    PricingPromosComponent,
-    GroupsEventsComponent,
-    AboutUsComponent,
     BirthdayPartiesComponent,
     CampProgramsComponent,
-    ProgramDetailComponent,
-    GroupEventDetailComponent,
     ServicesComponent,
     AeroSportsServiceComponent,
     ServicesComponent,

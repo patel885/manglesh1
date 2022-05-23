@@ -12,7 +12,6 @@ export class ContactComponent implements OnInit {
   headerStyle = "";
   // Footer Style
   footerStyle = "dark-bg"
-
   ngOnInit(): void {
   }
 

@@ -8,7 +8,12 @@ export interface Aerosports {
     title:        string;
     data:         Data;
     section1:     string;
+    path: string;
     children?:    Aerosports[];
+    ruleyes:string;
+    ruleno:string;
+    warnings:string;
+    smalltext:string;
 }
 
 export interface BirthDayPackages {
@@ -45,7 +50,7 @@ export const PageTypes = {
     Attractions: 'attractions',
     Programs: 'programs',
     PricingPromos: 'pricingpromos',
-    GroupEvents: 'groupsevents',
+    GroupEvents: 'groups-events',
     Aboutus: 'aboutus',
     Blogs: 'blogs',
     Attractionsub: 'attractionssub',
@@ -55,5 +60,8 @@ export const PageTypes = {
     Programssub: 'programssub',
     BirthdayParties: 'kids-birthday-parties',
     Groupseventssub: 'groupseventssub',
-    Faq:'faq'
+    Faq:'faq',
+    contactus:"contactus"
+
+
 };

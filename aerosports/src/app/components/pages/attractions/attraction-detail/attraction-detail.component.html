@@ -1,13 +1,29 @@
 <app-header></app-header>
-<ngx-slick-carousel #slickModal="slick-carousel" [config]="settings"
-class="carousel"
-                        *ngIf="page.headerimage.split(',') != [] ">
-                        <div ngxSlickItem class="slide" *ngFor="let image of page.headerimage.split(',')">
-                            <img [src]="image" [alt]="image">
-                        </div>
-                    </ngx-slick-carousel>
-              
-<div style="text-align: center; margin-top: 50px; margin-bottom: 50px;" [innerHTML]="page.section1"></div>
+<app-contact *ngIf="page.path=='contact-us'" ></app-contact>
+          
+<div *ngIf="page.path!='contact-us'" style="text-align: center; margin-top: 50px; margin-bottom: 50px;" [innerHTML]="page.section1"></div>
 
+    <div id="parkrules" class="container">
+        <div *ngIf="page.ruleyes!=''">
+        <h5><i>{{page.desc}} Rules</i></h5>
+        <h6>Always</h6>
+        <ul style="list-style-type:circle">
+            <li *ngFor="let item of page.ruleyes.split(';')"><div [innerHTML]="item"></div></li>
+        </ul>
+        </div>
+        <div *ngIf="page.ruleno!=''">
+        
+        <h6>DO NOT</h6>
+        <ul style="list-style-type:circle">
+            <li *ngFor="let item of page.ruleno.split(';')"><div [innerHTML]="item"></div></li>
+        </ul>
+        </div>
+        <div *ngIf="page.warnings!=''">
+        <h6>WARNINGS</h6>
+        <ul style="list-style-type:circle">
+            <li *ngFor="let item of page.warnings.split(';')"><div [innerHTML]="item"></div></li>
+        </ul>
+       </div>
+</div>
 
 <app-footer [layout]="footerStyle"></app-footer>

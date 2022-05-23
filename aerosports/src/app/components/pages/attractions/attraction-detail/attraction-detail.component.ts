@@ -34,15 +34,14 @@ export class AttractionDetailComponent implements OnInit {
         this.route.params.subscribe(routeParams => {
          this.location = routeParams.location;   
          this.pagetype = routeParams.type;   
-         //console.log(routeParams.type);
+         console.log("attraction details");
          
        this.page= this.commonService.allPages.filter(t=>{
         return t.path==routeParams.type;
-
         })[0] as Aerosports;
-     
-        
+  
        });
+       console.log(this.page.section1);
 
      
    }

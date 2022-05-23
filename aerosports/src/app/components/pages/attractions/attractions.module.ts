@@ -7,11 +7,12 @@ import { SharedModule } from '../../shared/shared.module';
 import { HomeRoutingModule } from '../home/home-routing.module';
 import { AttractionsComponent } from './attractions.component';
 import { AttractionDetailComponent } from './attraction-detail/attraction-detail.component';
+import { ContactComponent } from './attraction-detail/contact.component';
 
 
 
 @NgModule({
-  declarations: [AttractionsComponent, AttractionDetailComponent],
+  declarations: [AttractionsComponent, AttractionDetailComponent,ContactComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,

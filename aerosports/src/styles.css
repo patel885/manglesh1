@@ -230,3 +230,12 @@ pagination-template .ngx-pagination li.pagination-previous::before {
 app-map + app-footer{
     display: none;
 }
+
+#parkrules p{
+    color: red !important;
+}
+
+
+  .alignverticalcenter{
+    justify-content: center;flex-direction: column; align-items: center;display: flex;
+  }

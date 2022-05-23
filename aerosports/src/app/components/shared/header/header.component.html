@@ -1,44 +1,8 @@
 <header class="sigma_header style-6 can-sticky">
-    <div class="sigma_header-middle">
-        <div class="container">
-            <div class="navbar">
-                <div class="sigma_logo-wrapper">
-                    <a class="sigma_logo" routerLink="/">
-                        <img src="/assets/img/logo.png" alt="aerosports logo">
-                    </a>
-                </div>
-                <div class="sigma_header-top-links important-links d-none d-lg-block">
-                    <ul class="sigma_header-top-nav">
-                        <li>
-                            <a href="#">
-                                <i class="fal fa-clock"></i>
-                                <div>
-                                    <p>Working Hours</p>
-                                    <p><b>Mon-Sat 9:00 To 17:00</b></p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fal fa-phone"></i>
-                                <div>
-                                    <p>Our Address</p>
-                                    <p><b>Drive Chicago IL</b></p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fal fa-map-marker-alt"></i>
-                                <div>
-                                    <p>Call Us</p>
-                                    <p><b>224-359-5495</b></p>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="sigma_header-controls style-2 d-block d-lg-none" (click)="toggleNav()">
+    <div class="sigma_header-middle aside-toggle">
+        <div class="container-fluid">
+            <div class="navbar" (click)="toggleNav()">
+                
                     <ul class="sigma_header-controls-inner">
                         <li class="aside-toggle aside-trigger">
                             <span></span>
@@ -46,11 +10,11 @@
                             <span></span>
                         </li>
                     </ul>
-                </div>
+                
             </div>
         </div>
     </div>
-    <div class="sigma_header-bottom">
+    <div class="sigma_header-bottom" >
         <div class="container">
             <div class="navbar" *ngIf="!hideMenu">
                 <ul class="navbar-nav" >
@@ -90,11 +54,12 @@
                             <span></span>
                         </li>
                     </ul>
-                    <a routerLink="/contact" class="sigma_btn-custom">Buy Now</a>
+                    <a href='{{location.estore}}' class="sigma_btn-custom">Buy Now</a>
                 </div>
             </div>
         </div>
     </div>
+     
 </header>
 <!-- Search -->
 <div class="search-form-wrapper" [ngClass]="searchmethod ? '' : 'open'">
@@ -108,6 +73,7 @@
             <i class="fal fa-search m-0"></i>
         </button>
     </form>
+
 </div>
 <!-- Canvas -->
 <aside class="sigma_aside sigma_aside-desktop" [ngClass]="canvasmethod ? '' : 'aside-right-open'">
@@ -122,4 +88,75 @@
     </div>
     <app-mobile-menu></app-mobile-menu>
 </aside>
-<div class="sigma_aside-overlay aside-trigger" (click)="toggleNav()"></div>
+ 
+    <div class="sigma_banner banner-2" *ngIf="page.headerimage != ''">            
+        <ngx-slick-carousel #slickModal="slick-carousel" [config]="settings"
+        class="sigma_banner-slider" *ngIf="page.headerimage.split(',') != [] ">
+            <div ngxSlickItem class="slide"  *ngFor="let item of page.headerimage.split(',')">
+                        <div id="header1" class="mobileheader" style="background-image: url('{{item}}');" >
+                            <div class="container text-white">
+                                <div class="row ">
+                                    <div class="col-sm  d-flex align-items-left">
+                                    <a routerLink="/{{commonService.location}}/home" ><img  src="/assets/image/logo_white.png"/></a>
+                                    </div>
+                                </div>
+                                <div class="row" ><div>&nbsp;</div></div>
+                                <div class="row" >
+                                    <div class="col text-center">
+                                    <h1 class="stroke-text text-white animate__animated animate__fadeInLeftBig animate__delay-1s animate__1">
+                                     {{page.title}}
+                                    </h1>   
+                                </div>
+                                </div>          
+                                <!--<div class="row justify-content-md-center">
+                                <div style="color:white ; font-size:70px;font-weight: bolder;"
+                                 class="animate__animated animate__fadeInRightBig animate__delay-1s animate__1">
+                                    &nbsp;TRAMPOLINE PARK                                                                
+                            </div></div>-->
+                            <div class="row">
+                                <div  class="col text-center">
+                                <h6 class="text-white animate__animated animate__fadeInLeftBig animate__delay-1s animate__1">    {{page.smalltext}}</h6>
+                                </div>
+                            
+                                </div>
+
+<!---                            <div class="row justify-content-md-center">
+                            <div class="col col-lg-4 animate__animated animate__flash animate__delay-2s animate__1"><p>HAVE FUN AND KEEP FIT</p>
+                                <p>JUMP, FLIP , BOUNCE</p>
+                                <p>VISIT AEROSPORTS TODAY</p>
+                                </div>
+                            </div>
+
+
+                                <div>
+                                    <h4 class="text-white" style="background-color:black ;">CHECK ALL THE ACTION</h4>
+                                        <div class="section-button d-flex align-items-center">
+                                            <a routerLink="/case-study" class="sigma_btn-custom">Read more <i class="far fa-arrow-right"></i> </a>
+                                        </div>
+
+                                </div>-->
+                                <div class="row">
+                                    <div class="col section-button text-center animate__animated animate__fadeInLeftBig animate__delay-2s animate__1">
+                                        <a href="{{getconfig('estore')}}" class="sigma_btn-custom">Book Now<i class="far fa-arrow-right"></i> </a>
+                                    </div>
+
+                               </div>
+                               
+                               <!--
+                                   <div class="row justify-content-md-center">
+                                        <div class="offset-lg-2 col-lg-4 d-none d-lg-block">
+                                    
+                                        <a href="https://www.youtube.com/watch?v=78W4BGKIeMg" class="sigma_video-popup bg-white popup-youtube">
+                                        
+                                        <img class="fas fa-play" src="/assets/image/play_btn.png" sizes="(max-width: 904px)">
+                                                <i class="fas fa-play"></i>
+                                        </a>
+                                    </div>
+                                </div>-->
+                                <div class="row" ><div>&nbsp;</div></div>
+                               
+                            </div>
+                        </div>
+                    </div>                  
+    </ngx-slick-carousel>
+    </div>

@@ -1,31 +1,38 @@
 <!-- The header should be empty no menu for this. -->
-<app-header [hideMenu]="true"></app-header>
+        
+          
 
-<div class="section section-padding pt-0">
-    <div class="container">
-        <div class="section-title text-center">
-            
-            <h4 class="title">Locations</h4>
+<div class="section section-padding pt-0 diagonal-hero-bg">
+    <div class="stars">
+        <div class="small"></div>
+        <div class="medium"></div>
+        <div class="big"></div>
+
+      
+    <div class="container" >
+        <div class="row"><div class="stroke-text text-center mb-3">&nbsp;</div></div>
+        <div class="stroke-text text-center mb-3 animate__animated animate__fadeInLeftBig animate__delay-0.5s">
+            <h1>ONE PASS MORE FUN</h1>
         </div>
-        <div class="row">
-            <div class="col-lg-3 col-md-6" *ngFor="let item of commonService.locationData | slice:0:10">
-                <div class="sigma_service style-3">
-                   <!-- <div class="sigma_service-thumb">
-                        <i [class]="item.icon"></i>
-                    </div>-->
+        <div class="row animate__animated animate__fadeInRightBig animate__delay-1s">
+            <div class="col-lg-3 col-md-6" *ngFor="let item of commonService.locations">
+                <div class="p-2 text-center mb-3 inside">
                     <div>
-                        <a (click)="onLocationClick(item.locationid)" class="btn-link"><img src="{{item.smallImg}}" alt="#" class="img-responsive">
-                    </a>
+                        <a nav="onLocationClick(item.locations)" class="btn-link">
+                            <img src="{{item.smallimage}}" alt="#" class="img-responsive">
+                        </a>
                     </div>
-                    <div class="sigma_service-body">
-                        <h5>{{item.title}}</h5>
-                        <p>{{item.text}} </p>
-                        <a (click)="onLocationClick(item.locationid)" class="btn-link">SELECT THIS PARK <i class="far fa-arrow-right"></i> </a>
+                    <div>
+                        <h5 style="color:white ;" >{{item.desc}}</h5>
+                        <p style="color:white ;">{{item.phone}}</p><p>{{item.address}} </p>
+                        
+                        <a (click)="onLocationClick(item.locations)" class="btn-link sigma_btn-custom">SELECT THIS PARK <i class="far fa-arrow-right"></i> </a>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="row"><div class="stroke-text text-center mb-5">&nbsp;</div></div>
+        <div class="row"><div><a href="tel:416-660-3882">416-660-3882</a>
     </div>
 </div>
-
-<app-footer [layout]="footerStyle"></app-footer>
+</div>
