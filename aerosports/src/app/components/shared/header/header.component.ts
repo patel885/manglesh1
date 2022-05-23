@@ -3,6 +3,9 @@ import { HelperService } from '../../services/helper.service';
 import { CommonService } from '../../services/common.service';
 import { Aerosports } from '../../models/aerosports';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ContactComponent } from '../../pages/contact/contact.component';
+import { ContactFormComponent } from '../../pages/contact/contact-form/contact-form.component';
 
 @Component({
   selector: 'app-header',
@@ -24,7 +27,9 @@ export class HeaderComponent extends HelperService implements OnDestroy  {
     autoplay: true
   };
   constructor(private route: ActivatedRoute, 
-    private router: Router,public helperService: HelperService, public commonService: CommonService) {
+    private router: Router,public helperService: HelperService, 
+    public commonService: CommonService,
+    public modalService: NgbModal) {
     super();
     //console.log(this.commonService.aerosports);
     this.navigation = this.commonService.aerosports;
@@ -84,6 +89,11 @@ export class HeaderComponent extends HelperService implements OnDestroy  {
 
   hasChildren(item: any){
     return item.children === undefined || item.children.length <= 0 ? false : true;
+  }
+
+  onInquireClick(){
+    this.modalService.open(ContactFormComponent, {backdrop: 'static',size: 'lg', keyboard: false, centered: true});
+    
   }
 
 }
