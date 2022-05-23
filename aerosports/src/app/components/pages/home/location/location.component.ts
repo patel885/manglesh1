@@ -15,6 +15,7 @@ export class LocationComponent implements OnInit {
   headerStyle = "tertiary-bg";
   // Footer Style
   footerStyle = "tertiary-bg"
+  
 
   constructor(public commonService: CommonService, private router: Router) { 
     //console.log(this.commonService.locationData);
@@ -27,9 +28,17 @@ export class LocationComponent implements OnInit {
 
   onLocationClick(location: string){
     //console.log(location);
-    this.commonService.location = location;
-    this.router.navigate([location + '/home']);
+    this.commonService.location = location;  
+    window.location.href=location + '/home'; 
+    // this.router.navigate([location + '/home']).then(() => {
+    //   window.location.reload();
+    // });;
+
+    
   }
+
+ 
+
 
   
 

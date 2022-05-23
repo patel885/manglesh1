@@ -14,7 +14,7 @@ import { CommonService, slideInAnimation } from './common.service';
 export class DynamicRouterService {
 
   constructor(private router:Router, private commonService: CommonService) {
-    console.log('Dynamic Router...'); 
+    //console.log('Dynamic Router...'); 
     this.commonService.aerosprots$.subscribe(s =>{
       this.buildDynamicRoute();
 
@@ -27,7 +27,7 @@ export class DynamicRouterService {
  
 
   public buildDynamicRoute(){ 
-    console.log(this.commonService.aerosports);
+    //console.log(this.commonService.aerosports);
     this.commonService.aerosports.forEach(s =>{
       //console.log(s);
       this.iterate(s, "/" + s.path);
@@ -42,13 +42,13 @@ export class DynamicRouterService {
     }
 
     var url = window.location.href;
-    console.log(url);
+    //console.log(url);
         var urlItems = url.split('/');
         if(urlItems.length >= 5){
           this.router.navigate([window.location.pathname]);
         }
 
-    console.log(this.modifiedRoutes);
+    //console.log(this.modifiedRoutes);
   }
 
   iterate(s: any, path: string){
@@ -61,12 +61,12 @@ export class DynamicRouterService {
          data:{
             Animation:slideInAnimation
         }} as Route
-        console.log(path);
-        console.log(route);
+        //console.log(path);
+        //console.log(route);
         this.modifiedRoutes.push(route)     
 
     }else{   
-      console.log('nochild');   
+      //console.log('nochild');   
         var route = {path: ":location" + path + (s.iscustom === 'y' ? "/" + s.path : "/:type") ,  
         component: this.getComponent(s.path,s.parentid),
         data:{

@@ -40,8 +40,8 @@ export class CommonService {
                   return (m.location.toUpperCase().indexOf(this.location.toUpperCase())>-1 || m.location=='');
         });    
         
-        console.log("fyfft");
-        console.log(this.location);
+        //console.log("fyfft");
+        //console.log(this.location);
         this.allPages=this.aerosports;
         this.BirthDayPackages = XLSX.utils.sheet_to_json(wb.Sheets["birthday packages"], {defval:""}) ;
         this.BirthDayPackages = this.BirthDayPackages.filter(m=>{         
@@ -52,16 +52,16 @@ export class CommonService {
         this.blogs = this.blogs.filter(m=>{         
           return (m.location.toUpperCase().indexOf(this.location.toUpperCase())>-1 || m.location=='');
         });           
-        console.log(this.blogs);
+        //console.log(this.blogs);
 
         this.config=XLSX.utils.sheet_to_json(wb.Sheets["config"], {defval:""});        
         this.config=this.config.filter(m=>{      
           m.value= m.value.replace(/\r?\n|\r/g, "<br/>");    
           return (m.location.toUpperCase().indexOf(this.location.toUpperCase())>-1 || m.location=='');
         });    
-        console.log('configtt');
-        console.log(this.location);
-        console.log(this.config);
+        //console.log('configtt');
+        //console.log(this.location);
+        //console.log(this.config);
         let result: any[] = [];
         this.aerosports.reduce((acc: any, place: any) =>{
         let plc = Object.assign(place, {"children": []});
@@ -77,7 +77,7 @@ export class CommonService {
 
         this.aerosports = result;
         this.locations = XLSX.utils.sheet_to_json(wb.Sheets["locations"], {defval:""}) ;
-        console.log(this.locations);
+        //console.log(this.locations);
         //console.log(this.router.url);
        
         var url = window.location.href;

@@ -3,13 +3,10 @@ import { Meta, Title } from '@angular/platform-browser';
 import { BreadcrumbService, Breadcrumb } from 'angular-crumbs';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { DynamicRouterService } from './components/services/dynamic-router.service';
-<<<<<<< HEAD
-import { CommonService } from './components/services/common.service';
+
 import { ActivatedRoute, Router } from '@angular/router';
 import * as replaceString from 'replace-string';
 
-
-=======
 import { CommonService, slideInAnimation } from './components/services/common.service';
 import {
   trigger,
@@ -19,7 +16,6 @@ import {
   transition,
   // ...
 } from '@angular/animations';
->>>>>>> bc7e12ee46699bfac0335c7bf1fb2fd2a33c28af
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -54,19 +50,20 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     
     this.breadcrumbService.breadcrumbChanged.subscribe(crumbs => {
-      console.log(this.router);
+      //console.log(this.router);
       //this.titleService.setTitle(this.createTitle(crumbs));
       this.buildSEO();
      // console.log('applog nginit'); 
     });
+    
     
   }
 
 buildSEO(){
     
     var pType = this.router.url.split('/').pop();  
-    console.log(pType); 
-    console.log(this.commonService.allPages);  
+    //console.log(pType); 
+    //console.log(this.commonService.allPages);  
     var d = this.commonService.allPages.filter(s =>{
       return s.path == pType;
     });
@@ -79,7 +76,8 @@ buildSEO(){
       this.createOrUpdateTag('og:title',this.metaTitleFormat,d);
       this.createOrUpdateTag('og:description',this.metaOgDesc,d);
       this.createOrUpdateTag('og:type',"website",d);
-      this.createOrUpdateTag('og:image',"",d);
+      if(d[0])
+        this.createOrUpdateTag('og:image',d[0].headerimage,d);
       this.createOrUpdateTag('og:url',window.location.href,d);
       // this.metaService.addTags([
       //   {name: 'robots', content: 'index,follow'},
@@ -94,7 +92,7 @@ buildSEO(){
 }
 
 createOrUpdateTag(nameValue: string, content: string, d:any){
-  console.log(this.metaService.getTag("name='" + nameValue + "'"));
+  //console.log(this.metaService.getTag("name='" + nameValue + "'"));
   this.metaService.getTag("name='" + nameValue + "'") ? 
           this.metaService.updateTag({name: nameValue, content: this.replaceValues(content,d)},"name='"+ nameValue +"'") : 
           this.metaService.addTag({name: nameValue, content: this.replaceValues(content,d)});
@@ -102,7 +100,7 @@ createOrUpdateTag(nameValue: string, content: string, d:any){
 }
 
 replaceValues(val: String, d:any){
-  console.log(d);
+  //console.log(d);
 
   var data = val.replace(this.locationFormat,this.commonService.location);
   data =  data.replace(this.featureFormat, d.length > 0 ? d[0].desc : '');
@@ -116,7 +114,7 @@ replaceValues(val: String, d:any){
   private createTitle(routesCollection: Breadcrumb[]) {
     const title = 'Aerosports Teampoline Park|Best Fun and Birthday Party Place';
     
-    console.log(routesCollection);
+    //console.log(routesCollection);
     const titles = routesCollection.filter((route) => route.displayName);
 
     if (!titles.length) { return title; }
