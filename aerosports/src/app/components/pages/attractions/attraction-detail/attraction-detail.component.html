@@ -1,8 +1,13 @@
 <app-header></app-header>
-<app-contact *ngIf="page.path=='contact-us'" ></app-contact>
-          
-<div *ngIf="page.path!='contact-us'" style="text-align: center; margin-top: 50px; margin-bottom: 50px;" [innerHTML]="page.section1"></div>
 
+<app-contact *ngIf="page.path=='contact-us'" ></app-contact>
+<section>          
+
+<div class="container" *ngIf="page.path!='contact-us'" >
+<br/><br/>
+<div class="text-center" [innerHTML]="page.section1"></div>
+<br/><br/>
+</div>
     <div id="parkrules" class="container">
         <div *ngIf="page.ruleyes!=''">
         <h5><i>{{page.desc}} Rules</i></h5>
@@ -25,5 +30,5 @@
         </ul>
        </div>
 </div>
-
+</section>
 <app-footer [layout]="footerStyle"></app-footer>
