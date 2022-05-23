@@ -34,8 +34,8 @@ import { BlogComponent } from './components/pages/blog/blog.component';
     BreadcrumbModule,
     NgbModule,
     HttpClientModule,
-    SlickCarouselModule,
-
+    SlickCarouselModule
+    
   ],
   providers: [CommonService,{
     provide: APP_INITIALIZER,

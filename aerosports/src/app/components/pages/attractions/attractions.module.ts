@@ -19,7 +19,7 @@ import { ContactComponent } from './attraction-detail/contact.component';
     SharedModule,
     NgbModule,
     SlickCarouselModule,
-    CountUpModule
+    CountUpModule   
   ]
 })
 export class AttractionsModule { }

@@ -21,6 +21,7 @@ import { AttractionsModule } from '../attractions/attractions.module';
 import { PartiesEventsModule } from '../parties-events/parties-events.module';
 import { FunckySectionComponent } from '../../shared/funckySection.component';
 
+
 @NgModule({
   declarations: [HomeComponent,  AboutTextComponent,  BrandsComponent, 
     ServicesComponent, CounterComponent,  TestimonialsComponent, BlogPostComponent, AboutUsComponent, 
