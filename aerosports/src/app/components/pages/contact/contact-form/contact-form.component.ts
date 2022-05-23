@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactService } from '../../../services/contact.service';
 import { Contact } from '../../../models/contact';
-import { NgbDateStruct, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDateStruct, NgbCalendar, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-contact-form',
   templateUrl: './contact-form.component.html',
@@ -12,7 +12,7 @@ export class ContactFormComponent implements OnInit {
   model = new Contact;
   submitted = false;
   error: {} | undefined;
-  constructor(private contactService: ContactService) { }
+  constructor(private contactService: ContactService, public activeModal: NgbActiveModal) { }
   onSubmit() {
     this.submitted = true; 
     return this.contactService.contactForm(this.model).subscribe(

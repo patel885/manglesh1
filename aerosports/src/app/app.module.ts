@@ -18,6 +18,8 @@ import { CampProgramsComponent } from './components/pages/parties-events/camp-pr
 import { ServicesComponent } from './components/pages/services/services.component';
 import { ServicesComponent as AeroSportsServiceComponent } from './components/pages/home/services/services.component';
 import { BlogComponent } from './components/pages/blog/blog.component';
+import { ContactComponent } from './components/pages/contact/contact.component';
+import { ContactFormComponent } from './components/pages/contact/contact-form/contact-form.component';
 
 
 
@@ -25,7 +27,9 @@ import { BlogComponent } from './components/pages/blog/blog.component';
   declarations: [
     AppComponent,
     ServicesComponent,
-    BlogComponent],
+    BlogComponent,
+    ContactComponent,
+    ContactFormComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -53,7 +57,9 @@ import { BlogComponent } from './components/pages/blog/blog.component';
     ServicesComponent,
     AeroSportsServiceComponent,
     ServicesComponent,
-    BlogComponent
+    BlogComponent,
+    ContactComponent,
+    ContactFormComponent
 
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
