@@ -30,8 +30,7 @@ import { PricingComponent } from './components/pages/pricing/pricing.component';
     ServicesComponent,
     BlogComponent,
     ContactComponent,
-    ContactFormComponent,
-    PricingComponent],
+    ContactFormComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -62,7 +61,7 @@ import { PricingComponent } from './components/pages/pricing/pricing.component';
     BlogComponent,
     ContactComponent,
     ContactFormComponent,
-    PricingComponent
+    PricingComponent 
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

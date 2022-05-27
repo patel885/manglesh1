@@ -20,6 +20,7 @@ import { LocationComponent } from './location/location.component';
 import { AttractionsModule } from '../attractions/attractions.module';
 import { PartiesEventsModule } from '../parties-events/parties-events.module';
 import { FunckySectionComponent } from '../../shared/funckySection.component';
+import { PricingModule } from '../pricing/pricing.module';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { FunckySectionComponent } from '../../shared/funckySection.component';
     SlickCarouselModule,
     CountUpModule,
     AttractionsModule,
-    PartiesEventsModule, 
+    PartiesEventsModule,
+    PricingModule 
   ]
 })
 export class HomeModule { }

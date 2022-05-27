@@ -11,12 +11,11 @@ import { BlockComponent } from './block/block.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { BrandsComponent } from './brands/brands.component';
 import { ServiceBlockComponent } from './service-block/service-block.component';
-import { AboutComponent } from './about/about.component';
 import { PlansComponent } from './plans/plans.component';
 
 
 @NgModule({
-  declarations: [ServicesComponent, BlockComponent, TestimonialsComponent, BrandsComponent, ServiceBlockComponent, AboutComponent, PlansComponent],
+  declarations: [ServicesComponent, BlockComponent, TestimonialsComponent, BrandsComponent, ServiceBlockComponent, PlansComponent],
   imports: [
     CommonModule,
     ServicesRoutingModule,

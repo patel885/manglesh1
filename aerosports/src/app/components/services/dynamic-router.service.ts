@@ -56,7 +56,7 @@ export class DynamicRouterService {
           this.router.navigate([window.location.pathname]);
         }
 
-    //console.log(this.modifiedRoutes);
+    console.log(this.modifiedRoutes);
   }
 
   iterate(s: any, path: string){
