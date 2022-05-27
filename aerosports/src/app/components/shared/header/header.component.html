@@ -1,14 +1,17 @@
 <header class="sigma_header style-6 can-sticky">
 <div class="container-fluid" style="background-color:white ;">
         <div class="row" >
-                <div class="col"> 
-                <a href="{{getconfig('estore')}}" target="_blank"  class="btn btn-info"><span class="cws_button_inner" data-bg_hover_color="#fec20b" data-bg_color="#3eb2cf" data-text_color="#fff">Buy a Pass</span></a>
+                <div class="col-sm p-2 justify-content-md-center"> 
+                <a href="{{getconfig('estore')}}" target="_blank"  class="btn sigma_btn-custom">
+                    Buy a Pass</a> &nbsp;
+                    <a href="{{getconfig('waiver')}}" target="_blank" class="btn sigma_btn-custom">
+                        Waiver&nbsp;&nbsp;&nbsp;&nbsp;</a>
                </div>
-               <div class="col">
-                <a href="{{getconfig('estore')}}" target="_blank" class="btn btn-info"><span class="cws_button_inner" data-bg_hover_color="" data-bg_color="" data-text_color="">Waiver</span></a>
-                </div>
-               <div class="col"> <a href="tel:{{location.phone}}"  class="btn btn-info"><span class="cws_button_inner" data-bg_hover_color="#fec20b" data-bg_color="#3eb2cf" data-text_color="#fff"><i class="fa fa-phone-square"></i> {{location.phone}}</span></a></div>
-                <div class="col"><a (click)="onInquireClick()"  class="btn btn-info "><span class="cws_button_inner" data-bg_hover_color="#c63107" data-bg_color="#ff4c7c" data-text_color="#fff"><i class="fa fa-calendar"></i> Inquire Now</span></a></div>
+                <div class="col-sm">&nbsp;</div>
+               <div class="col-sm p-2"> <a href="tel:{{location.phone}}"  class="btn sigma_btn-custom">
+                   <i class="fa fa-phone-square"></i> {{location.phone}}</a>&nbsp;&nbsp;&nbsp;
+                <a (click)="onInquireClick()"  class="btn sigma_btn-custom ">
+                    <i class="fa fa-calendar"></i> Inquire Now</a></div>
     
                 </div>
 
@@ -71,7 +74,7 @@
                             <span></span>
                         </li>
                     </ul>
-                    <a href='{{location.estore}}' class="sigma_btn-custom">Buy Now</a>
+                    <!--<a href='{{location.estore}}' class="sigma_btn-custom">Buy Now</a>-->
                 </div>
             </div>
         </div>
@@ -117,7 +120,7 @@
                                     <a routerLink="/{{commonService.location}}/home" ><img  src="/assets/image/logo_white.png"/></a>
                                     </div>
                                 </div>
-                                <div class="row" ><div>&nbsp;</div></div>
+                                
                                 <div class="row" >
                                     <div class="col text-center">
                                     <h1 class="stroke-text text-white animate__animated animate__fadeInLeftBig animate__delay-1s animate__1">
@@ -171,6 +174,8 @@
                                         </a>
                                     </div>
                                 </div>-->
+                                <div class="row" ><div>&nbsp;</div></div>
+                                <div class="row" ><div>&nbsp;</div></div>
                                 <div class="row" ><div>&nbsp;</div></div>
                                
                             </div>

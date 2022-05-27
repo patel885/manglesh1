@@ -18,7 +18,7 @@ export class HeaderComponent extends HelperService implements OnDestroy  {
   page!: Aerosports;
   pagetype!: string | any;
   someSubscription!: any;
-  
+  path!:string | any;
   settings = {
     slidesToShow: 1,
     slidesToScroll: 2,
@@ -36,15 +36,20 @@ export class HeaderComponent extends HelperService implements OnDestroy  {
     this.location=this.commonService.locations[0];
     console.log('navigation');
     this.pagetype = this.router.url.split('/').pop();
-    this.route.params.subscribe(routeParams => {
-        this.location = routeParams.location;    
-       // this.pagetype = routeParams.pagetype;
-     
-      });
+    
+    var urlitems=this.router.url.split('/');
+    this.path=this.router.url.split('/').pop();
+    console.log(urlitems);
+    console.log(this.path);
+       if(urlitems.length==2)
+       {
+          this.path="home";
+       }
+       console.log(this.path);
+       this.page =this.commonService.allPages.filter(m=>{
+        return m.path== this.path; 
+        })[0];
 
-      this.page = this.commonService.allPages.filter(s =>{
-        return s.path == this.pagetype;
-      })[0];
 
 
       this.router.routeReuseStrategy.shouldReuseRoute = function () {

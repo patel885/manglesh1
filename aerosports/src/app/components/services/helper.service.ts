@@ -13,7 +13,8 @@ export class HelperService implements OnInit, AfterViewInit {
     console.log('basehelper');    
   }
   // Sticky Nav
-   @HostListener('window:scroll', ['$event'])
+  /* 
+  @HostListener('window:scroll', ['$event'])
    onWindowScroll(_e: any) {
      if (window.pageYOffset > 100) {
        let element = <HTMLElement>document.getElementById('can-sticky');
@@ -22,7 +23,7 @@ export class HelperService implements OnInit, AfterViewInit {
        let element = <HTMLElement>document.getElementById('can-sticky');
        element.classList.remove('sticky');
      }
-   }
+   }*/
   // Navigation
   navmethod: boolean = true;
   toggleNav() {

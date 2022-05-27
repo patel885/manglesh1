@@ -6,6 +6,7 @@ import { PageTypes } from '../models/aerosports';
 import { AttractionDetailComponent } from '../pages/attractions/attraction-detail/attraction-detail.component';
 import { AttractionsComponent } from '../pages/attractions/attractions.component';
 import { BirthdayPartiesComponent } from '../pages/parties-events/birthday-parties/birthday-parties.component';
+import { PricingComponent } from '../pages/pricing/pricing.component';
 import { CommonService, slideInAnimation } from './common.service';
 
 @Injectable({
@@ -27,28 +28,35 @@ export class DynamicRouterService {
  
 
   public buildDynamicRoute(){ 
-    console.log(this.commonService.aerosports);
+    //console.log('starting');
+    
+    //console.log(this.modifiedRoutes);
+
+    //console.log(this.commonService.aerosports);
     this.commonService.aerosports.forEach(s =>{
       //console.log(s);
       this.iterate(s, "/" + s.path);
     });
 
     
+    //console.log(this.modifiedRoutes);
 
     if(this.modifiedRoutes.length > 0){
       this.routes.unshift(...this.modifiedRoutes);
       //console.log(this.routes);
       this.router.resetConfig(this.routes);
     }
+  //  console.log('after loca')
+   // console.log(this.modifiedRoutes);
 
     var url = window.location.href;
-    console.log(url);
+   // console.log(url);
         var urlItems = url.split('/');
-        if(urlItems.length >= 5){
+        if(urlItems.length >= 4){
           this.router.navigate([window.location.pathname]);
         }
 
-    console.log(this.modifiedRoutes);
+    //console.log(this.modifiedRoutes);
   }
 
   iterate(s: any, path: string){
@@ -61,12 +69,13 @@ export class DynamicRouterService {
          data:{
             Animation:slideInAnimation
         }} as Route
-        console.log(path);
-        console.log(route);
+      //  console.log(path);
+       // console.log(route);
         this.modifiedRoutes.push(route)     
 
     }else{   
-      console.log('nochild');   
+     // console.log('nochild'+s.path);   
+//console.log(":location" + path + (s.iscustom === 'y' ? "/" + s.path : "/:type"));
         var route = {path: ":location" + path + (s.iscustom === 'y' ? "/" + s.path : "/:type") ,  
         component: this.getComponent(s.path,s.parentid),
         data:{
@@ -115,6 +124,10 @@ export class DynamicRouterService {
         }
         case PageTypes.Groupseventssub:{
           return AttractionDetailComponent;
+        }
+        case  PageTypes.PricingComponent:{
+         //    console.log('PricingComponent');
+            return PricingComponent;
         }
     
         default:

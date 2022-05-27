@@ -1,3 +1,5 @@
+import { PricingComponent } from "../pages/pricing/pricing.component";
+
 export interface Aerosports {
     location:     string;
     desc:         string;
@@ -61,7 +63,6 @@ export const PageTypes = {
     BirthdayParties: 'kids-birthday-parties',
     Groupseventssub: 'groupseventssub',
     Faq:'faq',
-    contactus:"contactus"
-
-
+    contactus:"contactus",
+    PricingComponent:"pricing-promos"
 };

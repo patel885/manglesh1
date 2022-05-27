@@ -101,7 +101,11 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+               "robots.txt",
+               "sitemap.xml",
+               "sitemap_blogs.xml",
+			   "googlef01b1a9ca7cc84a0.html"
             ],
             "styles": [
               "src/styles.css"

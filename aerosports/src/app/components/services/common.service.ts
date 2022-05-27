@@ -14,6 +14,8 @@ export class CommonService {
   public aerosports: any[]  = [];
   public jsonData: any[]=[];
   public allPages:any[]=[];
+  public currentPage!:any;
+  
   public BirthDayPackages:any[]=[];
   public config:any[]=[]; 
   public locations:any[] = [];
@@ -31,17 +33,44 @@ export class CommonService {
     return this.httpClient.get('assets/data/menu.xlsx', { responseType: 'blob' }).pipe( tap(data =>{
       const reader: FileReader = new FileReader();
       reader.onload = (e: any) => {
+        var url = window.location.href;
+        var urlItems = url.split('/');
+        if(urlItems.length >= 4){
+          this.location = urlItems[3];
+
         const bstr: string = e.target.result;
         const wb: XLSX.WorkBook = XLSX.read(bstr, { type: 'binary' });
         const ws1: XLSX.WorkSheet = wb.Sheets["Data"]; 
        this.jsonData = XLSX.utils.sheet_to_json(ws1, {defval:""});        
        this.aerosports = this.jsonData.sort((i: any , j: any) => i.parentid - j.parentid).filter(m=>{
                 //m.section1= m.section1.replace(/\r?\n|\r/g, "<br/>");    
-                  return (m.location.toUpperCase().indexOf(this.location.toUpperCase())>-1 || m.location=='');
+                  return ((m.location.toUpperCase().indexOf(this.location.toUpperCase())>-1 || m.location=='') && m.isactive=='1' );
         });    
-        
-        console.log("fyfft");
+      /*****************getting current page*********************** */
+      var path=url.split('/').pop();
+       if(urlItems.length==4)
+       {
+          path="home";
+       }
+        this.currentPage =this.aerosports.filter(m=>{
+               return m.path.toUpperCase()== path?.toUpperCase();  
+        })[0];
+        /*****************end getting current page*********************** */
+        this.locations = XLSX.utils.sheet_to_json(wb.Sheets["locations"], {defval:""}) ;
+     /*   console.log(this.locations);
         console.log(this.location);
+        var sitemap='<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+        this.locations.forEach(t=>{
+          this.jsonData.forEach(data=>{
+            if(data.location.toUpperCase().indexOf(t.locations.toUpperCase())>-1 ||data.location=='')
+              sitemap=sitemap+'<url><loc>https://www.aerosportsparks.ca/'+t.locations+'/'+data.parentid+'/'+data.path  +'</loc></url>';
+          })
+
+        });
+        sitemap=sitemap+'</urlset>';
+
+        console.log("sitemap");
+        console.log(sitemap);*/
         this.allPages=this.aerosports;
         this.BirthDayPackages = XLSX.utils.sheet_to_json(wb.Sheets["birthday packages"], {defval:""}) ;
         this.BirthDayPackages = this.BirthDayPackages.filter(m=>{         
@@ -76,25 +105,21 @@ export class CommonService {
         },[]);
 
         this.aerosports = result;
-        this.locations = XLSX.utils.sheet_to_json(wb.Sheets["locations"], {defval:""}) ;
-        console.log(this.locations);
-        //console.log(this.router.url);
        
-        var url = window.location.href;
-        var urlItems = url.split('/');
-        if(urlItems.length >= 5){
-          var tempLocation = urlItems[3];
 
-          var pagetype = urlItems[4];
-          var actualLocation = this.locations.filter(s => {
-            return s.locations === tempLocation;
+//          var pagetype = urlItems[4];
+        if(this.location!='')
+        {
+          this.locations = this.locations.filter(s => {
+            return s.locations === this.location;
           });
+        }
 
 
-         if(actualLocation !== undefined && actualLocation.length > 0){
+        /* if(actualLocation !== undefined && actualLocation.length > 0){
            this.location = tempLocation;
            //this.router.navigate([window.location.pathname]);
-         }
+         }*/
         }
 
         this.aerosprots$.next(this.aerosports);

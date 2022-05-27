@@ -1758,7 +1758,7 @@ textarea {
 }
 
 .form-control {
-    height: 20px;
+    height: auto;
     padding: 8px 10px;
     border-radius: 5px;
     border: 1px solid #efefef;
@@ -2596,7 +2596,7 @@ table img {
 .sigma_header {
   position: relative;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.03);
-  background-color: #2874fc !important;
+  background-color: black !important;
 }
 
 .navbar {
@@ -2912,7 +2912,7 @@ table img {
   cursor: pointer;
   width: 58px;
   height: 58px;
-  border: 1px solid #efefef;
+  
   border-radius: 10px;
   transition: 0.3s;
 }

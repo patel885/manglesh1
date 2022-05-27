@@ -12,7 +12,8 @@ import {
   transition,
   // ...
 } from '@angular/animations';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+declare let gtag: Function;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -42,7 +43,20 @@ export class AppComponent implements OnInit {
     private breadcrumbService: BreadcrumbService,
     dynamicService: DynamicRouterService,
     private commonService: CommonService, private router: Router, 
-    private route:ActivatedRoute) {
+    private route:ActivatedRoute
+    
+    ) {
+      this.router.events.subscribe(event => {
+        if(event instanceof NavigationEnd){
+            gtag('config', 'UA-50747130-3', 
+                  {
+                    'page_path': event.urlAfterRedirects
+                  }
+                 );
+         }
+      }
+   );
+     
     //console.log('applog constructor');    
   }
   

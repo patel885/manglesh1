@@ -20,6 +20,7 @@ import { ServicesComponent as AeroSportsServiceComponent } from './components/pa
 import { BlogComponent } from './components/pages/blog/blog.component';
 import { ContactComponent } from './components/pages/contact/contact.component';
 import { ContactFormComponent } from './components/pages/contact/contact-form/contact-form.component';
+import { PricingComponent } from './components/pages/pricing/pricing.component';
 
 
 
@@ -29,7 +30,8 @@ import { ContactFormComponent } from './components/pages/contact/contact-form/co
     ServicesComponent,
     BlogComponent,
     ContactComponent,
-    ContactFormComponent],
+    ContactFormComponent,
+    PricingComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -59,8 +61,8 @@ import { ContactFormComponent } from './components/pages/contact/contact-form/co
     ServicesComponent,
     BlogComponent,
     ContactComponent,
-    ContactFormComponent
-
+    ContactFormComponent,
+    PricingComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

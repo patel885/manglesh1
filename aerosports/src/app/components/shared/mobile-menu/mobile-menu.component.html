@@ -1,6 +1,5 @@
 <div class="sigma_logo-wrapper">
     <a class="sigma_logo" routerLink="/">
-
         <img src="assets/image/logo.png" alt="logo">
     </a>
 </div>
@@ -9,10 +8,10 @@
     <li class="menu-item" 
     *ngFor="let item of navigation">
        <a href="javascript:void(0)" (click)="trigger(item)" *ngIf="hasChildren(item)">{{item.desc}}</a>
-        <a routerLink="/{{commonService.location}}/{{item.path}}" *ngIf="!hasChildren(item)">{{item.desc}}</a>
+        
        
         <ul class="sub-menu" *ngIf="hasChildren(item)" [ngClass]="item.open ? 'd-block' : ''">
-           
+            <a routerLink="/{{commonService.location}}/{{item.path}}" *ngIf="hasChildren(item)">{{item.desc}}</a>   
             <li class="menu-item" [ngClass]="hasChildren(citem) ? 'menu-item-has-children' : ''"
             *ngFor="let citem of item.children">
             <a href="javascript:void(0)" *ngIf="hasChildren(citem)">{{citem.desc}}</a>
