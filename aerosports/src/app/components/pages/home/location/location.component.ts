@@ -29,7 +29,7 @@ export class LocationComponent implements OnInit {
     //console.log(location);
     this.commonService.location = location;
     //this.router.navigate([location + '/home']);
-    window.location.href=location + '/home';
+    window.location.href=location + '/';
   }
 
   

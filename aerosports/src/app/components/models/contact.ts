@@ -1,11 +1,13 @@
 export class Contact {
-    id: number | undefined;
-    name: string | undefined;
-    email: string | undefined;
-    phone?: string | undefined;
-    subject: string | undefined;
-    eventDate:string|undefined;
-    eventtime:string |undefined;
-    location:string|undefined;
-    message: string | undefined;
+    name: string = "";
+    email: string ="";
+    phone?: string ="";
+    subject: string ="";
+    eventDate:string="";
+    eventtime:string ="";
+    location:string="";
+    message: string ="";
+    locationEmail:string="";
+    status:string="";
+    eventType:string="";
 }

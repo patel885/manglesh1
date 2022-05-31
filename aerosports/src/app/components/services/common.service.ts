@@ -44,7 +44,7 @@ export class CommonService {
        this.jsonData = XLSX.utils.sheet_to_json(ws1, {defval:""});        
        this.aerosports = this.jsonData.sort((i: any , j: any) => i.parentid - j.parentid).filter(m=>{
                 //m.section1= m.section1.replace(/\r?\n|\r/g, "<br/>");    
-                  return ((m.location.toUpperCase().indexOf(this.location.toUpperCase())>-1 || m.location=='') && m.isactive=='1' );
+                  return ((m.location.toUpperCase().indexOf(this.location.toUpperCase())>-1 || m.location=='') );
         });    
       /*****************getting current page*********************** */
       var path=url.split('/').pop();
@@ -57,7 +57,7 @@ export class CommonService {
         })[0];
         /*****************end getting current page*********************** */
         this.locations = XLSX.utils.sheet_to_json(wb.Sheets["locations"], {defval:""}) ;
-     /*   console.log(this.locations);
+        console.log(this.locations);
         console.log(this.location);
         var sitemap='<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
         this.locations.forEach(t=>{
@@ -70,7 +70,7 @@ export class CommonService {
         sitemap=sitemap+'</urlset>';
 
         console.log("sitemap");
-        console.log(sitemap);*/
+        console.log(sitemap);
         this.allPages=this.aerosports;
         this.BirthDayPackages = XLSX.utils.sheet_to_json(wb.Sheets["birthday packages"], {defval:""}) ;
         this.BirthDayPackages = this.BirthDayPackages.filter(m=>{         

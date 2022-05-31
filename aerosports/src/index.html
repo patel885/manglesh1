@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,24 +6,41 @@
   <title>Aerosports - A </title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="assets/img/home/Favicon_Icon_aerosports.png">
+  <link rel="icon" type="image/x-icon" href="assets/image/Favicon_Icon_aerosports.png">
   <link  rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-  <link href="assets/css/plugins/font-awesome.css" rel="stylesheet">
+  
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-50747130-3"></script>
   <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
   </script>
-  <script>
-    var cu=window.location.href;
-    if(cu.indexOf('bramption')>0)
-       window.location.href='https://aerosportsbrampton.ca/'
-    if(cu.indexOf('park-features')>0)
-      window.location.href='https://aerosportsparks.ca/oakville/attractions'
-    
-    
-  </script>
+<script>
+  var cu=window.location.href;
+  if(cu.indexOf('brampton')>0)
+  {
+     window.location.href='https://aerosportsbrampton.ca/';
+     
+  }
+  if(cu.indexOf('park-features')>0)
+  {
+    window.location.href='https://aerosportsparks.ca/oakville/attractions';
+  
+  }
+  if(cu.indexOf('pricing')>0)
+  {
+    window.location.href='https://aerosportsparks.ca/oakville/pricing-promos';
+  }
+  
+  if(cu.indexOf('jump')>0)
+  {
+    window.location.href='https://aerosportsparks.ca/oakville/open-jumps';
+  }
+  
+  
+  
+</script>
+
 </head>
 <body>
   <app-root></app-root>

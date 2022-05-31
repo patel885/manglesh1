@@ -78,7 +78,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "aerosports-website:build"
+            "browserTarget": "aerosports-website:build"            
           },
           "configurations": {
             "production": {
@@ -101,11 +101,11 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
+			         "src/googlef01b1a9ca7cc84a0.html",         
               "src/assets",
                "robots.txt",
                "sitemap.xml",
-               "sitemap_blogs.xml",
-			   "googlef01b1a9ca7cc84a0.html"
+               "sitemap_blogs.xml"
             ],
             "styles": [
               "src/styles.css"

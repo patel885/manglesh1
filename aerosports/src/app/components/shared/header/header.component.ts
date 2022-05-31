@@ -21,7 +21,7 @@ export class HeaderComponent extends HelperService implements OnDestroy  {
   path!:string | any;
   settings = {
     slidesToShow: 1,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     arrows: false,
     dots: false,
     autoplay: true
@@ -32,7 +32,9 @@ export class HeaderComponent extends HelperService implements OnDestroy  {
     public modalService: NgbModal) {
     super();
     //console.log(this.commonService.aerosports);
-    this.navigation = this.commonService.aerosports;
+    this.navigation = this.commonService.aerosports.filter(t=>{
+      return t.isactive=='1';
+    });
     this.location=this.commonService.locations[0];
     console.log('navigation');
     this.pagetype = this.router.url.split('/').pop();
@@ -71,7 +73,7 @@ export class HeaderComponent extends HelperService implements OnDestroy  {
     }
   }
   getconfig(key:string): string {
-    console.log(this.commonService.config);
+//    console.log(this.commonService.config);
     var s = this.commonService.config.filter(t=>{
       return t.key==key;
     }) [0].value;
@@ -84,7 +86,7 @@ export class HeaderComponent extends HelperService implements OnDestroy  {
   @Input() hideMenu: boolean = false;
 
   onLinkClick(link: string){
-    console.log(link);
+   // console.log(link);
   }
 
   hasLink(item: any){

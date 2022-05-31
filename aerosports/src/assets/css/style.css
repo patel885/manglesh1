@@ -2044,10 +2044,29 @@ textarea {
 .sigma_btn-custom.secondary::before{
     background-color: #353535;
 }
-
+.btn-sm {
+  padding: 5px 26px;
+  font-size: 16px;
+  color: black;
+}
+@media only screen and (max-width: 500px) {
+  .btn-sm {
+    padding: 5px 5px;
+    font-size: 12px;
+    color: black;
+  }
+  .btn-sm:hover {
+    background-color:  #489bc7;
+    color: white;
+  }
+}
+.btn-sm:hover {
+  background-color:  #489bc7;
+  color: white;
+}
 .sigma_btn-custom.btn-sm {
-    padding: 12px 26px;
-    font-size: 14px;
+    padding: 5px 26px;
+    font-size: 12px;
 }
 .sigma_btn-custom.btn-pill{
   border-radius: 55px;
@@ -2941,7 +2960,7 @@ table img {
   width: 20px;
   height: 2px;
   border-radius: 3px;
-  background-color: #222222;
+  background-color: white;
   transition: .3s;
   transform-origin: right;
 }
@@ -3760,7 +3779,7 @@ table img {
 
 .sigma_footer {
   
-  background-image: url('../image/footer_bg.png');
+  background-image: url('/assets/image/footer_bg.png');
   padding: 80px 0;
   background-size: cover;
   background-position: center;

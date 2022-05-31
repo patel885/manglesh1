@@ -9,18 +9,21 @@ import { Contact } from '../models/contact';
 })
 export class ContactService {
 
-  ServerUrl = 'https://slidesigma.nyc/scripts/sendmail.php';
+  ServerUrl = 'https://apis-351216.nn.r.appspot.com/api/email';
   errorData: {} | undefined;
 
   httpOptions = {
-    headers: new HttpHeaders({'Content-Type': 'application/json'})
+    
+    headers: new HttpHeaders({"Access-Control-Allow-Origin":"*"})
   };
 
   constructor( private http: HttpClient ) { }
 
   contactForm(formdata: Contact) {
+    console.log(formdata);
     return this.http.post<Contact>(this.ServerUrl, formdata, this.httpOptions).pipe(
       catchError(this.handleError)
+      
     );
   }
 

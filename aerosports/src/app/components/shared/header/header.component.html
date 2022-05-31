@@ -1,52 +1,50 @@
 <header class="sigma_header style-6 can-sticky">
-<div class="container-fluid" style="background-color:white ;">
-        <div class="row" >
-                <div class="col-sm p-2 justify-content-md-center"> 
-                <a href="{{getconfig('estore')}}" target="_blank"  class="btn sigma_btn-custom">
-                    Buy a Pass</a> &nbsp;
-                    <a href="{{getconfig('waiver')}}" target="_blank" class="btn sigma_btn-custom">
-                        Waiver&nbsp;&nbsp;&nbsp;&nbsp;</a>
-               </div>
-                <div class="col-sm">&nbsp;</div>
-               <div class="col-sm p-2"> <a href="tel:{{location.phone}}"  class="btn sigma_btn-custom">
-                   <i class="fa fa-phone-square"></i> {{location.phone}}</a>&nbsp;&nbsp;&nbsp;
-                <a (click)="onInquireClick()"  class="btn sigma_btn-custom ">
-                    <i class="fa fa-calendar"></i> Inquire Now</a></div>
-    
-                </div>
-
+    <div class="container-fluid" style="background-color:white ;">
+        <div class="row">
+            <div class="col-sm"><a href="{{getconfig('waiver')}}" target="_blank" class="btn-sm">
+                    Waiver</a><a href="tel:{{location.phone}}"
+                    class="btn-sm">
+                    <i class="fa fa-phone-square"></i> {{location.phone}}</a>
+                <a (click)="onInquireClick()" class="btn-sm ">
+                    <i class="fa fa-calendar"></i> Inquire Now</a>
             </div>
 
-        
+        </div>
+
+    </div>
+
+
 
     <div class="sigma_header-middle aside-toggle">
         <div class="container-fluid">
             <div class="navbar" (click)="toggleNav()">
-                
-                    <ul class="sigma_header-controls-inner">
-                        <li class="aside-toggle aside-trigger">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </li>
-                    </ul>
-                
+
+                <ul class="sigma_header-controls-inner">
+                    <li class="aside-toggle aside-trigger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </li>
+                </ul>
+
             </div>
         </div>
     </div>
-    <div class="sigma_header-bottom" >
+    <div class="sigma_header-bottom">
         <div class="container">
             <div class="navbar" *ngIf="!hideMenu">
-                <ul class="navbar-nav" >
+                <ul class="navbar-nav">
                     <li class="menu-item" [ngClass]="hasChildren(item) ? 'menu-item-has-children' : ''"
                         *ngFor="let item of navigation">
                         <a href="javascript:void(0)" *ngIf="!hasLink(item)">{{item.desc}}</a>
-                        <a routerLink="/{{commonService.location}}/{{item.path}}" *ngIf="hasLink(item)">{{item.desc}}</a>
+                        <a routerLink="/{{commonService.location}}/{{item.path}}"
+                            *ngIf="hasLink(item)">{{item.desc}}</a>
                         <ul class="sub-menu" *ngIf="hasChildren(item)" [ngClass]="item.open ? 'd-block' : ''">
                             <li class="menu-item" [ngClass]="hasChildren(citem) ? 'menu-item-has-children' : ''"
                                 *ngFor="let citem of item.children">
                                 <a href="javascript:void(0)" *ngIf="hasChildren(citem)">{{citem.desc}}</a>
-                                <a routerLink="/{{commonService.location}}/{{item.path}}/{{citem.path}}" *ngIf="!hasChildren(citem)">{{citem.desc}}</a>
+                                <a routerLink="/{{commonService.location}}/{{item.path}}/{{citem.path}}"
+                                    *ngIf="!hasChildren(citem)">{{citem.desc}}</a>
                                 <!-- <ul class="sub-menu" *ngIf="item.child" [ngClass]="item.open ? 'd-block' : ''">
                                     <li class="menu-item" *ngFor="let item of item.submenu">
                                         <a routerLink="{{item.link}}">{{item.linkText}} </a>
@@ -59,7 +57,8 @@
                 <div class="sigma_header-controls style-2 d-flex">
                     <ul class="sigma_header-controls-inner">
                         <li class="search-trigger header-controls-item d-none d-sm-block">
-                            <a class="sigma_header-control-search" title="Search" href="javascript:void(0)" (click)="searchToggle()">
+                            <a class="sigma_header-control-search" title="Search" href="javascript:void(0)"
+                                (click)="searchToggle()">
                                 <i class="fal fa-search"></i>
                             </a>
                         </li>
@@ -67,11 +66,13 @@
                             <span></span>
                             <span></span>
                             <span></span>
+                            
                         </li>
                         <li class="aside-toggle aside-trigger">
                             <span></span>
                             <span></span>
                             <span></span>
+                            
                         </li>
                     </ul>
                     <!--<a href='{{location.estore}}' class="sigma_btn-custom">Buy Now</a>-->
@@ -79,7 +80,7 @@
             </div>
         </div>
     </div>
-     
+
 </header>
 <!-- Search -->
 <div class="search-form-wrapper" [ngClass]="searchmethod ? '' : 'open'">
@@ -108,40 +109,43 @@
     </div>
     <app-mobile-menu></app-mobile-menu>
 </aside>
- 
-    <div class="sigma_banner banner-2" *ngIf="page.headerimage != ''">            
-        <ngx-slick-carousel #slickModal="slick-carousel" [config]="settings"
-        class="sigma_banner-slider" *ngIf="page.headerimage.split(',') != [] ">
-            <div ngxSlickItem class="slide"  *ngFor="let item of page.headerimage.split(',')">
-                        <div id="header1" class="mobileheader" style="background-image: url('{{item}}');" >
-                            <div class="container text-white">
-                                <div class="row ">
-                                    <div class="col-sm  d-flex align-items-left">
-                                    <a routerLink="/{{commonService.location}}/home" ><img  src="/assets/image/logo_white.png"/></a>
-                                    </div>
-                                </div>
-                                
-                                <div class="row" >
-                                    <div class="col text-center">
-                                    <h1 class="stroke-text text-white animate__animated animate__fadeInLeftBig animate__delay-1s animate__1">
-                                     {{page.title}}
-                                    </h1>   
-                                </div>
-                                </div>          
-                                <!--<div class="row justify-content-md-center">
+
+<div class="sigma_banner banner-2" *ngIf="page.headerimage != ''">
+    <ngx-slick-carousel #slickModal="slick-carousel" [config]="settings" class="sigma_banner-slider"
+        *ngIf="page.headerimage.split(',') != [] ">
+        <div ngxSlickItem class="slide" *ngFor="let item of page.headerimage.split(',')">
+            <div id="header1" class="mobileheader" style="background-image: url('{{item}}');">
+                <div class="container text-white">
+                    <div class="row ">
+                        <div class="col-sm  d-flex align-items-left">
+                            <a routerLink="/{{commonService.location}}"><img
+                                    src="/assets/image/logo/logo_white.png" /></a>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col text-center">
+                            <h1
+                                class="stroke-text text-white animate__animated animate__fadeInLeftBig animate__delay-0.1s animate__1">
+                                {{page.title}}
+                            </h1>
+                        </div>
+                    </div>
+                    <!--<div class="row justify-content-md-center">
                                 <div style="color:white ; font-size:70px;font-weight: bolder;"
                                  class="animate__animated animate__fadeInRightBig animate__delay-1s animate__1">
                                     &nbsp;TRAMPOLINE PARK                                                                
                             </div></div>-->
-                            <div class="row">
-                                <div  class="col text-center">
-                                <h6 class="text-white animate__animated animate__fadeInLeftBig animate__delay-1s animate__1"> 
-                                       {{page.smalltext}}</h6>
-                                </div>
-                            
-                                </div>
+                    <div class="row">
+                        <div class="col text-center">
+                            <h6
+                                class="text-white animate__animated animate__fadeInLeftBig animate__delay-0.1s animate__1">
+                                {{page.smalltext}}</h6>
+                        </div>
 
-<!---                            <div class="row justify-content-md-center">
+                    </div>
+
+                    <!---                            <div class="row justify-content-md-center">
                             <div class="col col-lg-4 animate__animated animate__flash animate__delay-2s animate__1"><p>HAVE FUN AND KEEP FIT</p>
                                 <p>JUMP, FLIP , BOUNCE</p>
                                 <p>VISIT AEROSPORTS TODAY</p>
@@ -156,14 +160,16 @@
                                         </div>
 
                                 </div>-->
-                                <div class="row">
-                                    <div class="col section-button text-center animate__animated animate__fadeInLeftBig animate__delay-2s animate__1">
-                                        <a href="{{getconfig('estore')}}" class="sigma_btn-custom">Book Now<i class="far fa-arrow-right"></i> </a>
-                                    </div>
+                    <div class="row">
+                        <div
+                            class="col section-button text-center animate__animated animate__fadeInLeftBig animate__delay-0.1s animate__1">
+                            <a href="{{getconfig('estore')}}" class="sigma_btn-custom">Book Now<i
+                                    class="far fa-arrow-right"></i> </a>
+                        </div>
 
-                               </div>
-                               
-                               <!--
+                    </div>
+
+                    <!--
                                    <div class="row justify-content-md-center">
                                         <div class="offset-lg-2 col-lg-4 d-none d-lg-block">
                                     
@@ -174,12 +180,8 @@
                                         </a>
                                     </div>
                                 </div>-->
-                                <div class="row" ><div>&nbsp;</div></div>
-                                <div class="row" ><div>&nbsp;</div></div>
-                                <div class="row" ><div>&nbsp;</div></div>
-                               
-                            </div>
-                        </div>
-                    </div>                  
+                </div>
+            </div>
+        </div>
     </ngx-slick-carousel>
-    </div>
+</div>

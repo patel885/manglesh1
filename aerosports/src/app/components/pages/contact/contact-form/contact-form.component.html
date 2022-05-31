@@ -8,7 +8,7 @@
           
             <div class="row">
                 <div class="offset-lg-1 col-lg-10">
-                    <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+                    <form (ngSubmit)="onSubmit()" ngNativeValidate #contactForm="ngForm">
                         
                                 <div class="form-group">
                                     <i class="far fa-user"></i>
@@ -20,13 +20,13 @@
                                 </div>
                                 <div class="form-group">
                                     <i class="far fa-envelope"></i>
-                                    <input type="phone" placeholder="Phone" class="form-control" name="phone" [(ngModel)]="model.phone" required>
+                                    <input type="phone" placeholder="Phone" class="form-control" name="phone" [(ngModel)]="model.phone">
                                 </div>
                     
                                 <div class="form-group">
                                     <i class="far fa-envelope"></i>
-                                    <select [(ngModel)]="model.subject" class="form-control"  placeholder="Subject" required name="cmbEvent" class="form-control">
-                                        <option value="" selected>Event</option>
+                                    <select [(ngModel)]="model.eventType" class="form-control" required  name="cmbEvent" class="form-control">
+                                        <option value="" disabled selected>Select Event</option>
                                         <option value="BirthDay">BirthDay Party</option>
                                         <option value="Group Booking">Group Booking</option>
                                         <option value="Admission">Admission</option>
@@ -36,15 +36,17 @@
                                   
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" [(ngModel)]="model.eventDate" placeholder="yyyy-mm-dd"
-                                           name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                                    <input class="form-control" required [(ngModel)]="model.eventDate" required placeholder="yyyy-mm-dd" name="dp">
+                                    
+                                    <!--<input class="form-control" [(ngModel)]="model.eventDate" placeholder="yyyy-mm-dd"
+                                           name="dp" ngbDatepicker #d="ngbDatepicker">
                                     <div class="input-group-append">
                                       <button class="btn btn-info" (click)="d.toggle()" type="button">Select</button>
-                                    </div>
+                                    </div>-->
                                   </div>
                                   <div class="form-group">
                                        <select [(ngModel)]="model.eventtime" placeholder="Time" required name="cmbEventTime" class="form-control">
-                                        <Option value="Time"></Option>
+                                        <Option value="" selected>Time</Option>
                                         <option>10 AM</option>
                                         <option>11 AM</option>
                                         <option>12 AM</option>
@@ -73,7 +75,7 @@
                             </ngb-alert>
                         </div>
                         <div [hidden]="!submitted" class="contact-message w-100 mt-4">
-                            <div *ngIf="model.id" class="contact-success w-100">
+                            <div  class="contact-success w-100">
                                 <ngb-alert type="success" class="mb-0 w-100" [dismissible]="false">
                                     <strong>Success!</strong> Contact form has been successfully submitted.
                                 </ngb-alert>
