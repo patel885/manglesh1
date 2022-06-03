@@ -24,37 +24,20 @@ export class DynamicRouterService {
 
   routes = routes;
   modifiedRoutes: Route[] = [];
-
- 
-
   public buildDynamicRoute(){ 
-    //console.log('starting');
-    
-    //console.log(this.modifiedRoutes);
-
-    //console.log(this.commonService.aerosports);
     this.commonService.aerosports.forEach(s =>{
-      //console.log(s);
       this.iterate(s, "/" + s.path);
     });
 
-    
-    //console.log(this.modifiedRoutes);
-
-    if(this.modifiedRoutes.length > 0){
-      this.routes.unshift(...this.modifiedRoutes);
-      //console.log(this.routes);
-      this.router.resetConfig(this.routes);
-    }
-  //  console.log('after loca')
-   // console.log(this.modifiedRoutes);
-
-    var url = window.location.href;
-   // console.log(url);
-        var urlItems = url.split('/');
-        if(urlItems.length >= 4){
-          this.router.navigate([window.location.pathname]);
-        }
+  if(this.modifiedRoutes.length > 0){
+    this.routes.unshift(...this.modifiedRoutes);
+    this.router.resetConfig(this.routes);
+  }
+  var url = window.location.href;
+      var urlItems = url.split('/');
+      if(urlItems.length >= 4){
+        this.router.navigate([window.location.pathname]);
+      }
 
     console.log(this.modifiedRoutes);
   }
@@ -65,33 +48,13 @@ export class DynamicRouterService {
       Array.from(s.children).forEach(child =>{
         this.iterate(child, path);
       });
-        var route = {path: ":location" + path  ,  component: this.getComponent(s.path,s.parentid),
-         data:{
-            Animation:slideInAnimation
-        }} as Route
-      //  console.log(path);
-       // console.log(route);
-        this.modifiedRoutes.push(route)     
-
-    }else{   
-     // console.log('nochild'+s.path);   
-//console.log(":location" + path + (s.iscustom === 'y' ? "/" + s.path : "/:type"));
-        var route = {path: ":location" + path + (s.iscustom === 'y' ? "/" + s.path : "/:type") ,  
-        component: this.getComponent(s.path,s.parentid),
-        data:{
-          Animation:slideInAnimation
-        }
-      } as Route
-        this.modifiedRoutes.push(route)
-        
-      }
-
+    }
+    var route = {path: ":location" + path + (s.parentid === '' ? '' : "/:type")  ,  component: this.getComponent(s.path)} as Route;
+      this.modifiedRoutes.push(route)    ; 
     
-
-   
   }
 
-  getComponent(type: string, parentid:string): Type<any> {
+  getComponent(type: string): Type<any> {
     
     switch (type) {
         case PageTypes.PartiesEvents: {
@@ -126,7 +89,7 @@ export class DynamicRouterService {
           return AttractionDetailComponent;
         }
         case  PageTypes.PricingComponent:{
-         //    console.log('PricingComponent');
+             console.log('PricingComponent');
             return PricingComponent;
         }
     

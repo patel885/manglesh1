@@ -33,10 +33,12 @@ export class HeaderComponent extends HelperService implements OnDestroy  {
     super();
     //console.log(this.commonService.aerosports);
     this.navigation = this.commonService.aerosports.filter(t=>{
+      t.children=t.children.filter((s: { isactive: string; })=>
+        {return s.isactive=='1';});
       return t.isactive=='1';
     });
     this.location=this.commonService.locations[0];
-    console.log('navigation');
+    console.log(this.navigation);
     this.pagetype = this.router.url.split('/').pop();
     
     var urlitems=this.router.url.split('/');

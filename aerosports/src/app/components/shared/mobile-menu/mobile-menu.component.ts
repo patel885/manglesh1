@@ -15,10 +15,15 @@ export class MobileMenuComponent extends HelperService {
     
     ) {
     super();
-    console.log('mobilemenu');
-    console.log(commonService.aerosports);
     
-    this.navigation= commonService.aerosports;
+    this.navigation = this.commonService.aerosports.filter(t=>{
+      t.children=t.children.filter((s: { isactive: string; })=>
+      {return s.isactive=='1';});
+      return t.isactive=='1';
+    });
+    console.log('mobilemenu');
+    console.log(this.navigation);
+    
   }
  
   onLinkClick(link: string){

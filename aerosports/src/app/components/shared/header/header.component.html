@@ -1,11 +1,10 @@
 <header class="sigma_header style-6 can-sticky">
-    <div class="container-fluid" style="background-color:white ;">
+    <div class="container-fluid" style="background-color:white ; ">
         <div class="row">
-            <div class="col-sm"><a href="{{getconfig('waiver')}}" target="_blank" class="btn-sm">
-                    Waiver</a><a href="tel:{{location.phone}}"
-                    class="btn-sm">
+            <div class="col-sm" ><a style="color:red ; font-weight: bolder;" href="{{getconfig('waiver')}}" target="_blank" class="btn-sm">
+                    Waiver</a><a href="tel:{{location.phone}}"    style="color:red ; font-weight: bolder;"   class="btn-sm">
                     <i class="fa fa-phone-square"></i> {{location.phone}}</a>
-                <a (click)="onInquireClick()" class="btn-sm ">
+                <a (click)="onInquireClick()" class="btn-sm " style="color:red ; font-weight: bolder;">
                     <i class="fa fa-calendar"></i> Inquire Now</a>
             </div>
 
@@ -40,7 +39,7 @@
                         <a routerLink="/{{commonService.location}}/{{item.path}}"
                             *ngIf="hasLink(item)">{{item.desc}}</a>
                         <ul class="sub-menu" *ngIf="hasChildren(item)" [ngClass]="item.open ? 'd-block' : ''">
-                            <li class="menu-item" [ngClass]="hasChildren(citem) ? 'menu-item-has-children' : ''"
+                            <li class="menu-item"  [ngClass]="hasChildren(citem) ? 'menu-item-has-children' : ''"
                                 *ngFor="let citem of item.children">
                                 <a href="javascript:void(0)" *ngIf="hasChildren(citem)">{{citem.desc}}</a>
                                 <a routerLink="/{{commonService.location}}/{{item.path}}/{{citem.path}}"
@@ -163,8 +162,8 @@
                     <div class="row">
                         <div
                             class="col section-button text-center animate__animated animate__fadeInLeftBig animate__delay-0.1s animate__1">
-                            <a href="{{getconfig('estore')}}" class="sigma_btn-custom">Book Now<i
-                                    class="far fa-arrow-right"></i> </a>
+                            <a href="{{getconfig('estore')}}" target="_blank" class="sigma_btn-custom">Book Now<i
+                                    class="far fa-arrow-right"  ></i> </a>
                         </div>
 
                     </div>
