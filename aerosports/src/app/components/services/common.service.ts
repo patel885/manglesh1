@@ -95,6 +95,7 @@ export class CommonService {
         this.aerosports.reduce((acc: any, place: any) =>{
         let plc = Object.assign(place, {"children": []});
          if(place.parentid){
+           if(acc[place.parentid])
             acc[place.parentid].children.push(plc);
           }else{
             result.push(plc);
