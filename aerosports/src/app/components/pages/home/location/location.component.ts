@@ -28,8 +28,8 @@ export class LocationComponent implements OnInit {
   onLocationClick(location: string){
     //console.log(location);
     this.commonService.location = location;
-    //this.router.navigate([location + '/home']);
-    window.location.href=location + '/';
+    //this.router.navigate([location]);
+    window.location.href=location ;
   }
 
   
