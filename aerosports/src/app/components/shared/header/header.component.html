@@ -1,19 +1,5 @@
 <header class="sigma_header style-6 can-sticky">
-    <div class="container-fluid" style="background-color:white ; ">
-        <div class="row">
-            <div class="col-sm" ><a style="color:red ; font-weight: bolder;" href="{{getconfig('waiver')}}" target="_blank" class="btn-sm">
-                    Waiver</a><a href="tel:{{location.phone}}"    style="color:red ; font-weight: bolder;"   class="btn-sm">
-                    <i class="fa fa-phone-square"></i> {{location.phone}}</a>
-                <a (click)="onInquireClick()" class="btn-sm " style="color:red ; font-weight: bolder;">
-                    <i class="fa fa-calendar"></i> Inquire Now</a>
-            </div>
-
-        </div>
-
-    </div>
-
-
-
+  
     <div class="sigma_header-bottom aside-toggle">
         <div class="container">
         
@@ -28,17 +14,48 @@
                     </li>
                 </ul>
    
-
+               
             </div>
-        
-            
+
             
         
         </div>
-        
 
     </div>
+
+    <div class="sigma_header-bottom aside-toggle mobile-toggle">
+        <div class="container">
+        
+           
+   
+                <div class="col-sm" ><a style="color:white ; font-weight: bolder;" href="{{getconfig('waiver')}}" target="_blank" class="btn-sm">
+                    Waiver</a><a href="tel:{{location.phone}}"    style="color:white ; font-weight: bolder;"   class="btn-sm">
+                    <i class="fa fa-phone-square"></i> {{location.phone}}</a>
+                    <a (click)="onInquireClick()" class="btn-sm " style="color:white ; font-weight: bolder;">
+                        <i class="fa fa-calendar"></i> Inquire Now</a>
+                </div>
+            
+
+            
+        
+        </div>
+
+    </div>
+
+  
     <div class="sigma_header-bottom">
+        <div class="container-fluid" style="background-color:white ; ">
+            <div class="row">
+                <div class="col-sm" ><a style="color:red ; font-weight: bolder;" href="{{getconfig('waiver')}}" target="_blank" class="btn-sm">
+                        Waiver</a><a href="tel:{{location.phone}}"    style="color:red ; font-weight: bolder;"   class="btn-sm">
+                        <i class="fa fa-phone-square"></i> {{location.phone}}</a>
+                    <a (click)="onInquireClick()" class="btn-sm " style="color:red ; font-weight: bolder;">
+                        <i class="fa fa-calendar"></i> Inquire Now</a>
+                </div>
+    
+            </div>
+    
+        </div>
         <div class="container">
             <div class="navbar" *ngIf="!hideMenu">
                 <ul class="navbar-nav">

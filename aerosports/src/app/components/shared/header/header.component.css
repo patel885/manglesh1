@@ -12,3 +12,20 @@
           background-position:unset !important;
         }
     }
+
+  .mobile-toggle{
+    width: 100%;
+    text-align: right;
+  }
+
+  .mobile-toggle:hover{
+    background-color: unset !important;
+  }
+
+  @media (max-width: 991px){
+    .sigma_header .aside-toggle {
+      display: table-cell !important;
+      height: 58px;
+      padding-top: 20px;
+    }
+  }
