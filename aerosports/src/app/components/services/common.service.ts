@@ -4,6 +4,7 @@ import * as  XLSX from 'xlsx';
 import { tap } from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs';
 import { animate, animateChild, group, query, style, transition, trigger } from '@angular/animations';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,7 @@ export class CommonService {
   public aerosprots$: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
   public blogs:any[] = [];
   
-  constructor(private httpClient: HttpClient){
+  constructor(private httpClient: HttpClient, private router:Router){
       
   }
 
@@ -33,15 +34,33 @@ export class CommonService {
     return this.httpClient.get('assets/data/menu.xlsx', { responseType: 'blob' }).pipe( tap(data =>{
       const reader: FileReader = new FileReader();
       reader.onload = (e: any) => {
-        var url = window.location.href;
-        var urlItems = url.split('/');
-        if(urlItems.length >= 4){
-          this.location = urlItems[3];
+       
 
         const bstr: string = e.target.result;
         const wb: XLSX.WorkBook = XLSX.read(bstr, { type: 'binary' });
         const ws1: XLSX.WorkSheet = wb.Sheets["Data"]; 
-       this.jsonData = XLSX.utils.sheet_to_json(ws1, {defval:""});        
+       this.jsonData = XLSX.utils.sheet_to_json(ws1, {defval:""});     
+       this.locations = XLSX.utils.sheet_to_json(wb.Sheets["locations"], {defval:""}) ; 
+       //console.log(this.locations);  
+
+      
+       var url = window.location.href.replace(window.location.search,"");
+       var urlItems = url.split('/');
+       if(urlItems.length >= 4){
+
+        var l = this.locations.filter(s => {
+          return s.locations === urlItems[3];
+        });
+
+        //console.log(this.location);
+
+        if(l.length > 0)
+          this.location = urlItems[3];
+        else {
+          this.location = "";
+          this.router.navigate(['/']);
+        }
+
        this.aerosports = this.jsonData.sort((i: any , j: any) => i.parentid - j.parentid).filter(m=>{
                 //m.section1= m.section1.replace(/\r?\n|\r/g, "<br/>");    
                   return ((m.location.toUpperCase().indexOf(this.location.toUpperCase())>-1 || m.location=='') );
@@ -56,7 +75,7 @@ export class CommonService {
                return m.path.toUpperCase()== path?.toUpperCase();  
         })[0];
         /*****************end getting current page*********************** */
-        this.locations = XLSX.utils.sheet_to_json(wb.Sheets["locations"], {defval:""}) ;
+        
 /*        console.log(this.locations);
         console.log(this.location);
         var sitemap='<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';

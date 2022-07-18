@@ -75,7 +75,8 @@ export class HeaderComponent extends HelperService implements OnDestroy  {
     }
   }
   getconfig(key:string): string {
-//    console.log(this.commonService.config);
+//console.log(key);
+//console.log(this.commonService.config);
     var s = this.commonService.config.filter(t=>{
       return t.key==key;
     }) [0].value;
