@@ -48,7 +48,15 @@ export class AppComponent implements OnInit {
     ) {
       this.router.events.subscribe(event => {
         if(event instanceof NavigationEnd){
-            gtag('config', 'UA-50747130-3', 
+            console.log("COMPONENTS TAGS");
+            console.log(this.commonService.locations[0].tag);
+            
+                 gtag('config', this.commonService.locations[0].tag,
+                 {
+                   'page_path': event.urlAfterRedirects
+                 }
+                );
+                gtag('config', 'UA-50747130-3', 
                   {
                     'page_path': event.urlAfterRedirects
                   }

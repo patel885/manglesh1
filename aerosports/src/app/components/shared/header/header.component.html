@@ -14,20 +14,29 @@
 
 
 
-    <div class="sigma_header-middle aside-toggle">
-        <div class="container-fluid">
+    <div class="sigma_header-bottom aside-toggle">
+        <div class="container">
+        
             <div class="navbar" (click)="toggleNav()">
 
                 <ul class="sigma_header-controls-inner">
                     <li class="aside-toggle aside-trigger">
+                            
                         <span></span>
                         <span></span>
                         <span></span>
                     </li>
                 </ul>
+   
 
             </div>
+        
+            
+            
+        
         </div>
+        
+
     </div>
     <div class="sigma_header-bottom">
         <div class="container">
@@ -124,10 +133,14 @@
 
                     <div class="row">
                         <div class="col text-center">
-                            <h1
+                         <!--   <h1
                                 class="stroke-text text-white animate__animated animate__fadeInLeftBig animate__delay-0.1s animate__1">
                                 {{page.title}}
-                            </h1>
+                            </h1>-->
+                            <h1
+                            class="stroke-text text-white">
+                            {{page.title}}
+                        </h1>
                         </div>
                     </div>
                     <!--<div class="row justify-content-md-center">
@@ -138,8 +151,12 @@
                     <div class="row">
                         <div class="col text-center">
                             <h6
-                                class="text-white animate__animated animate__fadeInLeftBig animate__delay-0.1s animate__1">
+                                class="text-white">
                                 {{page.smalltext}}</h6>
+<!--
+                                <h6
+                                class="text-white animate__animated animate__fadeInLeftBig animate__delay-0.1s animate__1">
+                                {{page.smalltext}}</h6>-->
                         </div>
 
                     </div>
@@ -160,10 +177,14 @@
 
                                 </div>-->
                     <div class="row">
-                        <div
-                            class="col section-button text-center animate__animated animate__fadeInLeftBig animate__delay-0.1s animate__1">
+                        <!--<div class="col section-button text-center animate__animated animate__fadeInLeftBig animate__delay-0.1s animate__1">-->
+                        <div class="col section-button  text-center">
                             <a href="{{getconfig('estore')}}" target="_blank" class="sigma_btn-custom">Book Now<i
-                                    class="far fa-arrow-right"  ></i> </a>
+                                    class="far fa-arrow-right"  ></i></a>&nbsp;
+                                    <a href="{{getconfig('waiver')}}" target="_blank" class="sigma_btn-custom">Waiver<i
+                                        class="far fa-arrow-right"  ></i> </a>
+                             
+                            
                         </div>
 
                     </div>
