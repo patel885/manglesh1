@@ -15,20 +15,20 @@ commonService !:CommonService;
     private router: Router,public cs:CommonService) { 
         this.commonService=cs;
       this.route.params.subscribe(routeParams => {
-        var d = routeParams.type;   
-       this.blog= (this.commonService.blogs).filter(t=>{
-        return t.id==d;
-        })[0];
+               
+       this.blog= (cs.blogs).filter(t=>{
+        return t.id==routeParams.id;
+        });
       
        });
    
-   
+      console.log(cs.blogs);
     }
   // Header style
   headerStyle = "";
   // Footer Style
   footerStyle = "dark-bg"
-  public blog!:any;
+  public blog :any[]=[];
 
   ngOnInit(): void {
   }
@@ -39,13 +39,13 @@ commonService !:CommonService;
       item = items[index - 1];
       id = item.id;
       // Show the previous button 
-      output.push("<a href='/blog-details/" + item.id + "' class='sigma_single-pagination-item pagination-prev'> <span>Previous Post</span><h6>" + item.title.slice(0, 20) + "</h6> </a>");
+      output.push("<a href='/"+this.commonService.location+"/blog-details/" + item.id + "' class='sigma_single-pagination-item pagination-prev'> <span>Previous Post</span><h6>" + item.title.slice(0, 20) + "</h6> </a>");
     }
     if (items[index + 1] !== undefined && index <= items.length - 1) {
       // Show next button 
       item = items[index + 1];
       id = item.id;
-      output.push("<a href='/blog-details/" + item.id + "' class='sigma_single-pagination-item pagination-next'> <span>Next Post</span><h6>" + item.title.slice(0, 20) + "</h6> </a>");
+      output.push("<a href='"+this.commonService.location+"/blog-details/" + item.id + "' class='sigma_single-pagination-item pagination-next'> <span>Next Post</span><h6>" + item.title.slice(0, 20) + "</h6> </a>");
     }
 
     return output;

@@ -28,8 +28,7 @@
         
            
    
-                <div class="col-sm" ><a style="color:white ; font-weight: bolder;" href="{{getconfig('waiver')}}" target="_blank" class="btn-sm">
-                    Waiver</a><a href="tel:{{location.phone}}"    style="color:white ; font-weight: bolder;"   class="btn-sm">
+                <div class="col-sm" ><a href="tel:{{location.phone}}"    style="color:white ; font-weight: bolder;"   class="btn-sm">
                     <i class="fa fa-phone-square"></i> {{location.phone}}</a>
                     <a (click)="onInquireClick()" class="btn-sm " style="color:white ; font-weight: bolder;">
                         <i class="fa fa-calendar"></i> Inquire Now</a>
@@ -44,7 +43,7 @@
 
   
     <div class="sigma_header-bottom">
-        <div class="container-fluid" style="background-color:white ; ">
+   <!--     <div class="container-fluid" style="background-color:white ; ">
             <div class="row">
                 <div class="col-sm" ><a style="color:red ; font-weight: bolder;" href="{{getconfig('waiver')}}" target="_blank" class="btn-sm">
                         Waiver</a><a href="tel:{{location.phone}}"    style="color:red ; font-weight: bolder;"   class="btn-sm">
@@ -55,7 +54,7 @@
     
             </div>
     
-        </div>
+        </div>-->
         <div class="container">
             <div class="navbar" *ngIf="!hideMenu">
                 <ul class="navbar-nav">
@@ -79,6 +78,11 @@
                         </ul>
                     </li>
                 </ul>
+                
+                
+                
+                <a (click)="onInquireClick()" class="btn-sm " style="color:white ; font-weight: bolder;">
+                    <i class="fa fa-calendar"></i> Inquire Now</a>
                 <div class="sigma_header-controls style-2 d-flex">
                     <ul class="sigma_header-controls-inner">
                         <li class="search-trigger header-controls-item d-none d-sm-block">
@@ -145,9 +149,12 @@
                         <div class="col-sm  d-flex align-items-left">
                             <a routerLink="/{{commonService.location}}"><img
                                     src="/assets/image/logo/logo_white.png" /></a>
+                                    
+                                    
                         </div>
+                        
                     </div>
-
+                 
                     <div class="row">
                         <div class="col text-center">
                          <!--   <h1
@@ -196,7 +203,7 @@
                     <div class="row">
                         <!--<div class="col section-button text-center animate__animated animate__fadeInLeftBig animate__delay-0.1s animate__1">-->
                         <div class="col section-button  text-center">
-                            <a href="{{getconfig('estore')}}" target="_blank" class="sigma_btn-custom">Book Now<i
+                            <a href="{{getroller()}}" target="_blank" class="sigma_btn-custom">Book Now<i
                                     class="far fa-arrow-right"  ></i></a>&nbsp;
                                     <a href="{{getconfig('waiver')}}" target="_blank" class="sigma_btn-custom">Waiver<i
                                         class="far fa-arrow-right"  ></i> </a>
@@ -220,5 +227,6 @@
                 </div>
             </div>
         </div>
+    
     </ngx-slick-carousel>
 </div>

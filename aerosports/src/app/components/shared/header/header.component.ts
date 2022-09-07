@@ -15,7 +15,7 @@ import { ContactFormComponent } from '../../pages/contact/contact-form/contact-f
 export class HeaderComponent extends HelperService implements OnDestroy  {
   public navigation!: Aerosports[];
   public location!:any;
-  page!: Aerosports;
+  page!: any;
   pagetype!: string | any;
   someSubscription!: any;
   path!:string | any;
@@ -50,11 +50,18 @@ export class HeaderComponent extends HelperService implements OnDestroy  {
           this.path="home";
        }
        console.log(this.path);
+       if(this.router.url.indexOf("blog-details")>0)
+       {
+        this.page =this.commonService.allPages.filter(m=>{
+          return m.path== "blog-details"; 
+          })[0];
+       }
+       else{
        this.page =this.commonService.allPages.filter(m=>{
         return m.path== this.path; 
         })[0];
-
-
+      }
+       console.log(this.page);
 
       this.router.routeReuseStrategy.shouldReuseRoute = function () {
         return false;
@@ -82,6 +89,19 @@ export class HeaderComponent extends HelperService implements OnDestroy  {
     return s;
     
   }
+  
+  getroller(): string {
+    console.log(this.page);
+    if(this.page.booknowurl=='')
+    {
+      return this.getconfig('estore');
+    }
+     else
+     {
+      return this.getconfig('estorebase') + this.page.booknowurl;
+     } 
+
+    }
   ngOnInit(): void { 
   }
   @Input() layout: number | string | undefined = "tertiary-bg" ;

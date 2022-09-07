@@ -21,6 +21,7 @@ import { BlogComponent } from './components/pages/blog/blog.component';
 import { ContactComponent } from './components/pages/contact/contact.component';
 import { ContactFormComponent } from './components/pages/contact/contact-form/contact-form.component';
 import { PricingComponent } from './components/pages/pricing/pricing.component';
+import { UnsubscribeComponent } from './components/pages/unsubscribe/unsubscribe.component';
 
 
 
@@ -30,7 +31,9 @@ import { PricingComponent } from './components/pages/pricing/pricing.component';
     ServicesComponent,
     BlogComponent,
     ContactComponent,
-    ContactFormComponent],
+    ContactFormComponent,
+    UnsubscribeComponent
+  ],
   imports: [
     BrowserModule,
     FormsModule,
@@ -61,7 +64,8 @@ import { PricingComponent } from './components/pages/pricing/pricing.component';
     BlogComponent,
     ContactComponent,
     ContactFormComponent,
-    PricingComponent 
+    PricingComponent ,
+    UnsubscribeComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

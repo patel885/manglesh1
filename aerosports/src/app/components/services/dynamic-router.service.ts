@@ -5,8 +5,10 @@ import { routes } from 'src/app/app-routing.module';
 import { PageTypes } from '../models/aerosports';
 import { AttractionDetailComponent } from '../pages/attractions/attraction-detail/attraction-detail.component';
 import { AttractionsComponent } from '../pages/attractions/attractions.component';
+import { BlogDetailsComponent } from '../pages/blog-details/blog-details.component';
 import { BirthdayPartiesComponent } from '../pages/parties-events/birthday-parties/birthday-parties.component';
 import { PricingComponent } from '../pages/pricing/pricing.component';
+import { UnsubscribeComponent } from '../pages/unsubscribe/unsubscribe.component';
 import { CommonService, slideInAnimation } from './common.service';
 
 @Injectable({
@@ -25,9 +27,18 @@ export class DynamicRouterService {
   routes = routes;
   modifiedRoutes: Route[] = [];
   public buildDynamicRoute(){ 
-    this.commonService.aerosports.forEach(s =>{
+    this.commonService.allPages.forEach(s =>{
       this.iterate(s, "/" + s.path);
     });
+    console.log(this.commonService.blogs);
+
+    this.commonService.blogs.forEach(b =>{
+     var route = {path: ":location/blogs/" + b.id  ,  component: BlogDetailsComponent} as Route;
+      this.modifiedRoutes.push(route)    ; 
+    });
+    var route = {path: "unsubscribe"   ,  component: UnsubscribeComponent} as Route;
+    this.modifiedRoutes.push(route)    ; 
+
 
   if(this.modifiedRoutes.length > 0){
     this.routes.unshift(...this.modifiedRoutes);
@@ -49,13 +60,20 @@ export class DynamicRouterService {
         this.iterate(child, path);
       });
     }
-    var route = {path: ":location" + path + (s.parentid === '' ? '' : "/:type")  ,  component: this.getComponent(s.path)} as Route;
+    if(s.path==s.pagetype)
+    {
+      var route = {path: ":location" + path,  component: this.getComponent(s.path)} as Route;
       this.modifiedRoutes.push(route)    ; 
-    
+    }
+    else{
+      var route = {path: ":location" + path + (s.parentid === '' ? '' : "/:type")  ,  component: this.getComponent(s.path)} as Route;
+        this.modifiedRoutes.push(route)    ; 
+    }
   }
 
   getComponent(type: string): Type<any> {
     
+  
     switch (type) {
         case PageTypes.PartiesEvents: {
             return AttractionsComponent;
@@ -91,6 +109,9 @@ export class DynamicRouterService {
         case  PageTypes.PricingComponent:{
              console.log('PricingComponent');
             return PricingComponent;
+        }
+        case  PageTypes.Unsubscribe:{
+                   return UnsubscribeComponent;
         }
     
         default:

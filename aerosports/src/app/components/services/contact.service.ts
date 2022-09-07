@@ -26,7 +26,7 @@ export class ContactService {
       
     );
   }
-
+  
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
 

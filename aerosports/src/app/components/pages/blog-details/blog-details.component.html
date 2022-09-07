@@ -1,22 +1,18 @@
 <app-header [layout]="headerStyle"></app-header>
 <app-breadcrumbs></app-breadcrumbs>
-<div class="section sigma_post-single" *ngFor="let item of commonService.blogs">
+<div class="section sigma_post-single" *ngFor="let item of blog">
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
                 <div class="post-detail-wrapper">
                     <div class="entry-content">
                         <img [src]="item.image" [alt]="item.title">
-                        <div class="sigma_post-meta">
-                            <div class="sigma_post-categories">
-                                <a routerLink="/blog/cat/{{category.id}}" class="sigma_post-category" *ngFor="let category of item.category">{{category.title}}</a>
-                            </div>
-                        </div>
+                        
                         <h4 class="entry-title">{{item.title}}</h4>
                         <div class="sigma_post-meta">
-                            <a routerLink="/blog-details/{{item.id}}"> <i class="far fa-eye"></i> {{item.views}} Views</a>
+                            <a routerLink="/{{commonService.location}}/blog-details/{{item.id}}"> <i class="far fa-eye"></i> {{item.views}} Views</a>
                             <!--<a routerLink="/blog-details/{{item.id}}"> <i class="far fa-comments"></i> {{item.reviews.length}} Comments</a>-->
-                            <a routerLink="/blog-details/{{item.id}}"> <i class="far fa-calendar"></i> {{item.postdate}}</a>
+                            <a routerLink="/{{commonService.location}}/blog-details/{{item.id}}"> <i class="far fa-calendar"></i> {{item.postdate}}</a>
                         </div>
                         <div [innerHtml]="item.htmldesc"></div>
                     </div>

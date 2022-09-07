@@ -9,7 +9,7 @@
         </div>
         <div class="row">
             <!-- Pricing Item Start -->
-            <div class="col-md-6 col-lg-4" *ngFor="let item of bps">
+            <div class="col-md-6 col-lg-5" *ngFor="let item of bps">
                 <div class="sigma_pricing pricing-2" [ngClass]="item.id === 2 ? 'main' : ''">
                     <div class="sigma_pricing-price">
                         <span class="sigma_pricing-currency">${{item.price | number:'1.0-0'}}</span>
@@ -21,22 +21,22 @@
                     </div>
                     <ul class="list-style-none">
                         <li *ngFor="let list of item.includes.split(',')">{{list}}</li>
-                        <li><a class="sigma_btn-custom" [ngClass]="item.btntype" target="_blank" href="{{getconfig('estore')}}" >Book Now</a></li>
                     </ul>
                     <br/>
                     <ngb-accordion id="ngb1" [animation]="true"  [closeOthers]="true" >
                         <ngb-panel  title="PARTY ADDONS">
                             <ng-template ngbPanelContent>
-                                <ul><li  *ngFor="let item of addons">{{item.value}}</li></ul>            
+                                <ul class="list-style-none"><li  *ngFor="let item of addons">{{item.value}}</li></ul>            
                             </ng-template>
                         </ngb-panel>                        
                         <ngb-panel  title="TERMS & CONDITIONS">                            
                             <ng-template ngbPanelContent>
-                                <ul><li  *ngFor="let item of rules">{{item.value}}</li></ul>            
+                                <ul class="list-style-none"><li  *ngFor="let item of rules">{{item.value}}</li></ul>            
                             </ng-template>
                         </ngb-panel>
                     </ngb-accordion>
-                
+                    <div><a class="sigma_btn-custom" [ngClass]="item.btntype" target="_blank" href="{{getconfig('estore')}}" >Check Availability or Book Now </a></div>
+                  
                 </div>
             </div>
             <!-- Pricing Item End -->

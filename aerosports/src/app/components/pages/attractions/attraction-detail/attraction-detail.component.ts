@@ -41,7 +41,9 @@ export class AttractionDetailComponent implements OnInit {
         })[0] as Aerosports;
   
        });
-       console.log(this.page.section1);
+       if(!this.page)
+        this.page =this.commonService.currentPage;
+
 
      
    }

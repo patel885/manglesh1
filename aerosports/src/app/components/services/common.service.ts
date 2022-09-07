@@ -34,7 +34,7 @@ export class CommonService {
       const reader: FileReader = new FileReader();
       reader.onload = (e: any) => {
         var url = window.location.href;
-        var urlItems = url.split('/');
+        var urlItems = url.split('?')[0].split('/');
         if(urlItems.length >= 4){
           this.location = urlItems[3];
 

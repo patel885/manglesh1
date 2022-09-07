@@ -10,21 +10,16 @@
             <div class="col-md-4" *ngFor="let item of commonService.blogs | slice:0:3">
                 <article class="sigma_post">
                     <div class="sigma_post-thumb">
-                        <a routerLink="/blog-details/{{item.id}}">
+                        <a routerLink="/{{commonService.location}}/blog-details/{{item.id}}">
                             <img [src]="item.image" [alt]="item.title">
                         </a>
                         <div class="sigma_post-date" [innerHtml]="getInitialDate(item.postdate)">
                         </div>
                     </div>
                     <div class="sigma_post-body">
-                        <div class="sigma_post-meta">
-                            <div class="mr-3">
-                                <i class="far fa-tag"></i>
-                                <a routerLink="/blog/tag/{{tag.id}}" class="sigma_post-category" *ngFor="let tag of item.tags.split(',') | slice:0:1">{{tag.title}}</a>
-                            </div>
-                        </div>
-                        <h5> <a routerLink="../blog-details/{{item.id}}">{{item.title | slice:0:50}}</a> </h5>
-                        <a routerLink="../blog-details/{{item.id}}" class="btn-link">Continue Reading <i class="far fa-arrow-right"></i> </a>
+                        
+                        <h5> <a routerLink="/{{commonService.location}}/blog-details/{{item.id}}">{{item.title | slice:0:50}}</a> </h5>
+                        <a routerLink="/{{commonService.location}}/blog-details/{{item.id}}" class="btn-link">Continue Reading <i class="far fa-arrow-right"></i> </a>
                     </div>
                 </article>
             </div>

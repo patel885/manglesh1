@@ -64,5 +64,6 @@ export const PageTypes = {
     Groupseventssub: 'groupseventssub',
     Faq:'faq',
     contactus:"contactus",
-    PricingComponent:"pricing-promos"
+    PricingComponent:"pricing-promos",
+    Unsubscribe:"unsubscribe"
 };
