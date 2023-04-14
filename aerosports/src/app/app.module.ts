@@ -26,47 +26,31 @@ import { UnsubscribeComponent } from './components/pages/unsubscribe/unsubscribe
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ServicesComponent,
-    BlogComponent,
-    ContactComponent,
-    ContactFormComponent,
-    UnsubscribeComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    BreadcrumbModule,
-    NgbModule,
-    HttpClientModule,
-    SlickCarouselModule
-    
-  ],
-  providers: [CommonService,{
-    provide: APP_INITIALIZER,
-    useFactory: (commonService: CommonService) => () => commonService.load(),
-    deps:[CommonService],
-    multi:true
-  }],
-  bootstrap: [AppComponent],
-  entryComponents:[
-    AttractionsComponent,
-    PartiesEventsComponent,
-    AttractionDetailComponent,
-    BirthdayPartiesComponent,
-    CampProgramsComponent,
-    ServicesComponent,
-    AeroSportsServiceComponent,
-    ServicesComponent,
-    BlogComponent,
-    ContactComponent,
-    ContactFormComponent,
-    PricingComponent ,
-    UnsubscribeComponent
-  ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    declarations: [
+        AppComponent,
+        ServicesComponent,
+        BlogComponent,
+        ContactComponent,
+        ContactFormComponent,
+        UnsubscribeComponent
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        BreadcrumbModule,
+        NgbModule,
+        HttpClientModule,
+        SlickCarouselModule
+    ],
+    providers: [CommonService, {
+            provide: APP_INITIALIZER,
+            useFactory: (commonService: CommonService) => () => commonService.load(),
+            deps: [CommonService],
+            multi: true
+        }],
+    bootstrap: [AppComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
