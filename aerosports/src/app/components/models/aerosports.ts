@@ -4,7 +4,7 @@ export interface Aerosports {
     location:     string;
     desc:         string;
     headerimage:  string;
-    smallerimage: string;
+    smallimage: string;
     isactive:     boolean;
     meta:         string;
     title:        string;
@@ -16,6 +16,8 @@ export interface Aerosports {
     ruleno:string;
     warnings:string;
     smalltext:string;
+    icon: string;
+    open:boolean;
 }
 
 export interface BirthDayPackages {

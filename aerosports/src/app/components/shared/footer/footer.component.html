@@ -49,15 +49,18 @@
                         </div>
                         <ul class="sigma_sm square mt-4 justify-content-start">
                             <li>
-                                <a href="https://www.facebook.com/aerosportsoakville/"><i
+                                <a href="https://www.facebook.com/{{this.commonService.locations[0].facebook}}/" title="Aerosports facebook"><i
                                         class="fab fa-facebook-f"></i></a>
                             </li>
-                            <li>
-                                <a href="https://twitter.com/AerosportsOak"><i class="fab fa-twitter"></i></a>
+                            <li *ngIf="this.commonService.locations[0].twitter.length>5">
+                                <a  href="https://twitter.com/{{this.commonService.locations[0].twitter}}" title="Aerosports twitter" ><i class="fab fa-twitter"></i></a>
                             </li>
                             <li>
-                                <a href="https://www.instagram.com/aerosportsoakville/"><i
-                                        class="fab fa-instagram"></i></a>
+                                <a  href="https://www.instagram.com/{{this.commonService.locations[0].insta}}/" title="Aerosports instagram" ><i  class="fab fa-instagram"></i></a>
+                            </li>
+                            <li *ngIf="this.commonService.locations[0].tiktok.length>5">
+                                <a href="https://www.instagram.com/{{this.commonService.locations[0].tiktok}}/" title="Aerosports instagram"><i
+                                        class="fab fa-pinterest"></i></a>
                             </li>
                             <!--<li>
                                 <a href=""><i class="fab fa-linkedin"></i></a>

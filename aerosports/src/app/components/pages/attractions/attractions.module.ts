@@ -8,6 +8,7 @@ import { HomeRoutingModule } from '../home/home-routing.module';
 import { AttractionsComponent } from './attractions.component';
 import { AttractionDetailComponent } from './attraction-detail/attraction-detail.component';
 import { ContactComponent } from './attraction-detail/contact.component';
+import { PricingComponent } from '../pricing/pricing.component';
 
 
 

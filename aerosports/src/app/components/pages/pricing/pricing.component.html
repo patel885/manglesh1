@@ -7,69 +7,28 @@
             climbing walls and free jump area. You won’t find a better value!</p>
 
     </div>
-    <div class="container text-align:center; " style="color:white ; font-size: large;">
-        <div class="row">
-            <div class="col"></div>
-            <div class="col-md">
-                <h2>1<sup>st</sup> <sub>Hour</sub></h2>
-            </div>
-            <div class="col-md">
-                <h2>2<sup>nd</sup> <sub>Hour</sub></h2>
-            </div>
+    <div class="row">
+    
 
-        </div>
-        <div class="row">
-            <div class="col">Age 6+</div>
-            <div class="col-md">$20</div>
-            <div class="col-md">$30</div>
-
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <hr>
+        <div class="container text-align:center; "  style="color:white;background-color: black; border-radius: 30px;">
+            <div class ="row" >
+            <div class="col">Age</div>
+            <div class="col">60 Min</div>
+            <div class="col">90 Min</div>
+            <div class="col">120 Min</div>
+            <div class="col">Day Pass</div>
             </div>
 
-        </div>
-        <div class="row">
-            <div class="col">Age 2-5+</div>
-            <div class="col-md">$16</div>
-            <div class="col-md">$28</div>
-
-        </div>
-        <div class="row">
-            <div class="col">
-                <hr>
+            <div class="row"  *ngFor = "let test of this.configPrices">
+                <div class="col" *ngFor = "let item of test.value.split(';')" >{{item}}</div>
             </div>
-
         </div>
-        <div class="row">
-            <div class="col">2 & Under</div>
-            <div class="col-md">$3</div>
-            <div class="col-md">$3</div>
-
-        </div>
+   
+    </div>
+       
 <div class="row">
-    <ul style="list-style-type:square">
-<li>Adults/Individuals who are staying to watch their kids or supervise are counted as spectators.</li>
-    <li>Toddles 2 & under must have a parent with them who has purchased an adult ticket which
-        is the Ages 6+ ticket.</li>
-    <li>
-        All purchases are final and non-refundable. Schedule can be altered only 3 days prior
-        to the reservation date.
-    </li>
-    <li>We apologize for the inconvenience and thank you for understanding during these challenging times.</li>
-    <li>Prices shown are plus HST</li>
-    <li>All jumpers must have a completed liability waiver on file in order to jump. Anyone under the age of 18 must
-            have the waiver signed by a parent or legal guardian. </li>
-
-     <li>Anyone 18 or older can sign for themselves with a  valid photo ID (must have picture and date of birth). Fill out the waiver online prior to arriving (call to
-            confirm proper completion) or come in and fill it out on site.</li>
-    <li>Parents feel free to come in and relax in one of our many lounge areas. We have several areas to use while
-        your kids jump around and burn off energy. Enjoy access to free Wifi lounge or just enjoy a snack at the
-        snack shack and relax in one of the many sofas that are spread out through the facility.</li>
-
-            
+    <ul class="container" style="list-style-type:square;color:white;" [innerHTML]="page.section1">    
+          
     </ul>
 
     </div>
@@ -78,6 +37,6 @@
 <div class="col" style="background-image:url('/assets/image/bg-hour-pricing-2.png') ;" ></div>
 </div>
 
-</div>
+
 </div>
 <app-footer></app-footer>

@@ -61,7 +61,8 @@ export class HeaderComponent extends HelperService implements OnDestroy  {
         return m.path== this.path; 
         })[0];
       }
-       console.log(this.page);
+      console.log("header")
+       //console.log(this.page);
 
       this.router.routeReuseStrategy.shouldReuseRoute = function () {
         return false;

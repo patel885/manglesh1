@@ -14,8 +14,11 @@ commonService !:CommonService;
   constructor(private route: ActivatedRoute, 
     private router: Router,public cs:CommonService) { 
         this.commonService=cs;
+        console.warn("inside component");
+       
       this.route.params.subscribe(routeParams => {
-               
+        console.warn(routeParams.id);
+        
        this.blog= (cs.blogs).filter(t=>{
         return t.id==routeParams.id;
         });

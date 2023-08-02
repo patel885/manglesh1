@@ -44,6 +44,7 @@ export class DynamicRouterService {
     this.routes.unshift(...this.modifiedRoutes);
     this.router.resetConfig(this.routes);
   }
+  
   var url = window.location.href;
       var urlItems = url.split('/');
       if(urlItems.length >= 4){
