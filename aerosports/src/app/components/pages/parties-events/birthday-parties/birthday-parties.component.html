@@ -24,8 +24,8 @@
             <span>{{ item.category }}</span>
           </div>
           <ul class="list-style-none">
-            <li *ngFor="let list of item.includes.split(',')">
-              <span>90 minutes in the arena</span>{{ list }}
+            <li *ngFor="let list of item.includes.split(';')">
+              <span></span>{{ list }}
             </li>
           </ul>
           <br />
