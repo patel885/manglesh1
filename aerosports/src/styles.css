@@ -311,11 +311,6 @@ membership-ul {
   color: red;
 }
 
-.membership-container-img {
-  display: block;
-  width: 50%;
-}
-
 .membership-container {
   display: flex;
   flex-direction: column;
@@ -325,7 +320,8 @@ membership-ul {
 
 .membership-memberships {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   max-width: 800px;
 }
@@ -336,10 +332,21 @@ membership-ul {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 45%;
+  width: 100%;
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 3px solid #ccc;
   border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.membership-membership-gold p,
+.membership-membership-platinum p {
+  border-bottom: 2px solid #f55322;
+  padding-top: 10px;
+  margin-top: 10px;
+  font-weight: bold;
 }
 
 .membership-container-img {
@@ -360,8 +367,27 @@ membership-ul {
   padding: 0;
   margin: 0;
   text-align: left;
+  list-style-image: url(./assets/image/target-pink.svg);
 }
 
 .membership-list li {
   margin-bottom: 5px;
+}
+
+@media (min-width: 768px) {
+  .membership-memberships {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .membership-membership-gold,
+  .membership-membership-platinum {
+    width: 45%;
+  }
+}
+
+.membership-membership-gold:hover,
+.membership-membership-platinum:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }

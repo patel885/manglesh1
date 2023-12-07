@@ -44,9 +44,12 @@ export class AttractionDetailComponent implements OnInit {
   
        });
        if(!this.page)
-        this.page =this.commonService.currentPage;
-
-
+         this.page = this.commonService.currentPage;
+     
+     if (this.location == "oakville") {
+       this.location = "oakvillemississauga";
+     }
+     this.page.section1 = this.page.section1.replace("{location.url}", this.location);
      
    }
  
