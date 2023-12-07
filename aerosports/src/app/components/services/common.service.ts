@@ -28,7 +28,7 @@ export class CommonService {
 
 
 
-  load(){
+   load(){
  
     return this.httpClient.get('assets/data/menu.xlsx', { responseType: 'blob' }).pipe( tap(data =>{
       const reader: FileReader = new FileReader();
@@ -52,7 +52,7 @@ export class CommonService {
        {
           path="home";
        }
-        this.currentPage =this.aerosports.filter(m=>{
+        this.currentPage = this.aerosports.filter(m=>{
                return m.path.toUpperCase()== path?.toUpperCase();  
         })[0];
         /*****************end getting current page*********************** */

@@ -35,9 +35,11 @@ export class AttractionDetailComponent implements OnInit {
          this.location = routeParams.location;   
          this.pagetype = routeParams.type;   
          console.log("attraction details");
-         
+    
+        if(this.pagetype === undefined )
+          this.pagetype = this.router.url.split('/').pop();
        this.page= this.commonService.allPages.filter(t=>{
-        return t.path==routeParams.type;
+        return t.path== this.pagetype;
         })[0] as Aerosports;
   
        });

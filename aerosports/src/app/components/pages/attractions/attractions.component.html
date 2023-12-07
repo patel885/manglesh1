@@ -14,13 +14,13 @@
           <!-- <div class="sigma_service-thumb">
                         <i [class]="item.icon"></i>
                     </div>-->
-          <div *ngIf="item.smallerimage != ''">
+          <div *ngIf="item.smallimage != ''">
             <a
               routerLink="/{{ commonService.location }}/{{ pagetype }}/{{
                 item.path
               }}"
             >
-              <img src="{{ item.smallerimage }}" alt="#" class="img-responsive"
+              <img src="{{ item.smallimage }}" alt="#" class="img-responsive"
             /></a>
           </div>
           <div class="sigma_service-body">

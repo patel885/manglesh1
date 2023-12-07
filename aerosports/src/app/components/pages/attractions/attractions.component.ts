@@ -45,7 +45,7 @@ export class AttractionsComponent implements OnInit {
       return s.path == this.pagetype;
     })[0];
 
-    console.log(this.currentPage);
+    console.log("console attraction",this.currentPage);
 
   }
   
