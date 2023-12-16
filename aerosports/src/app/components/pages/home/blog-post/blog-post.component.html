@@ -1,29 +1,50 @@
 <div class="section section-padding light-bg">
-    <div class="spacer bg-white spacer-lg spacer-bottom"></div>
-    <div class="container">
-        <div class="section-title text-center">
-            <h6 class="subtitle"> <span></span> Popular Stories <span></span> </h6>
-            <h4 class="title">Every Updated Article</h4>
-        </div>
-        <div class="row">
-            <!-- Article Start -->
-            <div class="col-md-4" *ngFor="let item of commonService.blogs | slice:0:3">
-                <article class="sigma_post">
-                    <div class="sigma_post-thumb">
-                        <a routerLink="/{{commonService.location}}/blog-details/{{item.id}}">
-                            <img [src]="item.image" [alt]="item.title">
-                        </a>
-                        <div class="sigma_post-date" [innerHtml]="getInitialDate(item.postdate)">
-                        </div>
-                    </div>
-                    <div class="sigma_post-body">
-                        
-                        <h5> <a routerLink="/{{commonService.location}}/blog-details/{{item.id}}">{{item.title | slice:0:50}}</a> </h5>
-                        <a routerLink="/{{commonService.location}}/blog-details/{{item.id}}" class="btn-link">Continue Reading <i class="far fa-arrow-right"></i> </a>
-                    </div>
-                </article>
-            </div>
-            <!-- Article End -->
-        </div>
+  <div class="spacer bg-white spacer-lg spacer-bottom"></div>
+  <div class="container">
+    <div class="section-title text-center">
+      <h6 class="subtitle"><span></span> Popular Stories <span></span></h6>
+      <h4 class="title" style="color: aqua">Every Updated Article</h4>
     </div>
+    <div class="row">
+      <!-- Article Start -->
+      <div
+        class="col-md-4"
+        *ngFor="let item of commonService.blogs | slice : 0 : 3"
+      >
+        <article class="sigma_post">
+          <div class="sigma_post-thumb">
+            <a
+              routerLink="/{{ commonService.location }}/blog-details/{{
+                item.id
+              }}"
+            >
+              <img [src]="item.image" [alt]="item.title" />
+            </a>
+            <div
+              class="sigma_post-date"
+              [innerHtml]="getInitialDate(item.postdate)"
+            ></div>
+          </div>
+          <div class="sigma_post-body">
+            <h5>
+              <a
+                routerLink="/{{ commonService.location }}/blog-details/{{
+                  item.id
+                }}"
+                >{{ item.title | slice : 0 : 50 }}</a
+              >
+            </h5>
+            <a
+              routerLink="/{{ commonService.location }}/blog-details/{{
+                item.id
+              }}"
+              class="btn-link"
+              >Continue Reading <i class="far fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+      <!-- Article End -->
+    </div>
+  </div>
 </div>

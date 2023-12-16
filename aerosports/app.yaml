@@ -4,7 +4,7 @@ threadsafe: true
 
 env_variables:
   environment: "--prod"
-  
+
 handlers:
   - url: /
     secure: always
@@ -22,6 +22,3 @@ handlers:
     secure: always
     static_files: dist/aerosports-website/index.html
     upload: dist/aerosports-website/index.html
-
-
-  

@@ -2,46 +2,63 @@
 <!--
 <video style="80vh; width:100%; object-fit:fill;" src="assets/img/video/Award-winning Aerosports Birthday Parties!.mp4" autoplay muted loop></video>
 -->
- <div class="section section.section-lg">
-    <div class="container">
-        <div class="section-title text-center">
-            <h4 class="title">Birthday Packages</h4>
-        </div>
-        <div class="row">
-            <!-- Pricing Item Start -->
-            <div class="col-md-6 col-lg-5" *ngFor="let item of bps">
-                <div class="sigma_pricing pricing-2" [ngClass]="item.id === 2 ? 'main' : ''">
-                    <div class="sigma_pricing-price">
-                        <span class="sigma_pricing-currency">${{item.price | number:'1.0-0'}}</span>
-                      
-                    </div>
-                    <div class="sigma_pricing-info">
-                        <h5 class="sigma_pricing-title">{{item.plantitle}}</h5>
-                        <span>{{item.category}}</span>
-                    </div>
-                    <ul class="list-style-none">
-                        <li *ngFor="let list of item.includes.split(',')">{{list}}</li>
-                    </ul>
-                    <br/>
-                    <ngb-accordion id="ngb1" [animation]="true"  [closeOthers]="true" >
-                        <ngb-panel  title="PARTY ADDONS">
-                            <ng-template ngbPanelContent>
-                                <ul class="list-style-none"><li  *ngFor="let item of addons">{{item.value}}</li></ul>            
-                            </ng-template>
-                        </ngb-panel>                        
-                        <ngb-panel  title="TERMS & CONDITIONS">                            
-                            <ng-template ngbPanelContent>
-                                <ul class="list-style-none"><li  *ngFor="let item of rules">{{item.value}}</li></ul>            
-                            </ng-template>
-                        </ngb-panel>
-                    </ngb-accordion>
-                    <div><a class="sigma_btn-custom" [ngClass]="item.btntype" target="_blank" href="{{getconfig('estore')}}" >Check Availability or Book Now </a></div>
-                  
-                </div>
-            </div>
-            <!-- Pricing Item End -->
-        </div>
+<div class="section section.section-lg">
+  <div class="container">
+    <div class="section-title text-center">
+      <h4 class="title">Birthday Packages</h4>
     </div>
+    <div class="row">
+      <!-- Pricing Item Start -->
+      <div class="col-md-6 col-lg-5" *ngFor="let item of bps">
+        <div
+          class="sigma_pricing pricing-2"
+          [ngClass]="item.id === 2 ? 'main' : ''"
+        >
+          <div class="sigma_pricing-price">
+            <span class="sigma_pricing-currency"
+              >${{ item.price | number : "1.0-0" }}</span
+            >
+          </div>
+          <div class="sigma_pricing-info">
+            <h5 class="sigma_pricing-title">{{ item.plantitle }}</h5>
+            <span>{{ item.category }}</span>
+          </div>
+          <ul class="list-style-none">
+            <li *ngFor="let list of item.includes.split(';')">
+              <span></span>{{ list }}
+            </li>
+          </ul>
+          <br />
+          <ngb-accordion id="ngb1" [animation]="true" [closeOthers]="true">
+            <ngb-panel title="PARTY ADDONS">
+              <ng-template ngbPanelContent>
+                <ul class="list-style-none">
+                  <li *ngFor="let item of addons">{{ item.value }}</li>
+                </ul>
+              </ng-template>
+            </ngb-panel>
+            <ngb-panel title="TERMS & CONDITIONS">
+              <ng-template ngbPanelContent>
+                <ul class="list-style-none">
+                  <li *ngFor="let item of rules">{{ item.value }}</li>
+                </ul>
+              </ng-template>
+            </ngb-panel>
+          </ngb-accordion>
+          <div>
+            <a
+              class="sigma_btn-custom"
+              [ngClass]="item.btntype"
+              target="_blank"
+              href="{{ getconfig('estore') }}"
+              >Check Availability or Book Now
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Pricing Item End -->
+    </div>
+  </div>
 </div>
 <!--
 <div class="col-8 container"
@@ -64,7 +81,6 @@
 </div>
 -->
 
-<br/><br/>
+<br /><br />
 
 <app-footer></app-footer>
-

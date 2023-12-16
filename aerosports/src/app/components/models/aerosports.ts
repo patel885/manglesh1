@@ -15,9 +15,9 @@ export interface Aerosports {
     ruleyes:string;
     ruleno:string;
     warnings:string;
-    smalltext:string;
+    smalltext: string;
     icon: string;
-    open:boolean;
+    open: boolean;
 }
 
 export interface BirthDayPackages {
