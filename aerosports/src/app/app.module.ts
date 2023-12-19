@@ -15,6 +15,7 @@ import { BlogComponent } from './components/pages/blog/blog.component';
 import { ContactComponent } from './components/pages/contact/contact.component';
 import { ContactFormComponent } from './components/pages/contact/contact-form/contact-form.component';
 import { UnsubscribeComponent } from './components/pages/unsubscribe/unsubscribe.component';
+import { PromoPopupComponent } from './components/pages/promo-popup/promo-popup.component';
 
 
 
@@ -25,7 +26,8 @@ import { UnsubscribeComponent } from './components/pages/unsubscribe/unsubscribe
         BlogComponent,
         ContactComponent,
         ContactFormComponent,
-        UnsubscribeComponent
+        UnsubscribeComponent,
+        PromoPopupComponent
     ],
     imports: [
         BrowserModule,

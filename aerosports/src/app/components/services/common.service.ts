@@ -11,6 +11,7 @@ import { animate, animateChild, group, query, style, transition, trigger } from 
 
 export class CommonService {
   
+  public isPromoPopupDisplayed: boolean=false;
   public aerosports: any[]  = [];
   public jsonData: any[]=[];
   public allPages:any[]=[];
@@ -29,7 +30,7 @@ export class CommonService {
 
 
    load(){
- 
+   console.log("load common service");
     return this.httpClient.get('assets/data/menu.xlsx', { responseType: 'blob' }).pipe( tap(data =>{
       const reader: FileReader = new FileReader();
       reader.onload = (e: any) => {
@@ -146,7 +147,20 @@ export class CommonService {
     return s === null ? '' : s;
   }
 
-  
+  getconfig(key:string): string {
+    //console.log(s);
+    //console.log(this.commonService.config);
+    var s: any[];
+        s = this.config.filter(t=>{
+          return t.key==key;
+        }) ;
+       // console.log(s);
+    if(s.length>0)
+       return s[0].value;
+       else 
+       return '';    
+        
+      }
 
   
 }
