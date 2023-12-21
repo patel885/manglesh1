@@ -6,6 +6,7 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ContactComponent } from '../../pages/contact/contact.component';
 import { ContactFormComponent } from '../../pages/contact/contact-form/contact-form.component';
+import { PromoPopupComponent } from '../../pages/promo-popup/promo-popup.component';
 
 @Component({
   selector: 'app-header',
@@ -74,6 +75,15 @@ export class HeaderComponent extends HelperService implements OnDestroy  {
           this.router.navigated = false;
         }
       });
+    
+    if(this.commonService.allPages.filter(m=>{
+        return m.path== 'membership'; 
+        }).length>0)
+        {
+
+           if(!this.commonService.isPromoPopupDisplayed)
+              this.modalService.open(PromoPopupComponent, {size: 'lg', keyboard: false, centered: false});  
+        }
      
    
   }
@@ -84,24 +94,42 @@ export class HeaderComponent extends HelperService implements OnDestroy  {
   }
   getconfig(key:string): string {
 //console.log(key);
-//console.log(this.commonService.config);
-    var s = this.commonService.config.filter(t=>{
-      return t.key==key;
-    }) [0].value;
-    return s;
-    
+    //console.log(this.commonService.config);
+    var s: any[];
+    s = this.commonService.config.filter(t=>{
+    // var s = this.commonService.config.filter(t=>{
+      return t.key == key;
+         }) ;
+   if(s.length>0)
+   return s[0].value;
+   else 
+       return '';
+
   }
   
   getroller(): string {
-    console.log(this.page);
-    if(this.page.booknowurl=='')
+    // console.log(this.page);
+    // if(this.page.booknowurl=='')
+    // {
+    //   return this.getconfig('estore');
+    // }
+    //  else
+    //  {
+    //   return this.getconfig('estorebase') + this.page.booknowurl;
+    //  } 
+    if(this.getconfig(this.path+'-roller-url')!='')
+    return this.getconfig(this.path+'-roller-url');
+
+
+
+
+    if(this.page.booknowlink!='')
     {
-      return this.getconfig('estore');
+      var urlLocation=this.commonService.location==='oakville'?'oakvillemississauga':this.commonService.location;
+      return this.page.booknowlink.replace("{0}",'aerosports'+urlLocation);
     }
-     else
-     {
-      return this.getconfig('estorebase') + this.page.booknowurl;
-     } 
+
+    return this.getconfig('estorebase');
 
     }
   ngOnInit(): void { 

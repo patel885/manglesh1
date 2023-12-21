@@ -11,6 +11,7 @@ import { animate, animateChild, group, query, style, transition, trigger } from 
 
 export class CommonService {
   
+  public isPromoPopupDisplayed: boolean=false;
   public aerosports: any[]  = [];
   public jsonData: any[]=[];
   public allPages:any[]=[];
@@ -145,7 +146,20 @@ export class CommonService {
     var s = localStorage.getItem(this._locationCookieName);
     return s === null ? '' : s;
   }
+getconfig(key:string): string {
+    //console.log(s);
+    //console.log(this.commonService.config);
+    var s: any[];
+        s = this.config.filter(t=>{
+          return t.key==key;
+        }) ;
+       // console.log(s);
+    if(s.length>0)
+       return s[0].value;
+       else 
+       return '';    
 
+      }
   
 
   
