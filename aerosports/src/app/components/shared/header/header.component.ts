@@ -4,7 +4,7 @@ import { CommonService } from '../../services/common.service';
 import { Aerosports } from '../../models/aerosports';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ContactComponent } from '../../pages/contact/contact.component';
+
 import { ContactFormComponent } from '../../pages/contact/contact-form/contact-form.component';
 import { PromoPopupComponent } from '../../pages/promo-popup/promo-popup.component';
 
@@ -39,18 +39,18 @@ export class HeaderComponent extends HelperService implements OnDestroy  {
       return t.isactive=='1';
     });
     this.location=this.commonService.locations[0];
-    console.log(this.navigation);
+    //console.log(this.navigation);
     this.pagetype = this.router.url.split('/').pop();
     
     var urlitems=this.router.url.split('/');
     this.path=this.router.url.split('/').pop();
-    console.log(urlitems);
-    console.log(this.path);
+    //console.log(urlitems);
+    //console.log(this.path);
        if(urlitems.length==2)
        {
           this.path="home";
        }
-       console.log(this.path);
+      // console.log(this.path);
        if(this.router.url.indexOf("blog-details")>0)
        {
         this.page =this.commonService.allPages.filter(m=>{
@@ -62,7 +62,7 @@ export class HeaderComponent extends HelperService implements OnDestroy  {
         return m.path== this.path; 
         })[0];
       }
-      console.log("header")
+      //console.log("header")
        //console.log(this.page);
 
       this.router.routeReuseStrategy.shouldReuseRoute = function () {

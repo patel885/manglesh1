@@ -30,7 +30,7 @@ export class CommonService {
 
 
    load(){
- 
+   console.log("load common service");
     return this.httpClient.get('assets/data/menu.xlsx', { responseType: 'blob' }).pipe( tap(data =>{
       const reader: FileReader = new FileReader();
       reader.onload = (e: any) => {
