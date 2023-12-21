@@ -4,7 +4,8 @@ import { CommonService } from '../../services/common.service';
 import { Aerosports } from '../../models/aerosports';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ContactComponent } from '../../pages/contact/contact.component';
+import {PromoPopupComponent} from '../../pages/promo-popup/promo-popup.component';
+
 import { ContactFormComponent } from '../../pages/contact/contact-form/contact-form.component';
 
 @Component({
@@ -38,18 +39,18 @@ export class HeaderComponent extends HelperService implements OnDestroy  {
       return t.isactive=='1';
     });
     this.location=this.commonService.locations[0];
-    console.log(this.navigation);
+    //console.log(this.navigation);
     this.pagetype = this.router.url.split('/').pop();
     
     var urlitems=this.router.url.split('/');
     this.path=this.router.url.split('/').pop();
-    console.log(urlitems);
-    console.log(this.path);
+    //console.log(urlitems);
+    //console.log(this.path);
        if(urlitems.length==2)
        {
           this.path="home";
        }
-       console.log(this.path);
+      // console.log(this.path);
        if(this.router.url.indexOf("blog-details")>0)
        {
         this.page =this.commonService.allPages.filter(m=>{
@@ -61,7 +62,7 @@ export class HeaderComponent extends HelperService implements OnDestroy  {
         return m.path== this.path; 
         })[0];
       }
-      console.log("header")
+      //console.log("header")
        //console.log(this.page);
 
       this.router.routeReuseStrategy.shouldReuseRoute = function () {
@@ -74,7 +75,15 @@ export class HeaderComponent extends HelperService implements OnDestroy  {
           this.router.navigated = false;
         }
       });
-     
+   
+      if(this.commonService.allPages.filter(m=>{
+        return m.path== 'membership'; 
+        }).length>0)
+        {
+
+           if(!this.commonService.isPromoPopupDisplayed)
+              this.modalService.open(PromoPopupComponent, {size: 'lg', keyboard: false, centered: false});  
+        }
    
   }
   ngOnDestroy(): void {
@@ -83,25 +92,53 @@ export class HeaderComponent extends HelperService implements OnDestroy  {
     }
   }
   getconfig(key:string): string {
-//console.log(key);
+//console.log(s);
 //console.log(this.commonService.config);
-    var s = this.commonService.config.filter(t=>{
+var s: any[];
+    s = this.commonService.config.filter(t=>{
       return t.key==key;
-    }) [0].value;
-    return s;
+    }) ;
+   // console.log(s);
+if(s.length>0)
+   return s[0].value;
+   else 
+   return '';    
     
   }
   
   getroller(): string {
-    console.log(this.page);
-    if(this.page.booknowurl=='')
+    //console.log(this.page);
+    //console.log(this.getconfig(this.path+'-roller-url'));
+    if(this.getconfig(this.path+'-roller-url')!='')
+    return this.getconfig(this.path+'-roller-url');
+      
+    
+
+
+    if(this.page.booknowlink!='')
     {
-      return this.getconfig('estore');
+      var urlLocation=this.commonService.location==='oakville'?'oakvillemississauga':this.commonService.location;
+      return this.page.booknowlink.replace("{0}",'aerosports'+urlLocation);
+    }
+    
+    return this.getconfig('estorebase');
+    
+
+    
+   
+         
+
+   /* var urlLocation=this.commonService.location==='oakville'?'oakvillemississauga':this.commonService.location;
+
+
+    if(this.page.booknowlink!='')
+    {
+      return this.page.booknowlink.replace("{0}",'aerosports'+urlLocation);
     }
      else
      {
-      return this.getconfig('estorebase') + this.page.booknowurl;
-     } 
+      return this.getconfig('estorebase');
+     } */
 
     }
   ngOnInit(): void { 
