@@ -20,7 +20,9 @@ export class PromoPopupComponent implements OnInit {
  
   content: string | any;
   buildInitial(){
-      
+      if (this.commonService.location == "oakville") {
+       this.commonService.location = "oakvillemississauga";
+     }
       
     this.content = this.commonService.getconfig('promotion-popup').replace("{location.url}", this.commonService.location);
     this.commonService.isPromoPopupDisplayed = true;
